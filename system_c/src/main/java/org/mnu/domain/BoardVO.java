@@ -6,9 +6,13 @@ import lombok.Data;
 
 @Data
 public class BoardVO {
-	private long no, hit;
-	private String title,content, writer;
+	private long no;
+	private long hit;
+	private String title;
+	private String content;
+	private String writer;
 	private Date writeDate;
+	
 	public long getNo() {
 		return no;
 	}
@@ -45,5 +49,6 @@ public class BoardVO {
 	public void setWriteDate(Date writeDate) {
 		this.writeDate = writeDate;
 	}
+
 	
 }

@@ -5,7 +5,6 @@
 	uri="http://www.opensymphony.com/sitemesh/decorator"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%LoginVO loginVO = (LoginVO) session.getAttribute("login"); %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -102,7 +101,7 @@ footer {
 						 <% if(loginVO != null) { %> 
 							<li><a href="/message/list.jsp">메시지</a></li>
 						<%} %>
-						<% if(loginVO != null ) { %>
+						<% if(loginVO != null) {%>
 							<li><a href="/member/list">회원관리</a></li>
 						<%} %>
 						
@@ -115,7 +114,7 @@ footer {
 							<li><a href="/member/login">로그인</a></li>
 						<%} else { %>
 							<li><a href="/member/view">
-								<%-- 	<%= loginVO.getName() %> --%>
+									<%= loginVO.getName() %> 
 								</a></li>
 							<li><a href="/member/logout">로그아웃</a></li>
 						<% } %>

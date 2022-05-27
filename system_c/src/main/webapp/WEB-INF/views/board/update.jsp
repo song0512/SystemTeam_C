@@ -46,7 +46,7 @@
 			
 			<div class="form-group">
 				<label>작성자</label>
-				<input name="writer" id="writer" class="form-control" value="${vo.writer }" readonly="readonly">
+				<input name="writer" id="writer" class="form-control" value="${vo.writer}" readonly="readonly">
 			</div>	
 			
 			<button>수정</button>
