@@ -127,10 +127,10 @@ footer {
 	<article>
 		<decorator:body />
 	</article>
-
+<!-- 
 	<footer class="container-fluid text-center">
 		<p>이 홈페이지의 저작권은 system-c에게 있습니다.</p>
 	</footer>
-
+ -->
 </body>
 </html>
