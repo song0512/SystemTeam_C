@@ -13,7 +13,9 @@
 			from (
 				select i.no, i.title, i.id, m.name, i.writeDate, i.fileName
 				from tbl_imageboard i, tbl_member m
-				where i.id = m.id
+				where (1 = 1) 
+				<include refid="search" />
+				and (i.id = m.id)
 				order by i.no asc
 				)
 			)
@@ -21,9 +23,46 @@
 	</select>
 	
 	<!-- 전체 데이터 개수 -->
-	<select id="getTotalRow" resultType="Long">
+	<select id="getTotalRow" resultType="long">
 		select count(*) from tbl_imageboard
+		where(1 = 1)
+		<include refid="search" />
 	</select>
+	
+	<!-- 이미지 게시글 검색 -->
+	<sql id="search">
+		<if test="word != null and word != ''.toString">
+			and (
+			<if test="key == 'tcf'.toString()">
+				title like '%' || #{word} || '%'
+				or content like '%' || #{word} || '%'
+				or fileName like '%' || #{word} || '%'
+			</if>
+			<if test="key == 't'.toString()">
+				title like '%' || #{word} || '%'
+			</if>
+			<if test="key == 'c'.toString()">
+				content like '%' || #{word} || '%'
+			</if>
+			<if test="key == 'f'.toString()">
+				fileName like '%' || #{word} || '%'
+			</if>
+			<if test="key == 'tc'.toString()">
+				title like '%' || #{word} || '%'
+				or content like '%' || #{word} || '%'
+			</if>
+			<if test="key == 'tf'.toString()">
+				title like '%' || #{word} || '%'
+				or fileName like '%' || #{word} || '%'
+			</if>
+			<if test="key == 'cf'.toString()">
+				content like '%' || #{word} || '%'
+				or fileName like '%' || #{word} || '%'
+			</if>
+			)
+		</if>
+	</sql>
+		
 	
 	<!-- 이미지 보기 -->
 	<select id="view" resultType="org.mnu.domain.ImageVO">
@@ -32,11 +71,30 @@
 		where (no = #{no}) and (m.id = i.id)
 	</select>
 	
+	<!-- 이미지 변경(파일명) -->
+	<update id="changeImage">
+		update tbl_imageboard 
+		set fileName = #{fileName}
+		where no = #{no}
+	</update>
+	
 	
 	<!-- 이미지 등록 -->
 	<insert id="write">
 		insert into tbl_imageboard(no, title, content, id, fileName)
 		values(seq_imageboard.nextval, #{title}, #{content}, #{id}, #{fileName})
 	</insert>
+	
+	<update id="update">
+		update tbl_imageboard 
+		set title = #{title}, content = #{content}
+		where no = #{no}
+	</update>
+	
+	<!-- 이미지게시글 삭제 -->
+	<delete id="delete">
+		delete from tbl_imageboard
+		where no = #{no}
+	</delete>
 	
 </mapper>

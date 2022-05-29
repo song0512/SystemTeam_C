@@ -1,14 +1,18 @@
 package org.mnu.controller;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.mnu.domain.BoardVO;
 import org.mnu.service.BoardService;
+import org.mnu.util.CookieUtil;
+import org.mnu.util.MSGUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webjjang.util.PageObject;
 
@@ -51,8 +55,10 @@ public class BoardController {
 	
 	//write
 	@PostMapping("/write")
-	public String write(BoardVO vo, int perPageNum) throws Exception {
+	public String write(BoardVO vo, int perPageNum, RedirectAttributes rttr, HttpServletResponse response) throws Exception {
 		service.write(vo);
+		
+		rttr.addFlashAttribute("msg", "게시글이 등록되었습니다.");
 		return "redirect:list?page=1&perPageNum="+perPageNum;
 	}
 	
@@ -67,16 +73,20 @@ public class BoardController {
 	
 	//update
 	@PostMapping("/update")
-	public String update(PageObject pageObject, BoardVO vo) throws Exception {
+	public String update(PageObject pageObject, BoardVO vo,RedirectAttributes rttr) throws Exception {
 		service.update(vo);
+		rttr.addFlashAttribute("msg", "게시글이 수정되었습니다.");
+		
 		return "redirect:view?no="+vo.getNo() + "&inc=0"
 				+ "&page="+pageObject.getPage() + "&perPageNum="+pageObject.getPerPageNum();
 	}
 	
 	//delete
 	@GetMapping("/delete")
-	public String delete(long no, int perPageNum) throws Exception {
+	public String delete(long no, int perPageNum,RedirectAttributes rttr) throws Exception {
 		service.delete(no);
+		
+		rttr.addFlashAttribute("msg", "게시글이 삭제되었습니다.");
 		
 		return "redirect:list?perPageNum="+perPageNum;
 	}

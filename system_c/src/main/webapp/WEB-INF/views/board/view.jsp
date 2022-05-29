@@ -60,8 +60,8 @@
 
 	<tr>
 		<td colspan="2">
-			<a href="update?no=${vo.no }&inc=0&page=${param.page }&perPageNum=${param.perPageNum}" class="btn btn-default">수정</a>
-			<a href="delete?no=${vo.no }&perPageNum=${param.perPageNum}" class="btn btn-default">삭제</a>
+			<a href="update?no=${vo.no }&inc=0&page=${param.page }&perPageNum=${param.perPageNum}" class="btn btn-success">수정</a>
+			<a href="delete?no=${vo.no }&perPageNum=${param.perPageNum}" class="btn btn-danger" id="deleteBtn">삭제</a>
 			<a href="list?page=${param.page }&perPageNum=${param.perPageNum}" class="btn btn-default">리스트</a>
 		</td>
 	</tr>	

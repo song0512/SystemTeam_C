@@ -39,7 +39,7 @@
 			</div>	
 			
 			<div class="form-group">
-				<label>작성자</label>
+				<label>작성자s</label>
 				<input name="writer" id="writer" class="form-control">
 			</div>	
 			

@@ -35,5 +35,24 @@ public class ImageService {
 		log.info(vo);
 		return mapper.write(vo);
 	}
+	
+	// 이미지 변경 
+	public int changeImage(ImageVO vo) throws Exception {
+		log.info(vo);
+		return mapper.changeImage(vo);
+	}
+	
+	//정보수정
+	public int update(ImageVO vo) throws Exception {
+		log.info(vo);
+		return mapper.update(vo);
+	}
+	
+	//이미지게시글 삭제
+	
+	public int delete(long no) throws Exception {
+		log.info(no);
+		return mapper.delete(no);
+	}
 
 }

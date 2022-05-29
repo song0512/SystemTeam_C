@@ -25,6 +25,7 @@
 		select count(*) from tbl_board
 		<include refid="search" />
 	</select>
+	
 	<!-- 검색 조건 처리 -->
 	<sql id="search">
 		<if test="word != null and word != ''.toString">

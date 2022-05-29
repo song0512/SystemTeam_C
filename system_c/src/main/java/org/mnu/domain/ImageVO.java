@@ -17,6 +17,7 @@ public class ImageVO {
 	private Date writeDate;
 	private String fileName;
 	private MultipartFile image;
+	private String deleteImage;
 	
 
 

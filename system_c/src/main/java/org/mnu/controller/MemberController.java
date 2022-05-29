@@ -1,10 +1,13 @@
 package org.mnu.controller;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.mnu.domain.LoginVO;
 import org.mnu.domain.MemberVO;
 import org.mnu.service.MemberService;
+import org.mnu.util.CookieUtil;
+import org.mnu.util.MSGUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,20 +39,24 @@ public class MemberController {
 	
 	//로그인 - id, pw 입력해서 보냄 -> 받음
 	@PostMapping("/login")
-	public String login(LoginVO invo, HttpSession session) throws Exception {
+	public String login(LoginVO invo, HttpSession session, HttpServletResponse response) throws Exception {
 		log.info("login 처리 ="+ invo);
 		
-		session.setAttribute("login", service.login(invo));
+		LoginVO vo = service.login(invo);
+		
+		session.setAttribute("login", vo);
+		
+		if(vo != null) CookieUtil.createMessageCookie(MSGUtil.MSG_LOGIN, response);
 		return "redirect:/board/list";
 	}
 
 	//로그아웃 처리 - session 지움
 	@GetMapping("/logout")
-	public String logout(HttpSession session, RedirectAttributes rttr) throws Exception {
+	public String logout(HttpSession session, HttpServletResponse response) throws Exception {
 		session.removeAttribute("login");
-		rttr.addFlashAttribute("msg", "로그아웃 되셨습니다.");
-		
 		log.info("로그아웃 됨");
+		
+		CookieUtil.createMessageCookie(MSGUtil.MSG_LOGOUT, response);
 		return "redirect:/board/list";
 	}
 	

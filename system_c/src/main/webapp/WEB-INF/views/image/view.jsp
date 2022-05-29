@@ -6,12 +6,38 @@
 <head>
 <meta charset="UTF-8">
 <title>이미지 게시판 보기</title>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+	#updateMsgDiv {
+		display:none;
+	}
+	#changeImageDiv {
+		display:none;
+	}
+
+</style>
 <script type="text/javascript">
 	$(function(){
 		var imageWidth = $("#image").width();
 		var imageDivWidth = $("#imageDiv").innerWidth();
 		
 		if(imageDivWidth < imageWidth) $("#image").width("100%");
+		
+		$("#updateBtn")
+		.mouseover(function(){
+			$("#updateMsgDiv").slideDown();
+		})
+		.mouseout(function(){
+			$("#updateMsgDiv").slideUp();
+		});
+		
+		$("#changeImageBtn").click(function() {
+			$("#changeImageDiv").slideToggle();
+		});
+		
+		$("#deleteBtn").click(function() {
+			if(!confirm("이미지를 삭제하시겠습니까?")) return false;
+		});
 	});
 </script>
 </head>
@@ -27,7 +53,20 @@
 		<div class="col-sm-9">${vo.title }</div>
 	</div>
 	<div class="well row">
-		<div class="col-sm-3">이미지</div>
+		<div class="col-sm-3">
+			<div>
+				이미지<button class="btn btn-warning btn-sm" id="changeImageBtn">바꾸기</button>
+			</div>
+			<div id="changeImageDiv">
+				<form action="changeImage" method="post" enctype="multipart/form-data">
+					<input name="no" type="hidden" value="${vo.no }">
+					<input name="deleteImage"  value="${vo.fileName }" type="hidden">
+					<input type="file" name="image" class="form-control">	
+					<button class="btn btn-default">바꾸기</button>		
+				</form>
+			
+			</div>
+		</div>
 		<div class="col-sm-9" id="imageDiv"><img src="${vo.fileName }" class="thumbnail" id="image"></div>
 	</div>
 	<div class="well row">
@@ -42,6 +81,13 @@
 		<div class="col-sm-3">작성일</div>
 		<div class="col-sm-9"><fmt:formatDate value="${vo.writeDate }" pattern="yyyy-MM-dd" /></div>
 	</div>
+	<a href="update?no=${vo.no }&page=${param.page}&perPageNum=${param.perPageNum}&key=${param.key}&word=${param.word}"
+	class = "btn btn-default" id="updateBtn" data-toggle="tooltip" data-placement="top">수정</a>
+	<a href="delete?no=${vo.no }&deleteImage=${vo.fileName}"
+	class = "btn btn-default" id="deleteBtn">삭제</a>
+	<a href="list?page=${param.page}&perPageNum=${param.perPageNum}&key=${param.key}&word=${param.word}"
+	class = "btn btn-default">리스트</a>
+	<div class="alert alert-info" id="updateMsgDiv">이미지 바꾸기는 이미지 제목 오른쪽의 바꾸기 버튼을 이용하세요.</div>
 </div>
 </body>
 </html>
