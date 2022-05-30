@@ -33,7 +33,7 @@
 </head>
 <body>
 <div class="container">
-<h2>게시판 글보기</h2>
+<h2>${vo title}</h2>
 <table class="table">
 	<tr>
 		<th>번호</th>

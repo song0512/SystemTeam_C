@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시글 작성폼</title>
+<title>게시글 작성</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -32,7 +32,7 @@
 </head>
 <body>
 	<div class="container">
-		<h2>게시글 작성폼</h2>
+		<h2>게시글 작성</h2>
 		<form action="write" method="post">
 			<input type="hidden" value="${param.perPageNum }" name="perPageNum">
 			<div class="form-group">

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>이미지 등록</title>
+<title>게시글 작성</title>
 <style type="text/css">
 .container {
 	margin-top:100px;
@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="container">
-	<h2>이미지 등록</h2>
+	<h2>게시글 작성</h2>
 	<form action="write" method="post" enctype="multipart/form-data">
 		<input name="perPageNum" value="${param.perPageNum }" type="hidden">
 		<div class="form-group">

@@ -13,14 +13,7 @@
 		<property name="username" value="system" />
 		<property name="password" value="1234" />
 	</bean>
-	  <!-- 
-	 <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig" >
-		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
-		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@systemc_high?TNS_ADMIN=./src/main/resources/Wallet_systemc" />
-		<property name="username" value="admin" />
-		<property name="password" value="System123456" />
-	</bean>
-	 -->
+
 	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
 		<constructor-arg ref="hikariConfig" />
 	</bean>

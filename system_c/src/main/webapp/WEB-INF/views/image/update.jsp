@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>이미지 수정</title>
+<title>게시글 수정</title>
 
 <style type="text/css">
 .container {
@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="container">
-	<h2>이미지 수정</h2>
+	<h2>${vo.title } 수정</h2>
 	<form action="update" method="post">
 		<input name="page" value="${param.page }" type="hidden">
 		<input name="perPageNum" value="${param.perPageNum }" type="hidden">

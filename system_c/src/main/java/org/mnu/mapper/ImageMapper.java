@@ -22,10 +22,10 @@ public interface ImageMapper {
 	//update
 	public int update(ImageVO vo) throws Exception;
 	
-	//imagechange
+	//changeImage
 	public int changeImage(ImageVO vo) throws Exception;
 	
-	//imagedelte
+	//DeleteImage
 	public int delete(long no) throws Exception;
 
 }

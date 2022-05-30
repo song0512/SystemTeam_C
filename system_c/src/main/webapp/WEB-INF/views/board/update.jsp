@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시글 수정폼</title>
+<title>게시글 수정</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -31,7 +31,7 @@
 </head>
 <body>
 	<div class="container">
-		<h2>게시글 수정폼</h2>
+		<h2>${vo.title } 수정</h2>
 		<input type="hidden" name="page" value="${param.page }" >
 		<input type="hidden" name="perPageNum" value="${param.perPageNum }" >
 		<form action="update" method="post">

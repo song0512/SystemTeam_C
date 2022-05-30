@@ -18,6 +18,8 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class BoardTest {
 	
+	//자유게시판 테스트 완료
+	
 	@Inject
 	private BoardMapper mapper;
 	

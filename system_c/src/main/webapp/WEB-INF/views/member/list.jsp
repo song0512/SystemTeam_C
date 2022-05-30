@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원리스트</title>
+<title>회원 리스트</title>
 
 <style type="text/css">
 	.dataRow:hover {
