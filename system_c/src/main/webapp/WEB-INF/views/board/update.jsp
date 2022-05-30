@@ -22,6 +22,12 @@
   		
   	});
   </script>
+  
+  <style type="text/css">
+	.container {
+		margin-top:100px;
+	}
+	</style>
 </head>
 <body>
 	<div class="container">
@@ -49,9 +55,9 @@
 				<input name="writer" id="writer" class="form-control" value="${vo.writer}" readonly="readonly">
 			</div>	
 			
-			<button>수정</button>
-			<button type="reset">새로입력</button>
-			<button type="button" id="cancleBtn">취소</button>
+			<button class="btn btn-success">수정</button>
+			<button type="reset" class="btn btn-default">새로입력</button>
+			<button type="button" id="cancleBtn" class="btn btn-danger">취소</button>
 		</form>
 	</div>
 

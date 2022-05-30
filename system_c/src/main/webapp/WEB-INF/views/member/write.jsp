@@ -7,12 +7,14 @@
 
 
 .container{
-width:30%;
+width:30% !important;
 
 }
 
 .container > h2 {
 text-align: center;
+margin-top:100px;
+
 }
 
 
@@ -59,6 +61,7 @@ text-align: center;
 				} else {
 					//사용 가능한 경우
 					$("#idCheckDiv").addClass("alert-success");
+				
 					idCheck = true;
 				}
 			});
@@ -117,7 +120,6 @@ text-align: center;
 		$("#pw2").keyup(function() {
 			pwCheck = false;
 			var pw2 = $(this).val();
-			//alert(pw2.length);
 						//6이상
 			if(pw2.length < 6) {
 				$("#pw2CheckDiv").removeClass("alert-success");
@@ -173,9 +175,6 @@ text-align: center;
 				
 				return false;
 			}
-			
-			
-			//return false;
 		});	
 	});
 </script>
@@ -192,7 +191,7 @@ text-align: center;
 					<input id="name" name="name" required="required" pattern="[A-Za-z0-9]{4,20}" placeholder="닉네임 입력"
 					class="form-control" autocomplete="off">
 			</div>
-			<div class="form-group">
+			<div class="form-group" id="form-group-id">
 				<label for="id">아이디</label>
 				<input id="id" name="id" required="required" pattern="[A-Za-z0-9]{4,20}" placeholder="아이디 입력"
 				class="form-control" autocomplete="off">
@@ -213,9 +212,6 @@ text-align: center;
 				<div id="pw2CheckDiv" class="alert alert-danger">비밀번호는 6자리 이상이여야 합니다.</div>
 			</div>
 				
-	
-			
-			
 			<button class="btn btn-success">가입하기</button>
 			<button class="btn btn-default" type="reset">새로입력</button>
 			<button type="button" class="btn btn-danger" onclick="history.back()">취소</button>

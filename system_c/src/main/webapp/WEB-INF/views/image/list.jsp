@@ -8,13 +8,21 @@ pageEncoding="UTF-8"%>
 <html>
 	<head>
 	<meta charset="UTF-8">
-	<title>이미지 리스트</title>
+	<title>커뮤니티 게시판</title>
 	
 <style type="text/css">
-.dataRow:hover {
-	cursor:pointer;
-	background: #eee;
-}
+	.dataRow:hover {
+		cursor:pointer;
+		background: #eee;
+	}
+	
+	.container {
+		margin-top:100px;
+	}
+	.container-footer {
+		margin-bottom : 120px;
+	}
+
 </style>
 
 <script type="text/javascript">
@@ -27,7 +35,7 @@ $(function() {
 </head>
 <body>
 	<div class="container">
-		<h2>이미지 리스트</h2>
+		<h2>커뮤니티 게시판</h2>
 		
 		<div class="row" style="margin-bottom: 5px;">
 	<!-- 검색 form -->
@@ -55,7 +63,7 @@ $(function() {
 		  </div>
 		</form>
 	</div>
-	<!-- 한페이지에 보여주는 데이터 개수 -->	
+	<!-- 한페이지에 보여주는 데이터 개수 --> 
 	<div class="col-md-4 text-right">
 		<form action="list" class="form-inline" id="perPageNumForm">
 			<input type="hidden" name="page" value="1">
@@ -72,16 +80,15 @@ $(function() {
 		</form>
 	
 	</div>
+
 </div>
-		
-		
 		
 		<div class="row">
 			<c:forEach items="${list }" var="vo" varStatus="vs">
 				<div class="col-md-3">
 					<div class="thumbnail dataRow" 
 					onclick="location='view?no=${vo.no}&page=${pageObject.page }&perPageNum=${pageObject.perPageNum}&key=${pageObject.key}&word=${pageObject.word}'">
-						<img src="${vo.fileName }" alt="Photo Lists" style="width:100%;height:300px;">
+						<img src="${vo.fileName }" alt="이미지가 없습니다." style="width:100%; height:300px;">
 						<div class="caption">
 							<p>[${vo.no }] ${vo.title }</p>
 							${vo.name }(${vo.id }) - 
@@ -89,19 +96,22 @@ $(function() {
 						</div>
 					</div>
 				</div>
-				<c:if test="${vs.count % 4 == 0 && vs.count != list.size() }">
-					${"</div>"}
-					${"</div class='row'>" }
-				</c:if>
+
 			</c:forEach>
 		</div>
-		<div>
+
+	</div>
+	<div class="container-footer">
+		<div style="text-align:right; margin-right:12.5%;" >
+			<c:if test="${!empty login }">
+				<a href="write?perPageNum=${pageObject.perPageNum }" class="btn btn-success">글쓰기</a>
+			</c:if>
+			<a href="list?page=${pageObject.page }&perPageNum=${pageObject.perPageNum}&key=${pageObject.key}&word=${pageObject.word}" class="btn btn-default">새로고침</a>
+		</div>	
+		<div style="text-align:center;">
 			<pageNav:pageNav listURI="list" pageObject="${pageObject }" query="&key=${pageObject.key }&word=${pageObject.word }"/>
 		</div>
-		<c:if test="${!empty login }">
-			<a href="write?perPageNum=${pageObject.perPageNum }" class="btn btn-default">등록</a>
-		</c:if>
-		<a href="list?&page=${pageObject.page }&perPageNum=${pageObject.perPageNum}&key=${pageObject.key}&word=${pageObject.word}" class="btn btn-default">새로고침</a>
 	</div>
 </body>
+
 </html>

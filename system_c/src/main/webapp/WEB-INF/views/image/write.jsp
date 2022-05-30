@@ -5,6 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>이미지 등록</title>
+<style type="text/css">
+.container {
+	margin-top:100px;
+}
+</style>
 </head>
 <body>
 <div class="container">
@@ -26,9 +31,9 @@
 			<input name="image" type="file" class="form-control">
 		</div>
 
-		<button class="btn btn-default">등록</button>
+		<button class="btn btn-success">등록</button>
 		<button type="reset" class="btn btn-default">새로입력</button>
-		<button type="button" onclick="history.back()" class="btn btn-default">취소</button>
+		<button type="button" onclick="history.back()" class="btn btn-danger">취소</button>
 	</form>
 </div>
 </body>

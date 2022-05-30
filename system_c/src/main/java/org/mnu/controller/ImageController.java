@@ -58,14 +58,14 @@ public class ImageController {
 		service.changeImage(vo);
 		
 		FileUtil.remove(FileUtil.getRealPath("", vo.getDeleteImage(), request));
-		
-		//Thread.sleep(500);
+	
 		
 		return "redirect:view?no=" + vo.getNo()
 				+ "&page=" +pageObject.getPage()
 				+ "&perPageNum=" +pageObject.getPerPageNum()
 				+ "&key=" +pageObject.getKey()
-				+ "&word="+URLEncoder.encode(pageObject.getWord(),"utf-8");
+				//+ "&word="+URLEncoder.encode(pageObject.getWord(),"utf-8")
+				+"&word="+pageObject.getWord();
 	}
 	
 	@GetMapping("/write")
@@ -101,7 +101,6 @@ public class ImageController {
 		
 		service.update(vo);
 		rttr.addFlashAttribute("msg", "게시글이 수정되었습니다.");
-		//Thread.sleep(500);
 		
 		return "redirect:view?no="+vo.getNo()
 				+ "&page="+pageObject.getPage()

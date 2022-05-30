@@ -14,6 +14,8 @@
 		background: #eee;
 		cursor: pointer;
 	}
+	.container {
+	margin-top : 100px;}
 
 </style>
 <script type="text/javascript">

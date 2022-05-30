@@ -6,8 +6,6 @@ import javax.servlet.http.HttpSession;
 import org.mnu.domain.LoginVO;
 import org.mnu.domain.MemberVO;
 import org.mnu.service.MemberService;
-import org.mnu.util.CookieUtil;
-import org.mnu.util.MSGUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,25 +37,23 @@ public class MemberController {
 	
 	//로그인 - id, pw 입력해서 보냄 -> 받음
 	@PostMapping("/login")
-	public String login(LoginVO invo, HttpSession session, HttpServletResponse response) throws Exception {
+	public String login(LoginVO invo, HttpSession session, HttpServletResponse response, RedirectAttributes rttr) throws Exception {
 		log.info("login 처리 ="+ invo);
 		
 		LoginVO vo = service.login(invo);
+		rttr.addFlashAttribute("msg", "로그인이 완료되었습니다. \\n환영합니다.");
 		
 		session.setAttribute("login", vo);
 		
-		if(vo != null) CookieUtil.createMessageCookie(MSGUtil.MSG_LOGIN, response);
-		return "redirect:/board/list";
+		return "redirect:/image/list";
 	}
 
 	//로그아웃 처리 - session 지움
 	@GetMapping("/logout")
-	public String logout(HttpSession session, HttpServletResponse response) throws Exception {
+	public String logout(HttpSession session, HttpServletResponse response, RedirectAttributes rttr) throws Exception {
 		session.removeAttribute("login");
-		log.info("로그아웃 됨");
-		
-		CookieUtil.createMessageCookie(MSGUtil.MSG_LOGOUT, response);
-		return "redirect:/board/list";
+		rttr.addFlashAttribute("msg", "로그아웃 되셨습니다.");
+		return "redirect:/image/list";
 	}
 	
 	//회원리스트 - 관리자만 가능 
@@ -72,10 +68,10 @@ public class MemberController {
 	@GetMapping("/view")
 	public String view(String id, Model model, HttpSession session) throws Exception{
 		if(id == null) {
-			model.addAttribute("title", "내 정보 보기");
+			model.addAttribute("title", "내 정보");
 			id = ((LoginVO) session.getAttribute("login")).getId();
 		} else {
-			model.addAttribute("title", "회원 정보 보기");
+			model.addAttribute("title", "회원 정보");
 		}
 		model.addAttribute("vo", service.view(id));
 		return "member/view";

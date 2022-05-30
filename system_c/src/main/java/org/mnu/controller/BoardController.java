@@ -4,8 +4,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.mnu.domain.BoardVO;
 import org.mnu.service.BoardService;
-import org.mnu.util.CookieUtil;
-import org.mnu.util.MSGUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -56,6 +54,7 @@ public class BoardController {
 	//write
 	@PostMapping("/write")
 	public String write(BoardVO vo, int perPageNum, RedirectAttributes rttr, HttpServletResponse response) throws Exception {
+
 		service.write(vo);
 		
 		rttr.addFlashAttribute("msg", "게시글이 등록되었습니다.");

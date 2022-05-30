@@ -13,6 +13,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+	<style type="text/css">
+
+		.container {
+		margin-top:100px;
+		}
+	</style>
   
   <script type="text/javascript">
   	$(function(){
@@ -23,6 +29,7 @@
   		
   	});
   </script>
+  
 </head>
 <body>
 <div class="container">
@@ -60,8 +67,10 @@
 
 	<tr>
 		<td colspan="2">
-			<a href="update?no=${vo.no }&inc=0&page=${param.page }&perPageNum=${param.perPageNum}" class="btn btn-success">수정</a>
-			<a href="delete?no=${vo.no }&perPageNum=${param.perPageNum}" class="btn btn-danger" id="deleteBtn">삭제</a>
+			<c:if test="${!empty login }">
+				<a href="update?no=${vo.no }&inc=0&page=${param.page }&perPageNum=${param.perPageNum}" class="btn btn-success">수정</a>
+				<a href="delete?no=${vo.no }&perPageNum=${param.perPageNum}" class="btn btn-danger" id="deleteBtn">삭제</a>
+			</c:if>
 			<a href="list?page=${param.page }&perPageNum=${param.perPageNum}" class="btn btn-default">리스트</a>
 		</td>
 	</tr>	

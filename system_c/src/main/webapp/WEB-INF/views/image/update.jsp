@@ -5,6 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>이미지 수정</title>
+
+<style type="text/css">
+.container {
+	margin-top:100px;
+}
+</style>
 </head>
 <body>
 <div class="container">

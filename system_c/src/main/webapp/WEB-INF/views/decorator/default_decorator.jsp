@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>system_c::<decorator:title /></title>
+<title>목포대학교 음식점 커뮤니티<decorator:title /></title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -20,9 +20,6 @@
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
 <style type="text/css">
-header, footer {
-	background: AntiqueWhite;
-}
 
 pre {
 	background: white;
@@ -39,7 +36,7 @@ pre {
 
 
 .carousel-inner img {
-	width: 100%; /* Set width to 100% */
+	width: 100%;  /* Set width to 100% */
 	margin: auto;
 	min-height: 200px;
 }
@@ -50,20 +47,26 @@ pre {
 		display: none;
 	}
 }
+.navbar,
+.container-fluid {
+	background-color : #009B94;
+}
 
-article{
-	min-height: 400px;
-	margin-top:80px;
-	margin-bottom:120px;
-}
-footer {
-	background-color: black;
-	padding: 25px;
-	color:#ddd;
-}
 #welcome {
 	color: grey;
-	margin: 0 auto;
+	margin: 0 auto;	
+}
+
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav>li>a{
+	color : white;
+}
+
+
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-nav>li>a:hover {
+color : #134DA0;
 }
 </style>
 
@@ -96,7 +99,6 @@ $(function(){
 		);
 		msgShow = false;
 	}
-	
 });
 </script>
 </c:if>
@@ -112,18 +114,12 @@ $(function(){
 						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="http://localhost:8081/board/list">System_C</a>
+					<a class="navbar-brand" href="http://localhost:8081/image/list">목포대학교 음식점 커뮤니티</a>
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
-						<li><a href="/image/list">이미지게시판</a></li>
+						<li><a href="/image/list">커뮤니티 게시판</a></li>
 						<li><a href="/board/list">자유게시판</a></li>
-						<li><a href="/notice/list">공지사항</a></li>
-						<li><a href="/qna/list">//</a></li>
-						
-						 <% if(loginVO != null) { %> 
-							<li><a href="/message/list.jsp">메시지</a></li>
-						<%} %>
 						<% if(loginVO != null) {%>
 							<li><a href="/member/list">회원관리</a></li>
 						<%} %>
@@ -148,10 +144,5 @@ $(function(){
 	<article>
 		<decorator:body />
 	</article>
-<!-- 
-	<footer class="container-fluid text-center">
-		<p>이 홈페이지의 저작권은 system-c에게 있습니다.</p>
-	</footer>
- -->
 </body>
 </html>

@@ -8,6 +8,11 @@
 <head>
 <style>
 
+.container {
+margin-top:100px;
+margin-bottom : 120px;
+}
+
 </style>
 <meta charset="UTF-8">
 <title>자유게시판 리스트</title>
@@ -105,7 +110,9 @@
 	</c:forEach>	
 	<tr >
 		<td colspan="5" style='text-align:right'>
-			<a href="write?perPageNum=${pageObject.perPageNum }" class="btn btn-default">글쓰기</a>
+			<c:if test="${!empty login }">
+				<a href="write?perPageNum=${pageObject.perPageNum }" class="btn btn-success">글쓰기</a>
+			</c:if>
 		</td>
 	</tr>	
 	<tr>

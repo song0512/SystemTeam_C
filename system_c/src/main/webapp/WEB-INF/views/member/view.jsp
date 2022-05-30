@@ -7,6 +7,13 @@
 <head>
 <meta charset="UTF-8">
 <title>${title }</title>
+
+<style type="text/css">
+
+	.container {
+		margin-top:100px;	
+	}
+</style>
 </head>
 <body>
 <div class="container">
@@ -33,7 +40,6 @@
 				<c:if test="${empty param.id }">
 				<!-- 개인메뉴 -->
 					<a href="update" class="btn btn-default">정보수정</a>
-					<a href="changePassword" class="btn btn-default">비밀번호 변경</a>
 					<a href="delete" class="btn btn-danger">회원탈퇴</a>
 				</c:if>
 			</td>
