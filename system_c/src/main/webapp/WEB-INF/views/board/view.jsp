@@ -42,7 +42,6 @@
   		function showList() {
   			replyService.list({no : ${vo.no}},
   				function(list) {
-  				alert(JSON.stringify(list));
   				var str = "";
   				if(list == null || list.length == 0)
   					str += "<li class='list-group-item'>댓글이 존재하지 않습니다.</li>";
@@ -66,27 +65,20 @@
   			});
   		}
   		
-  		//댓글 등록
+  		//댓글 등록폼
   		$("#writeReplyBtn").click(function(){
-  			alert("댓글 등록 이벤트");
+  			$("#myModal .modal-title").text("댓글 등록");
+
+  			$("#rno-modal, #modalDeleteReplyBtn, #modalUpdateReplyBtn").hide();
+  			$("#modalWriteReplyBtn").show();
   			
-  			/*
-  			replyService.write(
-  				{content : "댓글 등록합니다.", writer : "admin", no : no},
-  				function(result){
-  					alert("RESULT : " + result);
-  				}
-  			);
-  			showList();
-  			*/
   			$("#content").val("");
   			$("#writer").val("");
   			$("#myModal").modal("show");
   		});
   		
-  		
+  		// 댓글 등록
   		$("#modalWriteReplyBtn").click(function(){
-  			
   			var content = $("#content").val();
   			var writer = $("#writer").val();
   			
@@ -99,7 +91,6 @@
   			replyService.write(
   	  				{content : content, writer : writer, no : no},
   	  				function(result){
-  	  					alert("RESULT : " + result);
   	  					showList();
   	  					
   	  					$("#myModal").modal("hide");
@@ -107,20 +98,51 @@
   	  			);
   		});
   		
+  		// 댓글 수정폼
   		$(".chat").on("click", ".dataRow", function(){
-  			alert("수정 / 삭제 modal");
+  			
   			
   			$("#myModal .modal-title").text("댓글 - 수정 / 삭제");
   			
   			var rno = $(this).data("rno");
   			var content = $(this).find(".content").text();
   			var writer = $(this).find(".writer").text();
+
   			$("#rno").val(rno);
   			$("#content").val(content);
   			$("#writer").val(writer);
-
+  			
+  			$("#modalUpdateReplyBtn, #modalDeleteReplyBtn, #rno-modal").show();
   			$("#modalWriteReplyBtn").hide();
   			$("#myModal").modal("show");
+  		});
+  		
+  		// 댓글 수정 
+  		$("#modalUpdateReplyBtn").click(function(){
+  			var rno = $("#rno").val();
+  			var content = $("#content").val();
+  			var writer = $("#writer").val();
+  			
+  			var reply = {
+  					rno : rno,
+  					content : content,
+  					writer : writer
+  			}
+  			
+  			replyService.update(reply, function(result){
+  				showList();
+  				$("#myModal").modal("hide");
+  			});
+  		});
+  		
+  		//댓글 삭제 
+  		$("#modalDeleteReplyBtn").click(function(){
+  			var rno = $("#rno").val();
+  			
+  			replyService.delete(rno, function(result){
+  				showList();
+  				$("#myModal").modal("hide");
+  			});
   		});
   	
   	});
@@ -159,7 +181,6 @@
 		<th>조회수</th>
 		<th>${vo.hit }</th>
 	</tr>
-	
 
 	<tr>
 		<td colspan="2">
@@ -171,27 +192,20 @@
 		</td>
 	</tr>	
 </table>
+
  <!--  댓글 부분  -->
 	<div class="row" style="margin-top:15px;">
 		<div class="col-lg-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<i class="fa fa-comments fa-fw"></i> Reply
-					<button id="writeReplyBtn" class="btn btn-primary btn-xs pull-right">등록</button>
+					<i class="fa fa-comments fa-fw"></i> 댓글
+					<c:if test="${!empty login }">
+						<button id="writeReplyBtn" class="btn btn-primary btn-xs pull-right">등록</button>
+					</c:if>
 				</div>
 				<div class="panel-body">
 					<div><strong>* 댓글을 클릭하면 수정 / 삭제를 할 수 있습니다.</strong></div>
 					<ul class="chat list-group">
-					<!-- 
-						<li class="left clearfix list-group-item" data-rno='12'>
-							<div>
-								<div class="header">
-									<strong>작성자</strong>
-									<small class="pull-right text-muted">날짜 데이터</small>
-								</div>
-								<p>댓글 내용이 나오는 부분</p>
-							</div>
-						</li> -->
 					</ul>
 				</div>
 			</div>
@@ -200,40 +214,41 @@
 </div>
 
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">댓글 등록</h4>
-      </div>
-      <div class="modal-body">
-      	<div class="form-group">
-    		<label for="rno">댓글 번호</label>
-    		<input type="text" class="form-control" id="rno" readonly = "readonly">
-  		</div>
-      
-     	 <div class="form-group">
-		  	<label for="content">댓글 내용</label>
-		  	<textarea class="form-control" rows="5" id="content"></textarea>
-		</div>
-		
-        <div class="form-group">
-    		<label for="writer">작성자</label>
-    		<input type="text" class="form-control" id="writer">
-  		</div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success" id="modalWriteReplyBtn">등록</button>
-        <button type="button" class="btn btn-success" id="modalUpdateReplyBtn">수정</button>
-        <button type="button" class="btn btn-warning" id="modalDeleteReplyBtn">삭제</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">취소</button>
-      </div>
-    </div>
-
-  </div>
-</div>
+<c:if test="${!empty login }">
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+	
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">댓글 등록</h4>
+	      </div>
+	      <div class="modal-body">
+	      	<div class="form-group" id="rno-modal">
+	    		<label for="rno">댓글 번호</label>
+	    		<input type="text" class="form-control" id="rno" readonly = "readonly">
+	  		</div>
+	      
+	     	 <div class="form-group">
+			  	<label for="content">댓글 내용</label>
+			  	<textarea class="form-control" rows="5" id="content"></textarea>
+			</div>
+			
+	        <div class="form-group">
+	    		<label for="writer">작성자</label>
+	    		<input type="text" class="form-control" id="writer">
+	  		</div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-success" id="modalWriteReplyBtn">등록</button>
+	        <button type="button" class="btn btn-success" id="modalUpdateReplyBtn">수정</button>
+	        <button type="button" class="btn btn-warning" id="modalDeleteReplyBtn">삭제</button>
+	        <button type="button" class="btn btn-danger" data-dismiss="modal">취소</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</c:if>
 </body>
 </html>

@@ -19,6 +19,11 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
+<!-- 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<link rel="stylesheet" href="<c:url value='/resources/common/css/common.css'/>" >
+ -->
+
 <style type="text/css">
 
 pre {
@@ -58,16 +63,6 @@ pre {
 }
 
 
-.navbar-inverse .navbar-brand,
-.navbar-inverse .navbar-nav>li>a{
-	color : white;
-}
-
-
-.navbar-inverse .navbar-brand:hover,
-.navbar-inverse .navbar-nav>li>a:hover {
-	color : #134DA0;
-}
 </style>
 
 <script type="text/javascript">
@@ -111,21 +106,22 @@ $(function(){
 						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="http://localhost:8080/image/list">목포대학교 음식점 커뮤니티</a>
+					<a class="navbar-brand" href="http://localhost:8080/image/list" style="color:white">목포대학교 음식점 커뮤니티</a>
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
-						<li><a href="/image/list">커뮤니티 게시판</a></li>
-						<li><a href="/board/list">자유게시판</a></li>
+						<li><a href="#" style="color:white">카테고리</a></li>
+						<li><a href="/image/list" style="color:white">커뮤니티 게시판</a></li>
+						<li><a href="/board/list" style="color:white">자유게시판</a></li>
 						<% if(loginVO != null) {%>
-							<li><a href="/member/list">회원관리</a></li>
+							<li><a href="/member/list" style="color:white">회원관리</a></li>
 						<%} %>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 					
 						<% if(loginVO == null) { %>
-							<li><a href="/member/write">회원가입</a></li>
-							<li><a href="/member/login">로그인</a></li>
+							<li><a href="/member/write" style="color:white">회원가입</a></li>
+							<li><a href="/member/login" style="color:white">로그인</a></li>
 						<%} else { %>
 							<li><a href="/member/view">
 									<%= loginVO.getName() %> 

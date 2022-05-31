@@ -18,7 +18,4 @@ public class ImageVO {
 	private String fileName;
 	private MultipartFile image;
 	private String deleteImage;
-	
-
-
 }

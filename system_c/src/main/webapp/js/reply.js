@@ -43,8 +43,54 @@
 		});
 	}
 	
+	//댓글 수정
+	function update(reply, callback, error){
+		alert("replyService.update - reply : " + JSON.stringify(reply));
+		$.ajax({
+			url : "/reply/update",
+			type : "patch",
+			data : JSON.stringify(reply),
+			contentType : "application/json; charset=utf-8",
+			success : function(result, status, xhr){
+				if(callback) callback(result);
+				else 
+					alert("댓글 수정이 되었습니다.");
+			},
+			error : function(xhr, status, er) {
+				if(error) error(er);
+				else 
+					alert("댓글 수정에 실패 하셨습니다.");
+			}
+		
+		});
+	
+	}
+	
+	//댓글 삭제
+	function deleteReply(rno, callback, error){
+		alert("replyService.delete - reply : " + rno);
+		$.ajax({
+			url : "/reply/delete?rno="+rno,
+			type : "delete",
+			success : function(result, status, xhr){
+				if(callback) callback(result);
+				else 
+					alert("댓글 삭제가 되었습니다.");
+			},
+			error : function(xhr, status, er) {
+				if(error) error(er);
+				else 
+					alert("댓글 삭제에 하셨습니다.");
+			}
+		
+		});
+	
+	}
+	
 	return {
 		list : list,
-		write : write
+		write : write,
+		update : update,
+		delete : deleteReply
 	}
 })();
