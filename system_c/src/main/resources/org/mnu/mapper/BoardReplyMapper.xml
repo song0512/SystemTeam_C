@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="org.mnu.mapper.BoardReplyMapper">
+	<!-- list -->
+	<select id="list" resultType="org.mnu.domain.BoardReplyVO">
+		select rno, no, content,writer,writeDate 
+		from tbl_reply
+		where no = #{no}
+		order by rno desc
+	</select>
+	
+	<!-- 댓글 작성 -->
+	<insert id="write">
+		insert into tbl_reply(rno, no, content, writer)
+		values(seq_rep.nextval, #{no}, #{content}, #{writer})
+	</insert>
+	
+	<!-- 댓글 수정 -->
+	<update id="update">
+		update tbl_reply
+		set content = #{content}, writer = #{writer}
+		where rno = #{rno}
+	</update>
+	
+	<!-- 댓글 삭제 -->
+	<delete id="delete">	
+		delete from tbl_reply
+		where rno = #{rno}
+	
+	</delete>
+</mapper>

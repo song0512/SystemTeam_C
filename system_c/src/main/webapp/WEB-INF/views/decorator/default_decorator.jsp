@@ -66,12 +66,9 @@ pre {
 
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-nav>li>a:hover {
-color : #134DA0;
+	color : #134DA0;
 }
 </style>
-
-<script type="text/javascript" src="${contextPath }/js/cookie/messageJS.js"></script>
-<script type="text/javascript" src="${contextPath }/js/cookie/cookieUtil.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -114,7 +111,7 @@ $(function(){
 						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="http://localhost:8081/image/list">목포대학교 음식점 커뮤니티</a>
+					<a class="navbar-brand" href="http://localhost:8080/image/list">목포대학교 음식점 커뮤니티</a>
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
