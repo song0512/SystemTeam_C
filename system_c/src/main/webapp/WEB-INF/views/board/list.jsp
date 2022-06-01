@@ -103,7 +103,7 @@ margin-bottom : 120px;
 		<tr class="dataRow">
 			<td class="no">${vo.no }</td>
 			<td>${vo.title }</td>
-			<td>${vo.writer }</td>
+			<td>${vo.name }</td>
 			<td><fmt:formatDate value="${vo.writeDate}" pattern="yyyy-MM-dd"/></td>
 			<td>${vo.hit }</td>
 		</tr>

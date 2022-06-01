@@ -22,6 +22,8 @@ pageEncoding="UTF-8"%>
 	.container-footer {
 		margin-bottom : 120px;
 	}
+	
+	
 
 </style>
 
@@ -30,7 +32,10 @@ $(function() {
   	$("#perPageNumSelect").change(function(){
   		$("#perPageNumForm").submit();
   	});
+  	
 });
+
+
 </script>
 </head>
 <body>
@@ -63,6 +68,8 @@ $(function() {
 		  </div>
 		</form>
 	</div>
+	
+	
 	<!-- 한페이지에 보여주는 데이터 개수 --> 
 	<div class="col-md-4 text-right">
 		<form action="list" class="form-inline" id="perPageNumForm">
@@ -82,24 +89,24 @@ $(function() {
 	</div>
 
 </div>
-		
-		<div class="row">
+
+		<div class="row" >
 			<c:forEach items="${list }" var="vo" varStatus="vs">
-				<div class="col-md-3">
-					<div class="thumbnail dataRow" 
-					onclick="location='view?no=${vo.no}&page=${pageObject.page }&perPageNum=${pageObject.perPageNum}&key=${pageObject.key}&word=${pageObject.word}'">
-						<img src="${vo.fileName }" alt="이미지가 없습니다." style="width:100%; height:300px;">
-						<div class="caption">
-							<p>[${vo.no }] ${vo.title }</p>
-							${vo.name }(${vo.id }) - 
-							<fmt:formatDate value="${vo.writeDate }" pattern="yyyy-MM-dd" />
+					<div class="col-md-3">
+						<div class="thumbnail dataRow" 
+						onclick="location='view?no=${vo.no}&page=${pageObject.page }&perPageNum=${pageObject.perPageNum}&key=${pageObject.key}&word=${pageObject.word}'">
+							<img src="${vo.fileName }" alt="이미지가 없습니다." style="width:100%; height:300px;">
+							<div class="caption">
+								<p>[${vo.no }] ${vo.title }</p>
+								${vo.name }<br>  
+								<fmt:formatDate value="${vo.writeDate }" pattern="yyyy-MM-dd" />
+							</div>
 						</div>
 					</div>
-				</div>
-
 			</c:forEach>
 		</div>
 
+	
 	</div>
 	<div class="container-footer">
 		<div style="text-align:right; margin-right:12.5%;" >
@@ -115,3 +122,5 @@ $(function() {
 </body>
 
 </html>
+
+

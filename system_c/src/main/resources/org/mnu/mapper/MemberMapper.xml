@@ -80,8 +80,8 @@
 	<!-- 글 수정 -->
 	<update id="update">
 		update tbl_member
-		set title = #{title}, content = #{content}, writer = #{writer}
-		where no = #{no}
+		set name = #{name}, id = #{id}
+		where id = #{id}
 	</update>
 	
 	<!-- 탈퇴 -->

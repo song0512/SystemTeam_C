@@ -7,14 +7,16 @@
 <mapper namespace="org.mnu.mapper.BoardMapper">
 	<!-- list -->
 	<select id="list" resultType="org.mnu.domain.BoardVO">
-		select no, title, writer, writeDate,  hit
+		select no, title, id, writeDate,  hit, name
 		from (
-			select rownum rnum, no, title, writer, writeDate, hit
+			select rownum rnum, no, title, id, writeDate, hit, name
 			from (
-				select no, title, writer, writeDate, hit
-				from tbl_board
+				select b.no, b.title, b.id, b.writeDate, b.hit, m.name
+				from tbl_board b, tbl_member m
+				where (1 = 1)
 				<include refid="search" />
-				order by no asc
+				and (b.id = m.id)
+				order by b.no desc
 				)
 			)
 			where rnum between #{startRow} and #{endRow}
@@ -23,6 +25,7 @@
 	<!-- 전체 데이터 개수 -->
 	<select id="getTotalRow" resultType="long">
 		select count(*) from tbl_board
+		where(1 = 1)
 		<include refid="search" />
 	</select>
 	
@@ -33,7 +36,7 @@
 			<if test="key == 'tcw'.toString()">
 				title like '%' || #{word} || '%'
 				or content like '%' || #{word} || '%'
-				or writer like '%' || #{word} || '%'
+				or id like '%' || #{word} || '%'
 			</if>
 			<if test="key == 't'.toString()">
 				title like '%' || #{word} || '%'
@@ -42,7 +45,7 @@
 				content like '%' || #{word} || '%'
 			</if>
 			<if test="key == 'w'.toString()">
-				writer like '%' || #{word} || '%'
+				id like '%' || #{word} || '%'
 			</if>
 			<if test="key == 'tc'.toString()">
 				title like '%' || #{word} || '%'
@@ -50,11 +53,11 @@
 			</if>
 			<if test="key == 'tw'.toString()">
 				title like '%' || #{word} || '%'
-				or writer like '%' || #{word} || '%'
+				or id like '%' || #{word} || '%'
 			</if>
 			<if test="key == 'cw'.toString()">
 				content like '%' || #{word} || '%'
-				or writer like '%' || #{word} || '%'
+				or id like '%' || #{word} || '%'
 			</if>
 		</if>
 	</sql>
@@ -63,9 +66,9 @@
 	
 	<!-- 게시글 보기 -->
 	<select id="view" resultType="org.mnu.domain.BoardVO">
-		select no, title, content ,writer, writeDate,  hit
-		from tbl_board
-		where no = #{no}
+		select b.no, b.title, b.content , b.writeDate,  b.hit, m.name
+		from tbl_board b, tbl_member m
+		where (no = #{no}) and (m.id = b.id)
 	</select>
 	
 	<!-- 조회수 1증가 -->
@@ -77,14 +80,14 @@
 	
 	<!-- 글 작성 -->
 	<insert id="write">
-		insert into tbl_board(no, title, writer, content, hit)
-		values(seq.nextval, #{title}, #{writer}, #{content}, 0)
+		insert into tbl_board(no, title,  content, hit, id)
+		values(seq.nextval, #{title}, #{content}, 0, #{id})
 	</insert>
 	
 	<!-- 글 수정 -->
 	<update id="update">
 		update tbl_board
-		set title = #{title}, content = #{content}, writer = #{writer}
+		set title = #{title}, content = #{content}
 		where no = #{no}
 	</update>
 	

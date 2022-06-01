@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.mnu.domain.BoardVO;
 import org.mnu.domain.LoginVO;
 import org.mnu.domain.MemberVO;
 import org.mnu.mapper.MemberMapper;
@@ -28,7 +29,6 @@ public class MemberService {
 		return mapper.view(id);
 	}
 	
-	
 	//회원가입
 	public int write(MemberVO vo) throws Exception {
 		return mapper.write(vo);
@@ -42,5 +42,10 @@ public class MemberService {
 	//아이디 중복체크 -> 아이디 가져옴
 	public String idCheck(String id) throws Exception {
 		return mapper.idCheck(id);
+	}
+	
+	//update
+	public MemberVO update(String id) throws Exception {
+		return mapper.update(id);
 	}
 }

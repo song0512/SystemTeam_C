@@ -169,7 +169,7 @@
 	
 	<tr>
 		<th>작성자</th>
-		<th>${vo.writer }</th>
+		<th>${vo.name }</th>
 	</tr>
 	
 	<tr>
@@ -181,10 +181,9 @@
 		<th>조회수</th>
 		<th>${vo.hit }</th>
 	</tr>
-
 	<tr>
 		<td colspan="2">
-			<c:if test="${!empty login }">
+			<c:if test="${!empty login}">
 				<a href="update?no=${vo.no }&inc=0&page=${param.page }&perPageNum=${param.perPageNum}" class="btn btn-success">수정</a>
 				<a href="delete?no=${vo.no }&perPageNum=${param.perPageNum}" class="btn btn-danger" id="deleteBtn">삭제</a>
 			</c:if>

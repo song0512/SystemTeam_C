@@ -99,5 +99,4 @@ public class MemberController {
 		return "member/idCheck";
 	}
 	
-
 }

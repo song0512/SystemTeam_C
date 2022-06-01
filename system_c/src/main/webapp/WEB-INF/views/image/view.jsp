@@ -84,7 +84,7 @@
 	</div>
 	<div class="well row">
 		<div class="col-sm-3">작성자</div>
-		<div class="col-sm-9">${vo.name}(${vo.id })</div>
+		<div class="col-sm-9">${vo.name}</div>
 	</div>
 	<div class="well row">
 		<div class="col-sm-3">작성일</div>

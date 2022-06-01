@@ -2,7 +2,10 @@ package org.mnu.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.mnu.domain.BoardReplyVO;
+import org.mnu.domain.LoginVO;
 import org.mnu.service.BoardReplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -39,9 +42,11 @@ public class BoardReplyController {
 	public ResponseEntity<String> write(@RequestBody BoardReplyVO vo) {
 		log.info("writeReply.vo : " + vo);
 		
+		
 		int writeCount = service.write(vo);
 		
 		log.info(writeCount);
+	
 		
 		return new ResponseEntity<String>("success", HttpStatus.OK);
 	}

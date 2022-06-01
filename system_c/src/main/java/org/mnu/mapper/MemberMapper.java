@@ -22,7 +22,7 @@ public interface MemberMapper {
 	public int write(MemberVO vo)throws Exception;
 	
 	//수정
-	public int update(MemberVO vo)throws Exception;
+	public MemberVO update(String id)throws Exception;
 	
 	// 탈퇴
 	public int delete(long no) throws Exception;

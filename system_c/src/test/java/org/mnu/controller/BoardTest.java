@@ -49,7 +49,6 @@ public class BoardTest {
 		BoardVO vo = new BoardVO();
 		vo.setTitle("테스트 진행");
 		vo.setContent("테스트 진행중");
-		vo.setWriter("SE");
 		log.info("==================================== 게시글 쓰기 test ====================================");
 		log.info(mapper.write(vo) + "\n");
 	}
@@ -60,7 +59,6 @@ public class BoardTest {
 		vo.setNo(7);
 		vo.setTitle("테스트 진행");
 		vo.setContent("테스트 진행중");
-		vo.setWriter("SE");
 		log.info("==================================== 게시글 글수정 test ====================================");
 		log.info(mapper.update(vo) + "\n");
 	}

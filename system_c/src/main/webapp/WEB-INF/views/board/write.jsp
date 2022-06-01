@@ -45,10 +45,6 @@
 				<textarea name="content" id="content" class="form-control" rows="7"></textarea>
 			</div>	
 			
-			<div class="form-group">
-				<label>작성자</label>
-				<input name="writer" id="writer" class="form-control" value="${vo.id }">
-			</div>	
 			
 			<button class="btn btn-success">등록</button>
 			<button type="reset" class="btn btn-default">새로입력</button>

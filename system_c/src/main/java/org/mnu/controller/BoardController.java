@@ -1,9 +1,12 @@
 package org.mnu.controller;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.mnu.domain.BoardVO;
+import org.mnu.domain.LoginVO;
 import org.mnu.service.BoardService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,13 +17,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webjjang.util.PageObject;
 
-import lombok.AllArgsConstructor;
 
 @Controller
 @RequestMapping("/board/*")
-@AllArgsConstructor
 public class BoardController {
 	
+	@Autowired
 	private BoardService service;
 	
 	//list
@@ -53,9 +55,11 @@ public class BoardController {
 	
 	//write
 	@PostMapping("/write")
-	public String write(BoardVO vo, int perPageNum, RedirectAttributes rttr, HttpServletResponse response) throws Exception {
+	public String write(BoardVO vo, int perPageNum, RedirectAttributes rttr, HttpServletResponse response,HttpSession session) throws Exception {
 
+		vo.setId(((LoginVO)session.getAttribute("login")).getId());
 		service.write(vo);
+		
 		
 		rttr.addFlashAttribute("msg", "게시글이 등록되었습니다.");
 		return "redirect:list?page=1&perPageNum="+perPageNum;

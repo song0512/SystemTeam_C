@@ -188,7 +188,7 @@ margin-top:100px;
 		
 			<div class="form-group">
 					<label for="name">닉네임</label>
-					<input id="name" name="name" required="required" pattern="[A-Za-z0-9]{4,20}" placeholder="닉네임 입력"
+					<input id="name" name="name" required="required" pattern="[가-힣-A-Za-z0-9]{4,20}" placeholder="닉네임 입력"
 					class="form-control" autocomplete="off">
 			</div>
 			<div class="form-group" id="form-group-id">
