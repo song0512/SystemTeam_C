@@ -47,12 +47,10 @@
 	<c:forEach begin="${pageObject.startPage }" end="${pageObject.endPage }" var="cnt">
   	<li ${(pageObject.page == cnt)?"class=\"active\"":"" } 
   	 data-page=${cnt }>
-  	 	<!-- 페이지와 cnt가 같으면 링크가 없음 -->
   	 	<c:if test="${pageObject.page == cnt }">
   			<a href="" onclick="return false"
   			 ${noMove } ${tooltip }>${cnt}</a>
   	 	</c:if>
-  	 	<!-- 페이지와 cnt가 같지 않으면 링크가 있음 -->
   	 	<c:if test="${pageObject.page != cnt }">
   			<a href="${listURI }?page=${cnt }&perPageNum=${pageObject.perPageNum}${query}"
 	  		 title="click to move ${cnt } page" ${tooltip }>${cnt}</a>

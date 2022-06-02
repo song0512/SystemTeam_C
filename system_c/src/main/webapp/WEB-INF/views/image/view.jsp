@@ -53,6 +53,11 @@
 		<div class="col-sm-3">번호</div>
 		<div class="col-sm-9">${vo.no }</div>
 	</div>
+	
+	<div class="well row">
+		<div class="col-sm-3">카테고리</div>
+		<div class="col-sm-9">${vo.category }</div>
+	</div>
 	<div class="well row">
 		<div class="col-sm-3">제목</div>
 		<div class="col-sm-9">${vo.title }</div>
@@ -97,9 +102,10 @@
 		class = "btn btn-danger" id="deleteBtn">삭제</a>
 		<div class="alert alert-info" id="updateMsgDiv">이미지 바꾸기는 이미지 제목 오른쪽의 바꾸기 버튼을 이용하세요.</div>
 	</c:if>
-		
+		<!-- 
 	<a href="list?page=${param.page}&perPageNum=${param.perPageNum}&key=${param.key}&word=${param.word}"
-	class = "btn btn-default">리스트</a>
+	class = "btn btn-default">리스트</a> -->
+	<a class = "btn btn-default" onclick="history.back()">리스트</a>
 </div>
 </body>
 </html>

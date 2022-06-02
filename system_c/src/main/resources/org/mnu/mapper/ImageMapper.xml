@@ -7,11 +7,11 @@
 <mapper namespace="org.mnu.mapper.ImageMapper">
 	<!-- list -->
 	<select id="list" resultType="org.mnu.domain.ImageVO">
-		select no, title, id, name, writeDate, fileName
+		select no, title, id, name, writeDate, fileName, category
 		from (
-			select rownum rnum, no, title, id, name, writeDate, fileName
+			select rownum rnum, no, title, id, name, writeDate, fileName, category
 			from (
-				select i.no, i.title, i.id, m.name, i.writeDate, i.fileName
+				select i.no, i.title, i.id, m.name, i.writeDate, i.fileName, i.category
 				from tbl_imageboard i, tbl_member m
 				where (1 = 1) 
 				<include refid="search" />
@@ -21,6 +21,77 @@
 			)
 			where rnum between #{startRow} and #{endRow}
 	</select>
+	
+	<!-- 카페, 디저트 category -->
+	<select id="soup_category" resultType="org.mnu.domain.ImageVO">
+		select no, title, id, name, writeDate, fileName, category
+		from (
+			select rownum rnum, no, title, id, name, writeDate, fileName, category
+			from (
+				select i.no, i.title, i.id, m.name, i.writeDate, i.fileName, i.category
+				from tbl_imageboard i, tbl_member m
+				where (1 = 1) 
+				<include refid="search" />
+				and (i.id = m.id)
+				order by i.no desc
+				)
+			)
+			where rnum between #{startRow} and #{endRow}
+	</select>
+	
+	
+	<!-- 중식 category -->
+	<select id="chinesefood_category" resultType="org.mnu.domain.ImageVO">
+		select no, title, id, name, writeDate, fileName, category
+		from (
+			select rownum rnum, no, title, id, name, writeDate, fileName, category
+			from (
+				select i.no, i.title, i.id, m.name, i.writeDate, i.fileName, i.category
+				from tbl_imageboard i, tbl_member m
+				where (1 = 1) 
+				<include refid="search" />
+				and (i.id = m.id)
+				order by i.no desc
+				)
+			)
+			where rnum between #{startRow} and #{endRow}
+	</select>
+	
+	<!-- 패스트푸드 category -->
+	<select id="fastfood_category" resultType="org.mnu.domain.ImageVO">
+		select no, title, id, name, writeDate, fileName, category
+		from (
+			select rownum rnum, no, title, id, name, writeDate, fileName, category
+			from (
+				select i.no, i.title, i.id, m.name, i.writeDate, i.fileName, i.category
+				from tbl_imageboard i, tbl_member m
+				where (1 = 1) 
+				<include refid="search" />
+				and (i.id = m.id)
+				order by i.no desc
+				)
+			)
+			where rnum between #{startRow} and #{endRow}
+	</select>
+	
+	<!-- 분식 category -->
+	<select id="snackbar_category" resultType="org.mnu.domain.ImageVO">
+		select no, title, id, name, writeDate, fileName, category
+		from (
+			select rownum rnum, no, title, id, name, writeDate, fileName, category
+			from (
+				select i.no, i.title, i.id, m.name, i.writeDate, i.fileName, i.category
+				from tbl_imageboard i, tbl_member m
+				where (1 = 1) 
+				<include refid="search" />
+				and (i.id = m.id)
+				order by i.no desc
+				)
+			)
+			where rnum between #{startRow} and #{endRow}
+	</select>
+
+	
 	
 	<!-- 전체 데이터 개수 -->
 	<select id="getTotalRow" resultType="long">
@@ -66,7 +137,7 @@
 	
 	<!-- 이미지 보기 -->
 	<select id="view" resultType="org.mnu.domain.ImageVO">
-		select i.no, i.title, i.content, i.id, m.name, i.writeDate, i.fileName
+		select i.no, i.title, i.content, i.id, m.name, i.writeDate, i.fileName, i.category
 		from tbl_imageboard i, tbl_member m
 		where (no = #{no}) and (m.id = i.id)
 	</select>
@@ -81,8 +152,8 @@
 	
 	<!-- 이미지 등록 -->
 	<insert id="write">
-		insert into tbl_imageboard(no, title, content, id, fileName)
-		values(seq_imageboard.nextval, #{title}, #{content}, #{id}, #{fileName})
+		insert into tbl_imageboard(no, title, content, id, fileName, category)
+		values(seq_imageboard.nextval, #{title}, #{content}, #{id}, #{fileName}, #{category})
 	</insert>
 	
 	<update id="update">

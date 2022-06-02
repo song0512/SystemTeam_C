@@ -1,15 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="pageNav" tagdir="/WEB-INF/tags"%>
-
 <!DOCTYPE html>
 <html>
-	<head>
-	<meta charset="UTF-8">
-	<title>커뮤니티 게시판</title>
-	
+<head>
+<meta charset="UTF-8">
+<title>카페, 디저트 카테고리</title>
+
 <style type="text/css">
 	.dataRow:hover {
 		cursor:pointer;
@@ -39,8 +38,9 @@ $(function() {
 </script>
 </head>
 <body>
+<body>
 	<div class="container">
-		<h2>커뮤니티 게시판</h2>
+		<h2>카페, 디저트 카테고리</h2>
 		
 		<div class="row" style="margin-bottom: 5px;">
 	<!-- 검색 form -->
@@ -69,10 +69,10 @@ $(function() {
 		</form>
 	</div>
 	
-	
+ 
 	<!-- 한페이지에 보여주는 데이터 개수 --> 
 	<div class="col-md-4 text-right">
-		<form action="list" class="form-inline" id="perPageNumForm">
+		<form action="soup_category" class="form-inline" id="perPageNumForm">
 			<input type="hidden" name="page" value="1">
 			<input type="hidden" name="key" value="${pageObject.key }">
 			<input type="hidden" name="word" value="${pageObject.word }">
@@ -87,11 +87,14 @@ $(function() {
 		</form>
 	
 	</div>
+	
+
 
 </div>
 
 		<div class="row" >
-			<c:forEach items="${list }" var="vo" varStatus="vs">
+			<c:forEach items="${soup_category }" var="vo" varStatus="vs">
+				<c:if test="${vo.category == '카페, 디저트' }">
 					<div class="col-md-3">
 						<div class="thumbnail dataRow" 
 						onclick="location='view?no=${vo.no}&page=${pageObject.page }&perPageNum=${pageObject.perPageNum}&key=${pageObject.key}&word=${pageObject.word}'">
@@ -104,6 +107,7 @@ $(function() {
 							</div>
 						</div>
 					</div>
+				</c:if>
 			</c:forEach>
 		</div>
 
@@ -114,14 +118,15 @@ $(function() {
 			<c:if test="${!empty login }">
 				<a href="write?perPageNum=${pageObject.perPageNum }" class="btn btn-success">글쓰기</a>
 			</c:if>
-			<a href="list?page=${pageObject.page }&perPageNum=${pageObject.perPageNum}&key=${pageObject.key}&word=${pageObject.word}" class="btn btn-default">새로고침</a>
+			<a href="soup_category?page=${pageObject.page }&perPageNum=${pageObject.perPageNum}&key=${pageObject.key}&word=${pageObject.word}" class="btn btn-default">새로고침</a>
 		</div>	
+
 		<div style="text-align:center;">
-			<pageNav:pageNav listURI="list" pageObject="${pageObject }" query="&key=${pageObject.key }&word=${pageObject.word }"/>
+			<pageNav:pageNav listURI="soup_category" pageObject="${pageObject }" query="&key=${pageObject.key }&word=${pageObject.word }"/>
 		</div>
+	
 	</div>
 </body>
 
+</body>
 </html>
-
-

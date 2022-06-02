@@ -11,6 +11,19 @@ public interface ImageMapper {
 	//list
 	public List<ImageVO> list(PageObject pageObject) throws Exception;
 	
+	//카페, 디저트 category
+	public List<ImageVO> soup_category(PageObject pageObject) throws Exception;
+	
+	//중식 category
+	public List<ImageVO> chinesefood_category(PageObject pageObject) throws Exception;
+		
+	//패스트푸드 category
+	public List<ImageVO> fastfood_category(PageObject pageObject) throws Exception;
+		
+	//분식 category
+	public List<ImageVO> snackbar_category(PageObject pageObject) throws Exception;
+		
+
 	public long getTotalRow(PageObject pageObject) throws Exception;
 	
 	//view

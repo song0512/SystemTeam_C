@@ -19,12 +19,6 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
-<!-- 
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-<link rel="stylesheet" href="<c:url value='/resources/common/css/common.css'/>" >
-  -->
-
 <style type="text/css">
 
 pre {
@@ -32,14 +26,10 @@ pre {
 	border: 0px;
 }
 
-/* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
 	margin-bottom: 0;
 	border-radius: 0;
 }
-
-/* Add a gray background color and some padding to the footer */
-
 
 .carousel-inner img {
 	width: 100%;  /* Set width to 100% */
@@ -47,7 +37,6 @@ pre {
 	min-height: 200px;
 }
 
-/* Hide the carousel text when the screen is less than 600 pixels wide */
 @media ( max-width : 600px) {
 	.carousel-caption {
 		display: none;
@@ -63,6 +52,36 @@ pre {
 	margin: 0 auto;	
 }
 
+
+/*category dropdown*/
+.dropdown {
+	margin-top : 8px;
+}
+.dropdown-button {
+			background-color: #009B94;
+			color : white;
+			padding: 8px;
+			font-size: 15px;
+			border: none;
+		}
+	
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: white;
+			min-width: 130px;
+			padding: 5px;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		}
+		.dropdown-content a {
+			color: black;
+			padding: 8px;
+			text-decoration: none;
+			display: block;
+		}
+		.dropdown-content a:hover { background-color: #2D3F50; color: white;  }
+		.dropdown:hover .dropdown-content { display: block; }
+		.dropdown:hover .dropdown-button { background-color: #2D3F50; }
 
 </style>
 
@@ -112,8 +131,19 @@ $(function(){
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
-						<li><a href="#" style="color:white">카테고리</a></li>
-						<li><a href="/image/list" style="color:white">커뮤니티 게시판</a></li>
+						<li>
+							<div class="dropdown">
+								<button class="dropdown-button">카테고리</button>
+								<div class="dropdown-content">
+									<a href="/image/list">전체</a>
+									<a href="/image/soup_category">카페, 디저트</a>
+									<a href="/image/chinesefood_category">중식</a>
+									<a href="/image/fastfood_category">패스트푸드</a>
+									<a href="/image/snackbar_category">분식</a>
+								</div>
+							</div>						
+						</li>
+					
 						<li><a href="/board/list" style="color:white">자유게시판</a></li>
 						<% if(loginVO != null) {%>
 							<li><a href="/member/list" style="color:white">회원관리</a></li>
@@ -135,37 +165,6 @@ $(function(){
 				</div>
 			</div>
 		</nav> 
-		
-	<!-- 
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		  <a class="navbar-brand" href="#">Expand at lg</a>
-		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-		    <span class="navbar-toggler-icon"></span>
-		  </button>
-		
-		  <div class="collapse navbar-collapse" id="navbarsExample05">
-		    <ul class="navbar-nav mr-auto">
-		      <li class="nav-item active">
-		        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="#">Link</a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link disabled" href="#">Disabled</a>
-		      </li>
-		      <li class="nav-item dropdown">
-		        <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">카테고리</a>
-		        <div class="dropdown-menu" aria-labelledby="dropdown05">
-		          <a class="dropdown-item" href="#">Action</a>
-		          <a class="dropdown-item" href="#">Another action</a>
-		          <a class="dropdown-item" href="#">Something else here</a>
-		        </div>
-		      </li>
-		    </ul>
-		  </div>
-		</nav>
-		 -->
 	
 	</header>
 	<article>

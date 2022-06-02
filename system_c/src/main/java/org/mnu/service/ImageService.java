@@ -24,6 +24,35 @@ public class ImageService {
 		pageObject.setTotalRow(mapper.getTotalRow(pageObject));
 		return mapper.list(pageObject);
 	}
+	
+	//카페, 디저트 category
+	public List<ImageVO> soup_category(PageObject pageObject) throws Exception {
+		log.info(pageObject);
+		pageObject.setTotalRow(mapper.getTotalRow(pageObject));
+		return mapper.soup_category(pageObject);
+	}
+	
+	//중식 category
+	public List<ImageVO> chinesefood_category(PageObject pageObject) throws Exception {
+		log.info(pageObject);
+		pageObject.setTotalRow(mapper.getTotalRow(pageObject));
+		return mapper.chinesefood_category(pageObject);
+	}
+	
+	//패스트푸드 category
+	public List<ImageVO> fastfood_category(PageObject pageObject) throws Exception {
+		log.info(pageObject);
+		pageObject.setTotalRow(mapper.getTotalRow(pageObject));
+		return mapper.fastfood_category(pageObject);
+	}
+	
+	//분식 category
+	public List<ImageVO> snackbar_category(PageObject pageObject) throws Exception {
+		log.info(pageObject);
+		pageObject.setTotalRow(mapper.getTotalRow(pageObject));
+		return mapper.snackbar_category(pageObject);
+	}
+	
 	//이미지 보기 
 	public ImageVO view(long no) throws Exception {
 		log.info(log);

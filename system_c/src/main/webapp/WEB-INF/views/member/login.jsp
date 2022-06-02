@@ -23,12 +23,14 @@ margin-top:100px;
 	<div class="container">
 		<h2>로그인</h2>
 		<form action="login" method="post">
+		
+	
 			<div class="form-group">
 				<label for="id">아이디</label>
 				<input name="id" id="id" class="form-control" placeholder="아이디를 입력해주세요."> 
 			</div>
 			
-			<div class="form-group">
+			 <div class="form-group">
 				<label for="pw">비밀번호</label>
 				<input name="pw" id="pw" class="form-control" type="password" placeholder="비밀번호를 입력해주세요."> 
 			</div>
@@ -40,9 +42,3 @@ margin-top:100px;
 
 </body>
 </html>
-
-
-<!-- 
-
-
- -->

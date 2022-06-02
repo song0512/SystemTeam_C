@@ -39,6 +39,54 @@ public class ImageController {
 		return "image/list";
 	}
 	
+	// 카페, 디저트 카테고리
+	@GetMapping("/soup_category")
+	public String soup_category(PageObject pageObject, Model model) throws Exception {
+		if(pageObject.getPage()<1)pageObject.setPage(1);
+		if(pageObject.getPerPageNum() == 10) pageObject.setPerPageNum(8);
+		log.info("soup_category()");
+		
+		model.addAttribute("soup_category", service.soup_category(pageObject));
+		return "image/soup_category";
+	}
+	
+	// 중식 카테고리
+	@GetMapping("/chinesefood_category")
+	public String chinesefood_category(PageObject pageObject, Model model) throws Exception {
+		if(pageObject.getPage()<1)pageObject.setPage(1);
+		if(pageObject.getPerPageNum() == 10) pageObject.setPerPageNum(8);
+		log.info("chinesefood_category()");
+		
+		model.addAttribute("chinesefood_category", service.chinesefood_category(pageObject));
+		return "image/chinesefood_category";
+	}
+	
+	// 패스트푸드 카테고리 
+	@GetMapping("/fastfood_category")
+	public String fastfood_category(PageObject pageObject, Model model) throws Exception {
+		if(pageObject.getPage()<1)pageObject.setPage(1);
+		if(pageObject.getPerPageNum() == 10) pageObject.setPerPageNum(8);
+		log.info("fastfood_category()");
+		
+		model.addAttribute("fastfood_category", service.fastfood_category(pageObject));
+		return "image/fastfood_category";
+	}
+	
+	
+	// 분식 카테고리
+	@GetMapping("/snackbar_category")
+	public String snackbar_category(PageObject pageObject, Model model) throws Exception {
+		if(pageObject.getPage()<1)pageObject.setPage(1);
+		if(pageObject.getPerPageNum() == 10) pageObject.setPerPageNum(8);
+		log.info("snackbar_category()");
+		
+		model.addAttribute("snackbar_category", service.snackbar_category(pageObject));
+		return "image/snackbar_category";
+	}
+
+	
+	
+	
 	@GetMapping("/view")
 	public String view(long no, Model model) throws Exception {
 		ImageVO vo  = service.view(no);

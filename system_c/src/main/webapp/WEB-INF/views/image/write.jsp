@@ -20,6 +20,16 @@
 			<label>제목</label>
 			<input name="title" class="form-control">
 		</div>
+		<div class="form-group">
+			<label>카테고리</label>
+			<div>
+				<label class="radio-inline"><input type="radio" name="category" checked value="카페, 디저트">카페, 디저트</label>
+				<label class="radio-inline"><input type="radio" name="category"  value="중식">중식</label>
+				<label class="radio-inline"><input type="radio" name="category" value="패스트푸드">패스트푸드</label>
+				<label class="radio-inline"><input type="radio" name="category"  value="분식">분식</label>			
+			</div>
+		</div>
+		
 		
 		<div class="form-group">
 			<label>내용 </label>
