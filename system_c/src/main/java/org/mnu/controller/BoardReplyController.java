@@ -1,4 +1,11 @@
 package org.mnu.controller;
+/**
+ * @brief 게시글 댓글 처리 
+ * @details 게시글 댓글 url 요청 처리 
+ * @author Team.C
+ * @date 2022/06/01
+ * @version 0.0.1
+ * */
 
 import java.util.List;
 
@@ -22,6 +29,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.log4j.Log4j;
 
+
 @RestController
 @RequestMapping("/reply")
 @Log4j
@@ -32,12 +40,20 @@ public class BoardReplyController {
 	private BoardReplyService service;
 	
 	// 댓글 리스트
+	/**
+	 * @brief 댓글 리스트 페이지 
+	 * @details 댓글 리스트 페이지 
+	 * */
 	@GetMapping(value = "/list")
 	public ResponseEntity<List<BoardReplyVO>> list(Long no){
 		return new ResponseEntity<List<BoardReplyVO>>(service.list(no),HttpStatus.OK);
 	}
 	
 	//댓글 작성
+	/** 
+	 * @brief 댓글 작성 처리 페이지
+	 * @details 댓글을 작성해서 db에 반영
+	 * */
 	@PostMapping(value = "/write", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces= {MediaType.TEXT_PLAIN_VALUE})
 	public ResponseEntity<String> write(@RequestBody BoardReplyVO vo) {
 		log.info("writeReply.vo : " + vo);
@@ -52,6 +68,10 @@ public class BoardReplyController {
 	}
 	
 	//댓글 수정
+	/** 
+	 * @brief 댓글 수정 처리 페이지
+	 * @details 댓글을 수정해서 db에 반영
+	 * */
 	@PatchMapping(value = "/update", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, 
 			produces= {MediaType.TEXT_PLAIN_VALUE})
 	public ResponseEntity<String> update(@RequestBody BoardReplyVO vo) {
@@ -63,6 +83,10 @@ public class BoardReplyController {
 	}
 	
 	//댓글 삭제
+	/** 
+	 * @brief 댓글 삭제 처리 페이지 
+	 * @details 댓글을 삭제 처리하고 db에 반영 
+	 * */
 	@DeleteMapping(value = "/delete", produces= {MediaType.TEXT_PLAIN_VALUE})
 	public ResponseEntity<String> delete(Long rno) {
 		log.info("deleteReply.rno : " + rno);

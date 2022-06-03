@@ -6,6 +6,15 @@ import org.mnu.domain.ImageVO;
 
 import com.webjjang.util.PageObject;
 
+/**
+ * @brief 이미지 게시판 객체 사용 방법 정의 
+ * @details 이미지 게시판 객체의 사용 방법을 정의한 타입
+ * @author Team.C
+ * @date 2022/06/01
+ * @version 0.0.1
+ * */
+
+
 public interface ImageMapper {
 	
 	//list

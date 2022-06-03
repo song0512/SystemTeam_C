@@ -21,6 +21,14 @@ import com.webjjang.util.file.FileUtil;
 
 import lombok.extern.log4j.Log4j;
 
+/**
+ * @brief 이미지게시판 주소 처리 
+ * @details 이미지게시판 url 요청 처리 
+ * @author Team.C
+ * @date 2022/06/01
+ * @version 0.0.1
+ * */
+
 @Controller
 @RequestMapping("/image")
 @Log4j
@@ -30,6 +38,10 @@ public class ImageController {
 	private ImageService service;
 	
 	@GetMapping("/list")
+	/**
+	 * @brief 이미지게시판 리스트 페이지 
+	 * @details 이미지게시판 리스트 페이지 
+	 * */
 	public String list(PageObject pageObject, Model model) throws Exception {
 		if(pageObject.getPage()<1)pageObject.setPage(1);
 		if(pageObject.getPerPageNum() == 10) pageObject.setPerPageNum(8);
@@ -40,6 +52,10 @@ public class ImageController {
 	}
 	
 	// 카페, 디저트 카테고리
+	/** 
+	 * @brief 카페-디저트 카테고리 리스트 페이지  
+	 * @details 카페-디저트 카테고리에 해당하는 게시글만 보여주는 페이지  
+	 * */
 	@GetMapping("/soup_category")
 	public String soup_category(PageObject pageObject, Model model) throws Exception {
 		if(pageObject.getPage()<1)pageObject.setPage(1);
@@ -51,6 +67,10 @@ public class ImageController {
 	}
 	
 	// 중식 카테고리
+	/** 
+	 * @brief 중식 카테고리 리스트 페이지  
+	 * @details 중식 카테고리에 해당하는 게시글만 보여주는 페이지  
+	 * */
 	@GetMapping("/chinesefood_category")
 	public String chinesefood_category(PageObject pageObject, Model model) throws Exception {
 		if(pageObject.getPage()<1)pageObject.setPage(1);
@@ -62,6 +82,10 @@ public class ImageController {
 	}
 	
 	// 패스트푸드 카테고리 
+	/** 
+	 * @brief 패스트푸드 카테고리 리스트 페이지  
+	 * @details 패스트푸드 카테고리에 해당하는 게시글만 보여주는 페이지  
+	 * */
 	@GetMapping("/fastfood_category")
 	public String fastfood_category(PageObject pageObject, Model model) throws Exception {
 		if(pageObject.getPage()<1)pageObject.setPage(1);
@@ -74,6 +98,10 @@ public class ImageController {
 	
 	
 	// 분식 카테고리
+	/** 
+	 * @brief 분식 카테고리 리스트 페이지  
+	 * @details 분식 카테고리에 해당하는 게시글만 보여주는 페이지  
+	 * */
 	@GetMapping("/snackbar_category")
 	public String snackbar_category(PageObject pageObject, Model model) throws Exception {
 		if(pageObject.getPage()<1)pageObject.setPage(1);
@@ -86,7 +114,10 @@ public class ImageController {
 
 	
 	
-	
+	/** 
+	 * @brief 이미지게시글 페이지 
+	 * @details 이미지게시판에서 이미지게시글을 골라 보는 페이지 
+	 * */
 	@GetMapping("/view")
 	public String view(long no, Model model) throws Exception {
 		ImageVO vo  = service.view(no);
@@ -95,6 +126,10 @@ public class ImageController {
 		return "image/view";
 	}
 	
+	/** 
+	 * @brief 이미지게시글 사진 바꾸는 페이지 
+	 * @details 이미지 게시글에 사진을 바꾸고 DB에 반영한다.
+	 * */
 	@PostMapping("/changeImage")
 	public String changeImage(PageObject pageObject,ImageVO vo, HttpServletRequest request) throws Exception {
 		String path = "/upload/image";
@@ -115,11 +150,21 @@ public class ImageController {
 				+"&word="+pageObject.getWord();
 	}
 	
+	
+	/** 
+	 * @brief 이미지 게시글 작성 페이지
+	 * @details 이미지 게시글을 작성할 수 있는 페이지를 보여줌 
+	 * */
 	@GetMapping("/write")
 	public String writeForm() throws Exception {
 		return "image/write";
 	}
 	
+	//write
+	/** 
+	 * @brief 이미지 게시글 작성 처리 페이지
+	 * @details 이미지 게시글을 작성해서 db에 반영
+	 * */
 	@PostMapping("/write")
 	public String write(PageObject pageObject, ImageVO vo,HttpSession session, HttpServletRequest request, RedirectAttributes rttr) throws Exception {
 		log.info(pageObject);
@@ -135,12 +180,20 @@ public class ImageController {
 		return "redirect:list?page=1&perPageNum="+pageObject.getPerPageNum();
 	}
 	
+	/** 
+	 * @brief 이미지 게시글 수정 페이지
+	 * @details 이미지 게시글을 수정할 수 있는 페이지를 보여줌 
+	 * */
 	@GetMapping("/update")
 	public String updateForm(PageObject pageObject, long no, Model model) throws Exception {
 		model.addAttribute("vo", service.view(no));
 		return "image/update";
 	}
 	
+	/** 
+	 * @brief 이미지 게시글 수정 처리 페이지
+	 * @details 이미지 게시글을 수정해서 db에 반영
+	 * */
 	@PostMapping("/update")
 	public String update(PageObject pageObject, ImageVO vo, RedirectAttributes rttr) throws Exception {
 		log.info(vo);
@@ -156,6 +209,10 @@ public class ImageController {
 				+ "&word="+URLEncoder.encode(pageObject.getWord(),"utf-8");
 	}
 	
+	/** 
+	 * @brief 이미지 게시글 삭제 처리 페이지 
+	 * @details 이미지 게시글을 삭제 처리하고 db에 반영 
+	 * */
 	@GetMapping("/delete")
 	public String delete(PageObject pageObject, long no, String deleteImage, HttpServletRequest request, RedirectAttributes rttr) throws Exception {
 		log.info(no);

@@ -45,7 +45,7 @@ $(function() {
 				<td><fmt:formatDate value="${vo.regDate}" pattern="yyyy-MM-dd" /></td>
 			</tr>
 		</c:forEach>
-		<tr><td colspan="9"><pageNav:pageNav listURI="list" pageObject="${pageObject }"></pageNav:pageNav></tr>
+		<tr><td colspan="9" style="text-align:center"><pageNav:pageNav listURI="list" pageObject="${pageObject }"></pageNav:pageNav></tr>
 	</table>
 </div>
 

@@ -10,6 +10,14 @@ import org.springframework.stereotype.Service;
 
 import com.webjjang.util.PageObject;
 
+/**
+ * @brief 게시판 처리 서비스 
+ * @details BoardService에 정보를 BoardController로 데이터를 넘기는 역할
+ * @author Team.C
+ * @date 2022/06/01
+ * @version 0.0.1
+ * */
+
 @Service
 public class BoardService {
 	

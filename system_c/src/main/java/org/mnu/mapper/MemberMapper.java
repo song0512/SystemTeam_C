@@ -7,6 +7,14 @@ import org.mnu.domain.LoginVO;
 
 import com.webjjang.util.PageObject;
 
+/**
+ * @brief 회원 객체 사용 방법 정의 
+ * @details 회원 객체의 사용 방법을 정의한 타입
+ * @author Team.C
+ * @date 2022/06/01
+ * @version 0.0.1
+ * */
+
 public interface MemberMapper {
 	
 	// 리스트
@@ -22,7 +30,7 @@ public interface MemberMapper {
 	public int write(MemberVO vo)throws Exception;
 	
 	//수정
-	public MemberVO update(String id)throws Exception;
+	public int update(MemberVO vo)throws Exception;
 	
 	// 탈퇴
 	public int delete(long no) throws Exception;
@@ -32,4 +40,5 @@ public interface MemberMapper {
 	
 	//아이디 중복 체크 
 	public String idCheck(String id) throws Exception;
+	
 }

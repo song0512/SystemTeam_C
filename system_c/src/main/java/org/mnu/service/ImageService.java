@@ -12,6 +12,15 @@ import com.webjjang.util.PageObject;
 
 import lombok.extern.log4j.Log4j;
 
+/**
+ * @brief 이미지게시판 처리 서비스 
+ * @details ImageService에 정보를 ImageController로 데이터를 넘기는 역할
+ * @author Team.C
+ * @date 2022/06/01
+ * @version 0.0.1
+ * */
+
+
 @Service
 @Log4j
 public class ImageService {

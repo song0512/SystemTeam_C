@@ -6,6 +6,14 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
 
+/**
+ * @brief 회원 VO 
+ * @details 각 계층간 데이터를 교환하기 위한 회원VO
+ * @author Team.C
+ * @date 2022/06/01
+ * @version 0.0.1
+ * */
+
 @Data
 public class MemberVO {
 	private String id;

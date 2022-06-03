@@ -12,6 +12,14 @@ import org.springframework.stereotype.Service;
 
 import com.webjjang.util.PageObject;
 
+/**
+ * @brief 회원 처리 서비스 
+ * @details MemberService에 정보를 MemberController로 데이터를 넘기는 역할
+ * @author Team.C
+ * @date 2022/06/01
+ * @version 0.0.1
+ * */
+
 @Service
 public class MemberService {
 	
@@ -44,8 +52,8 @@ public class MemberService {
 		return mapper.idCheck(id);
 	}
 	
-	//update
-	public MemberVO update(String id) throws Exception {
-		return mapper.update(id);
+	// 회원정보 수정
+	public int update(MemberVO vo) throws Exception {
+		return mapper.update( vo);
 	}
 }

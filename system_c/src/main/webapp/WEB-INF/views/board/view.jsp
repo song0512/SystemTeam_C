@@ -236,7 +236,7 @@
 			
 	        <div class="form-group">
 	    		<label for="writer">작성자</label>
-	    		<input type="text" class="form-control" id="writer">
+	    		<input type="text" class="form-control" id="writer" value="${vo.name }">
 	  		</div>
 	      </div>
 	      <div class="modal-footer">

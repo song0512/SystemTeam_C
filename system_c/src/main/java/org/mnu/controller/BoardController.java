@@ -17,6 +17,13 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webjjang.util.PageObject;
 
+/**
+ * @brief 게시판 주소 처리 
+ * @details 게시판 url 요청 처리 
+ * @author Team.C
+ * @date 2022/06/01
+ * @version 0.0.1
+ * */
 
 @Controller
 @RequestMapping("/board/*")
@@ -26,6 +33,10 @@ public class BoardController {
 	private BoardService service;
 	
 	//list
+	/** 
+	 * @brief 게시판 리스트 페이지 
+	 * @details 게시판 리스트 페이지 
+	 * */
 	@GetMapping("/list")
 	public String list(@ModelAttribute PageObject pageObject, Model model) throws Exception {
 		if (pageObject.getPage() < 1) pageObject.setPage(1);
@@ -36,6 +47,10 @@ public class BoardController {
 	}
 	
 	//view
+	/** 
+	 * @brief 게시글 페이지 
+	 * @details 게시판에서 게시글을 골라 보는 페이지 
+	 * */
 	@GetMapping("/view")
 	public String view(long no, int inc, Model model) throws Exception {
 		BoardVO vo = service.view(no, inc);
@@ -47,6 +62,10 @@ public class BoardController {
 	}
 	
 	//writeForm
+	/** 
+	 * @brief 게시글 작성 페이지
+	 * @details 게시글을 작성할 수 있는 페이지를 보여줌 
+	 * */
 	@GetMapping("/write")
 	public String writeForm() throws Exception {
 
@@ -54,6 +73,10 @@ public class BoardController {
 	}
 	
 	//write
+	/** 
+	 * @brief 게시글 작성 처리 페이지
+	 * @details 게시글을 작성해서 db에 반영
+	 * */
 	@PostMapping("/write")
 	public String write(BoardVO vo, int perPageNum, RedirectAttributes rttr, HttpServletResponse response,HttpSession session) throws Exception {
 
@@ -66,6 +89,10 @@ public class BoardController {
 	}
 	
 	//updateForm
+	/**
+	 * @brief 게시글 수정 페이지
+	 * @details 게시글을 수정할 수 있는 페이지를 보여줌 
+	 * */
 	@GetMapping("/update")
 	public String updateForm(long no,  Model model) throws Exception {
 		System.out.println("BoardController.update().vo = "+no);
@@ -75,6 +102,10 @@ public class BoardController {
 	}
 	
 	//update
+	/** 
+	 * @brief 게시글 수정 처리 페이지
+	 * @details 게시글을 수정해서 db에 반영
+	 * */
 	@PostMapping("/update")
 	public String update(PageObject pageObject, BoardVO vo,RedirectAttributes rttr) throws Exception {
 		service.update(vo);
@@ -85,6 +116,10 @@ public class BoardController {
 	}
 	
 	//delete
+	/** 
+	 * @brief 게시글 삭제 처리 페이지 
+	 * @details 게시글을 삭제 처리하고 db에 반영 
+	 * */
 	@GetMapping("/delete")
 	public String delete(long no, int perPageNum,RedirectAttributes rttr) throws Exception {
 		service.delete(no);
