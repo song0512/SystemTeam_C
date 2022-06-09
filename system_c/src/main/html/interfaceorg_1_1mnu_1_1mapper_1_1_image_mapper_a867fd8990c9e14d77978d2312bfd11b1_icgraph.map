@@ -1,0 +1,5 @@
+<map id="org.mnu.mapper.ImageMapper.update" name="org.mnu.mapper.ImageMapper.update">
+<area shape="rect" id="node1" title=" " alt="" coords="504,13,745,39"/>
+<area shape="rect" id="node2" href="$classorg_1_1mnu_1_1service_1_1_image_service.html#a7917a8819bd96d4a8997a6ca63e70b6d" title=" " alt="" coords="219,13,456,39"/>
+<area shape="rect" id="node3" href="$classorg_1_1mnu_1_1controller_1_1_image_controller.html#a74f3f50631cdda5bae7d3670b12ae058" title="이미지 게시글 수정 처리 페이지" alt="" coords="5,5,171,47"/>
+</map>

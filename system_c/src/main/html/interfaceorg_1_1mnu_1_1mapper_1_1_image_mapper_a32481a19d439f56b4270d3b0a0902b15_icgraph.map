@@ -1,0 +1,5 @@
+<map id="org.mnu.mapper.ImageMapper.list" name="org.mnu.mapper.ImageMapper.list">
+<area shape="rect" id="node1" title=" " alt="" coords="481,13,700,39"/>
+<area shape="rect" id="node2" href="$classorg_1_1mnu_1_1service_1_1_image_service.html#a8ff78713698a9c3277375594726782fe" title=" " alt="" coords="219,13,433,39"/>
+<area shape="rect" id="node3" href="$classorg_1_1mnu_1_1controller_1_1_image_controller.html#a6cbd1b9f0ab40b2f72691b450eb98d42" title="이미지게시판 리스트 페이지" alt="" coords="5,5,171,47"/>
+</map>

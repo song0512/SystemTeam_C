@@ -1,0 +1,62 @@
+\hypertarget{_member_v_o_8java_source}{}\doxysection{Member\+VO.\+java}
+\label{_member_v_o_8java_source}\index{java/org/mnu/domain/MemberVO.java@{java/org/mnu/domain/MemberVO.java}}
+\mbox{\hyperlink{_member_v_o_8java}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00001}00001 \textcolor{keyword}{package }org.mnu.domain;}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00003}00003 \textcolor{keyword}{import} java.util.Date;}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00005}00005 \textcolor{keyword}{import} org.springframework.format.annotation.DateTimeFormat;}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00007}00007 \textcolor{keyword}{import} lombok.Data;}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00017}00017 @Data}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00018}\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o}{00018}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o}{MemberVO}} \{}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00019}\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_aea47aefcf8e1ca06c7eeb1c61e138522}{00019}}     \textcolor{keyword}{private} String \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_aea47aefcf8e1ca06c7eeb1c61e138522}{id}};}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00020}\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_ad2c222b749ac62acf54c03537c4c1ab7}{00020}}     \textcolor{keyword}{private} String \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_ad2c222b749ac62acf54c03537c4c1ab7}{pw}};}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00021}\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a974811c2bcdd5a64fe08e52b8401a3ac}{00021}}     \textcolor{keyword}{private} String \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a974811c2bcdd5a64fe08e52b8401a3ac}{name}}; }
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00022}\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a5dd662711f033e3807e1646b29dfe0a0}{00022}}     \textcolor{keyword}{private} String \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a5dd662711f033e3807e1646b29dfe0a0}{status}};}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00023}00023     @DateTimeFormat(pattern = \textcolor{stringliteral}{"{}yyyy-\/MM-\/dd"{}})}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00024}\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a8644bddd6919757cec51671e267e7882}{00024}}     private Date \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a8644bddd6919757cec51671e267e7882}{regDate}};}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00025}\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_af6b76613442de8f5117432fc939beb78}{00025}}     private Date \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_af6b76613442de8f5117432fc939beb78}{conDate}};}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00026}00026     }
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00027}\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a8ce34d3d640e911c4e95efa6129509e2}{00027}}     public String \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a8ce34d3d640e911c4e95efa6129509e2}{getId}}() \{}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00028}00028         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_aea47aefcf8e1ca06c7eeb1c61e138522}{id}};}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00029}00029     \}}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00030}\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a108e5797143e3e5ef489ef5fd8872460}{00030}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a108e5797143e3e5ef489ef5fd8872460}{setId}}(String \textcolor{keywordtype}{id}) \{}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00031}00031         this.\textcolor{keywordtype}{id} = \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_aea47aefcf8e1ca06c7eeb1c61e138522}{id}};}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00032}00032     \}}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00033}\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a939bf67e50d4ee0a14d6dbdfe5637447}{00033}}     \textcolor{keyword}{public} String \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a939bf67e50d4ee0a14d6dbdfe5637447}{getPw}}() \{}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00034}00034         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_ad2c222b749ac62acf54c03537c4c1ab7}{pw}};}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00035}00035     \}}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00036}\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_ac5fecc2f640d593f80bdf6eaa6dca2b2}{00036}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_ac5fecc2f640d593f80bdf6eaa6dca2b2}{setPw}}(String \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_ad2c222b749ac62acf54c03537c4c1ab7}{pw}}) \{}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00037}00037         this.pw = \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_ad2c222b749ac62acf54c03537c4c1ab7}{pw}};}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00038}00038     \}}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00039}\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a402f2debdcce38fa1402bfa34f22e243}{00039}}     \textcolor{keyword}{public} String \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a402f2debdcce38fa1402bfa34f22e243}{getName}}() \{}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00040}00040         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a974811c2bcdd5a64fe08e52b8401a3ac}{name}};}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00041}00041     \}}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00042}\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a9c3558424350b29f44c54ce054f013a8}{00042}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a9c3558424350b29f44c54ce054f013a8}{setName}}(String \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a974811c2bcdd5a64fe08e52b8401a3ac}{name}}) \{}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00043}00043         this.name = \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a974811c2bcdd5a64fe08e52b8401a3ac}{name}};}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00044}00044     \}}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00045}\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_ae7d763e2130e7b4f695bbc687b50aa9c}{00045}}     \textcolor{keyword}{public} String \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_ae7d763e2130e7b4f695bbc687b50aa9c}{getStatus}}() \{}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00046}00046         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a5dd662711f033e3807e1646b29dfe0a0}{status}};}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00047}00047     \}}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00048}\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a030b30a2dc977bfd60cd88a86c93135a}{00048}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a030b30a2dc977bfd60cd88a86c93135a}{setStatus}}(String \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a5dd662711f033e3807e1646b29dfe0a0}{status}}) \{}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00049}00049         this.status = \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a5dd662711f033e3807e1646b29dfe0a0}{status}};}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00050}00050     \}}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00051}\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a226180b702927546b879d151f6417d46}{00051}}     \textcolor{keyword}{public} Date \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a226180b702927546b879d151f6417d46}{getRegDate}}() \{}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00052}00052         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a8644bddd6919757cec51671e267e7882}{regDate}};}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00053}00053     \}}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00054}\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a3ea2ba6dfbf5119b225eebf14d5bd6b7}{00054}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a3ea2ba6dfbf5119b225eebf14d5bd6b7}{setRegDate}}(Date \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a8644bddd6919757cec51671e267e7882}{regDate}}) \{}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00055}00055         this.regDate = \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a8644bddd6919757cec51671e267e7882}{regDate}};}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00056}00056     \}}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00057}\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_aec74c46f035b30552b7fcdc9437a6cc7}{00057}}     \textcolor{keyword}{public} Date \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_aec74c46f035b30552b7fcdc9437a6cc7}{getConDate}}() \{}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00058}00058         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_af6b76613442de8f5117432fc939beb78}{conDate}};}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00059}00059     \}}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00060}\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a2bb176d2d1003457a4103d649937a36b}{00060}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_a2bb176d2d1003457a4103d649937a36b}{setConDate}}(Date \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_af6b76613442de8f5117432fc939beb78}{conDate}}) \{}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00061}00061         this.conDate = \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o_af6b76613442de8f5117432fc939beb78}{conDate}};}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00062}00062     \}}
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00063}00063     }
+\DoxyCodeLine{\Hypertarget{_member_v_o_8java_source_l00064}00064 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,4 @@
+<map id="org.mnu.service.ImageService" name="org.mnu.service.ImageService">
+<area shape="rect" id="node1" title="이미지게시판 처리 서비스" alt="" coords="7,292,202,501"/>
+<area shape="rect" id="node2" href="$interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html" title="이미지 게시판 객체 사용 방법 정의" alt="" coords="5,5,204,229"/>
+</map>

@@ -1,0 +1,382 @@
+\hypertarget{classorg_1_1mnu_1_1controller_1_1_member_controller}{}\doxysection{org.\+mnu.\+controller.\+Member\+Controller 클래스 참조}
+\label{classorg_1_1mnu_1_1controller_1_1_member_controller}\index{org.mnu.controller.MemberController@{org.mnu.controller.MemberController}}
+
+
+회원가입 및 로그인 주소 처리  
+
+
+
+
+org.\+mnu.\+controller.\+Member\+Controller에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classorg_1_1mnu_1_1controller_1_1_member_controller__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+String \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_member_controller_a15892a4a4d835cb753a808ffa81f8e74}{login\+Form}} ()  throws Exception 
+\begin{DoxyCompactList}\small\item\em 로그인 페이지 \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_member_controller_ac78f14313237bca1204cc1db543d77dc}{login}} (\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_login_v_o}{Login\+VO}} invo, Http\+Session session, Http\+Servlet\+Response response, Redirect\+Attributes rttr)  throws Exception 
+\begin{DoxyCompactList}\small\item\em 로그인 처리 페이지 \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_member_controller_aaca3419171143b93bd295930d1327571}{logout}} (Http\+Session session, Http\+Servlet\+Response response, Redirect\+Attributes rttr)  throws Exception 
+\begin{DoxyCompactList}\small\item\em 로그아웃 처리 페이지 \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_member_controller_a79f72d9e3ead9097c35632650b89e990}{list}} (@Model\+Attribute Page\+Object page\+Object, Model model)  throws Exception
+\begin{DoxyCompactList}\small\item\em 회원 리스트 페이지 -\/ 관리자만 허용 \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_member_controller_a616d845d7b294f5fcc0dcd11ebe91963}{view}} (String id, Model model, Http\+Session session)  throws Exception
+\begin{DoxyCompactList}\small\item\em 마이페이지 \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_member_controller_a4bff0edefff46ac4a053b3f10b120299}{write\+Form}} ()  throws Exception 
+\begin{DoxyCompactList}\small\item\em 회원가입 작성 페이지 \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_member_controller_a6f1653c24b1f3cf8762b12a502e53d68}{write}} (\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o}{Member\+VO}} vo, Redirect\+Attributes rttr)  throws Exception 
+\begin{DoxyCompactList}\small\item\em 회원가입 작성 처리 페이지 \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_member_controller_a5e72e30731183eeacea62f65ad7437ab}{id\+Check}} (String id, Model model)  throws Exception 
+\begin{DoxyCompactList}\small\item\em 아이디 중복 체크 \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_member_controller_afe9a6f67d1aaaf40a18af108aca51c97}{update\+Form}} (String id, \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o}{Member\+VO}} vo, Model model, Http\+Session session)  throws Exception 
+\begin{DoxyCompactList}\small\item\em 회원정보 수정 페이지 \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_member_controller_a5a05554cbf9ec421d14b4f65b5588fda}{update}} (Page\+Object page\+Object, String id, \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o}{Member\+VO}} vo, Redirect\+Attributes rttr)  throws Exception 
+\begin{DoxyCompactList}\small\item\em 회원정보 수정 처리 페이지 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service}{Member\+Service}} \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_member_controller_a5a615d64671d4979210755c44fe3d6d1}{service}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+회원가입 및 로그인 주소 처리 
+
+회원가입 및 로그인 url 요청 처리 \begin{DoxyAuthor}{작성자}
+Team.\+C 
+\end{DoxyAuthor}
+\begin{DoxyDate}{날짜}
+2022/06/01 
+\end{DoxyDate}
+\begin{DoxyVersion}{버전}
+0.\+0.\+1 
+\end{DoxyVersion}
+
+
+\mbox{\hyperlink{_member_controller_8java_source}{Member\+Controller.\+java}} 파일의 \mbox{\hyperlink{_member_controller_8java_source_l00036}{36}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1controller_1_1_member_controller_a5e72e30731183eeacea62f65ad7437ab}\label{classorg_1_1mnu_1_1controller_1_1_member_controller_a5e72e30731183eeacea62f65ad7437ab}} 
+\index{org.mnu.controller.MemberController@{org.mnu.controller.MemberController}!idCheck@{idCheck}}
+\index{idCheck@{idCheck}!org.mnu.controller.MemberController@{org.mnu.controller.MemberController}}
+\doxysubsubsection{\texorpdfstring{idCheck()}{idCheck()}}
+{\footnotesize\ttfamily String org.\+mnu.\+controller.\+Member\+Controller.\+id\+Check (\begin{DoxyParamCaption}\item[{String}]{id,  }\item[{Model}]{model }\end{DoxyParamCaption}) throws Exception}
+
+
+
+아이디 중복 체크 
+
+작성한 아이디와 일치하는 아이디가 있는지 DB에서 확인 
+
+\mbox{\hyperlink{_member_controller_8java_source}{Member\+Controller.\+java}} 파일의 \mbox{\hyperlink{_member_controller_8java_source_l00139}{139}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00139                                                                    \{}
+\DoxyCodeLine{00140         model.addAttribute(\textcolor{stringliteral}{"{}id"{}}, \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_member_controller_a5a615d64671d4979210755c44fe3d6d1}{service}}.\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_ad88160586ff5d758d93dc7999f5f3167}{idCheck}}(\textcolor{keywordtype}{id}));}
+\DoxyCodeLine{00141         }
+\DoxyCodeLine{00142         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}member/idCheck"{}};}
+\DoxyCodeLine{00143     \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1controller_1_1_member_controller_a5e72e30731183eeacea62f65ad7437ab_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1controller_1_1_member_controller_a79f72d9e3ead9097c35632650b89e990}\label{classorg_1_1mnu_1_1controller_1_1_member_controller_a79f72d9e3ead9097c35632650b89e990}} 
+\index{org.mnu.controller.MemberController@{org.mnu.controller.MemberController}!list@{list}}
+\index{list@{list}!org.mnu.controller.MemberController@{org.mnu.controller.MemberController}}
+\doxysubsubsection{\texorpdfstring{list()}{list()}}
+{\footnotesize\ttfamily String org.\+mnu.\+controller.\+Member\+Controller.\+list (\begin{DoxyParamCaption}\item[{@Model\+Attribute Page\+Object}]{page\+Object,  }\item[{Model}]{model }\end{DoxyParamCaption}) throws Exception}
+
+
+
+회원 리스트 페이지 -\/ 관리자만 허용 
+
+관리자만 볼 수 있는 회원 리스트 페이지 
+
+\mbox{\hyperlink{_member_controller_8java_source}{Member\+Controller.\+java}} 파일의 \mbox{\hyperlink{_member_controller_8java_source_l00088}{88}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088                                                                                            \{}
+\DoxyCodeLine{00089         }
+\DoxyCodeLine{00090         model.addAttribute(\textcolor{stringliteral}{"{}list"{}}, \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_member_controller_a5a615d64671d4979210755c44fe3d6d1}{service}}.\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_aedc4a8442d4c15f7ce71ac8280310444}{list}}(pageObject));}
+\DoxyCodeLine{00091         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}member/list"{}};}
+\DoxyCodeLine{00092     \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1controller_1_1_member_controller_a79f72d9e3ead9097c35632650b89e990_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1controller_1_1_member_controller_ac78f14313237bca1204cc1db543d77dc}\label{classorg_1_1mnu_1_1controller_1_1_member_controller_ac78f14313237bca1204cc1db543d77dc}} 
+\index{org.mnu.controller.MemberController@{org.mnu.controller.MemberController}!login@{login}}
+\index{login@{login}!org.mnu.controller.MemberController@{org.mnu.controller.MemberController}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily String org.\+mnu.\+controller.\+Member\+Controller.\+login (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_login_v_o}{Login\+VO}}}]{invo,  }\item[{Http\+Session}]{session,  }\item[{Http\+Servlet\+Response}]{response,  }\item[{Redirect\+Attributes}]{rttr }\end{DoxyParamCaption}) throws Exception}
+
+
+
+로그인 처리 페이지 
+
+로그인 작성 후 DB와 일치하는 아이디와 비밀번호를 찾는다. 
+
+\mbox{\hyperlink{_member_controller_8java_source}{Member\+Controller.\+java}} 파일의 \mbox{\hyperlink{_member_controller_8java_source_l00059}{59}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059                                                                                                                                    \{}
+\DoxyCodeLine{00060         log.info(\textcolor{stringliteral}{"{}login 처리 ="{}}+ invo);}
+\DoxyCodeLine{00061         }
+\DoxyCodeLine{00062         LoginVO vo = \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_member_controller_a5a615d64671d4979210755c44fe3d6d1}{service}}.\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_ae751abb7d37c9e79e4de46241c100033}{login}}(invo);}
+\DoxyCodeLine{00063         rttr.addFlashAttribute(\textcolor{stringliteral}{"{}msg"{}}, \textcolor{stringliteral}{"{}로그인이 완료되었습니다. \(\backslash\)\(\backslash\)n환영합니다."{}});}
+\DoxyCodeLine{00064         }
+\DoxyCodeLine{00065         session.setAttribute(\textcolor{stringliteral}{"{}login"{}}, vo);}
+\DoxyCodeLine{00066         }
+\DoxyCodeLine{00067         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}redirect:/image/list"{}};}
+\DoxyCodeLine{00068     \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1controller_1_1_member_controller_ac78f14313237bca1204cc1db543d77dc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1controller_1_1_member_controller_a15892a4a4d835cb753a808ffa81f8e74}\label{classorg_1_1mnu_1_1controller_1_1_member_controller_a15892a4a4d835cb753a808ffa81f8e74}} 
+\index{org.mnu.controller.MemberController@{org.mnu.controller.MemberController}!loginForm@{loginForm}}
+\index{loginForm@{loginForm}!org.mnu.controller.MemberController@{org.mnu.controller.MemberController}}
+\doxysubsubsection{\texorpdfstring{loginForm()}{loginForm()}}
+{\footnotesize\ttfamily String org.\+mnu.\+controller.\+Member\+Controller.\+login\+Form (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Exception}
+
+
+
+로그인 페이지 
+
+로그인을 할 수 있는 페이지를 보여줌 ~\newline
+ 
+
+\mbox{\hyperlink{_member_controller_8java_source}{Member\+Controller.\+java}} 파일의 \mbox{\hyperlink{_member_controller_8java_source_l00048}{48}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048                                                \{}
+\DoxyCodeLine{00049         log.info(\textcolor{stringliteral}{"{}loginForm-\/-\/"{}});}
+\DoxyCodeLine{00050         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}member/login"{}};}
+\DoxyCodeLine{00051     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1controller_1_1_member_controller_aaca3419171143b93bd295930d1327571}\label{classorg_1_1mnu_1_1controller_1_1_member_controller_aaca3419171143b93bd295930d1327571}} 
+\index{org.mnu.controller.MemberController@{org.mnu.controller.MemberController}!logout@{logout}}
+\index{logout@{logout}!org.mnu.controller.MemberController@{org.mnu.controller.MemberController}}
+\doxysubsubsection{\texorpdfstring{logout()}{logout()}}
+{\footnotesize\ttfamily String org.\+mnu.\+controller.\+Member\+Controller.\+logout (\begin{DoxyParamCaption}\item[{Http\+Session}]{session,  }\item[{Http\+Servlet\+Response}]{response,  }\item[{Redirect\+Attributes}]{rttr }\end{DoxyParamCaption}) throws Exception}
+
+
+
+로그아웃 처리 페이지 
+
+로그아웃 처리 페이지 
+
+\mbox{\hyperlink{_member_controller_8java_source}{Member\+Controller.\+java}} 파일의 \mbox{\hyperlink{_member_controller_8java_source_l00076}{76}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076                                                                                                                       \{}
+\DoxyCodeLine{00077         session.removeAttribute(\textcolor{stringliteral}{"{}login"{}});}
+\DoxyCodeLine{00078         rttr.addFlashAttribute(\textcolor{stringliteral}{"{}msg"{}}, \textcolor{stringliteral}{"{}로그아웃 되셨습니다."{}});}
+\DoxyCodeLine{00079         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}redirect:/image/list"{}};}
+\DoxyCodeLine{00080     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1controller_1_1_member_controller_a5a05554cbf9ec421d14b4f65b5588fda}\label{classorg_1_1mnu_1_1controller_1_1_member_controller_a5a05554cbf9ec421d14b4f65b5588fda}} 
+\index{org.mnu.controller.MemberController@{org.mnu.controller.MemberController}!update@{update}}
+\index{update@{update}!org.mnu.controller.MemberController@{org.mnu.controller.MemberController}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily String org.\+mnu.\+controller.\+Member\+Controller.\+update (\begin{DoxyParamCaption}\item[{Page\+Object}]{page\+Object,  }\item[{String}]{id,  }\item[{\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o}{Member\+VO}}}]{vo,  }\item[{Redirect\+Attributes}]{rttr }\end{DoxyParamCaption}) throws Exception}
+
+
+
+회원정보 수정 처리 페이지 
+
+회원정보를 수정해서 db에 반영 
+
+\mbox{\hyperlink{_member_controller_8java_source}{Member\+Controller.\+java}} 파일의 \mbox{\hyperlink{_member_controller_8java_source_l00166}{166}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00166                                                                                                                  \{}
+\DoxyCodeLine{00167         \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_member_controller_a5a615d64671d4979210755c44fe3d6d1}{service}}.\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_a44772f2865759eb153bd1a6f2a876d7d}{update}}(vo);}
+\DoxyCodeLine{00168         rttr.addFlashAttribute(\textcolor{stringliteral}{"{}msg"{}}, \textcolor{stringliteral}{"{}회원정보가 수정되었습니다."{}});}
+\DoxyCodeLine{00169             }
+\DoxyCodeLine{00170         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}redirect:/member/view"{}};}
+\DoxyCodeLine{00171     \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1controller_1_1_member_controller_a5a05554cbf9ec421d14b4f65b5588fda_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1controller_1_1_member_controller_afe9a6f67d1aaaf40a18af108aca51c97}\label{classorg_1_1mnu_1_1controller_1_1_member_controller_afe9a6f67d1aaaf40a18af108aca51c97}} 
+\index{org.mnu.controller.MemberController@{org.mnu.controller.MemberController}!updateForm@{updateForm}}
+\index{updateForm@{updateForm}!org.mnu.controller.MemberController@{org.mnu.controller.MemberController}}
+\doxysubsubsection{\texorpdfstring{updateForm()}{updateForm()}}
+{\footnotesize\ttfamily String org.\+mnu.\+controller.\+Member\+Controller.\+update\+Form (\begin{DoxyParamCaption}\item[{String}]{id,  }\item[{\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o}{Member\+VO}}}]{vo,  }\item[{Model}]{model,  }\item[{Http\+Session}]{session }\end{DoxyParamCaption}) throws Exception}
+
+
+
+회원정보 수정 페이지 
+
+회원 정보를 수정할 수 있는 페이지를 보여줌 
+
+\mbox{\hyperlink{_member_controller_8java_source}{Member\+Controller.\+java}} 파일의 \mbox{\hyperlink{_member_controller_8java_source_l00151}{151}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00151                                                                                                         \{}
+\DoxyCodeLine{00152         \textcolor{keywordtype}{id} = ((LoginVO) session.getAttribute(\textcolor{stringliteral}{"{}login"{}})).getId();}
+\DoxyCodeLine{00153         System.out.println(\textcolor{stringliteral}{"{}BoardController.update().vo = "{}}+\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00154         }
+\DoxyCodeLine{00155         model.addAttribute(\textcolor{stringliteral}{"{}vo"{}}, \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_member_controller_a5a615d64671d4979210755c44fe3d6d1}{service}}.\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_af1fd699644887f9be99c208f479da889}{view}}(\textcolor{keywordtype}{id}));}
+\DoxyCodeLine{00156             }
+\DoxyCodeLine{00157         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}member/update"{}};}
+\DoxyCodeLine{00158     \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1controller_1_1_member_controller_afe9a6f67d1aaaf40a18af108aca51c97_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1controller_1_1_member_controller_a616d845d7b294f5fcc0dcd11ebe91963}\label{classorg_1_1mnu_1_1controller_1_1_member_controller_a616d845d7b294f5fcc0dcd11ebe91963}} 
+\index{org.mnu.controller.MemberController@{org.mnu.controller.MemberController}!view@{view}}
+\index{view@{view}!org.mnu.controller.MemberController@{org.mnu.controller.MemberController}}
+\doxysubsubsection{\texorpdfstring{view()}{view()}}
+{\footnotesize\ttfamily String org.\+mnu.\+controller.\+Member\+Controller.\+view (\begin{DoxyParamCaption}\item[{String}]{id,  }\item[{Model}]{model,  }\item[{Http\+Session}]{session }\end{DoxyParamCaption}) throws Exception}
+
+
+
+마이페이지 
+
+자신의 정보를 확인할 수 있는 페이지 
+
+\mbox{\hyperlink{_member_controller_8java_source}{Member\+Controller.\+java}} 파일의 \mbox{\hyperlink{_member_controller_8java_source_l00100}{100}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100                                                                                    \{}
+\DoxyCodeLine{00101         \textcolor{keywordflow}{if}(\textcolor{keywordtype}{id} == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{00102             model.addAttribute(\textcolor{stringliteral}{"{}title"{}}, \textcolor{stringliteral}{"{}내 정보"{}});}
+\DoxyCodeLine{00103             \textcolor{keywordtype}{id} = ((LoginVO) session.getAttribute(\textcolor{stringliteral}{"{}login"{}})).getId();}
+\DoxyCodeLine{00104         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00105             model.addAttribute(\textcolor{stringliteral}{"{}title"{}}, \textcolor{stringliteral}{"{}회원 정보"{}});}
+\DoxyCodeLine{00106         \}}
+\DoxyCodeLine{00107         model.addAttribute(\textcolor{stringliteral}{"{}vo"{}}, \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_member_controller_a5a615d64671d4979210755c44fe3d6d1}{service}}.\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_af1fd699644887f9be99c208f479da889}{view}}(\textcolor{keywordtype}{id}));}
+\DoxyCodeLine{00108         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}member/view"{}};}
+\DoxyCodeLine{00109     \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1controller_1_1_member_controller_a616d845d7b294f5fcc0dcd11ebe91963_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1controller_1_1_member_controller_a6f1653c24b1f3cf8762b12a502e53d68}\label{classorg_1_1mnu_1_1controller_1_1_member_controller_a6f1653c24b1f3cf8762b12a502e53d68}} 
+\index{org.mnu.controller.MemberController@{org.mnu.controller.MemberController}!write@{write}}
+\index{write@{write}!org.mnu.controller.MemberController@{org.mnu.controller.MemberController}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily String org.\+mnu.\+controller.\+Member\+Controller.\+write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o}{Member\+VO}}}]{vo,  }\item[{Redirect\+Attributes}]{rttr }\end{DoxyParamCaption}) throws Exception}
+
+
+
+회원가입 작성 처리 페이지 
+
+아이디, 닉네임, 비밀번호를 작성하여 DB에 반영 
+
+\mbox{\hyperlink{_member_controller_8java_source}{Member\+Controller.\+java}} 파일의 \mbox{\hyperlink{_member_controller_8java_source_l00127}{127}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00127                                                                                \{}
+\DoxyCodeLine{00128         \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_member_controller_a5a615d64671d4979210755c44fe3d6d1}{service}}.\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_a0f4e6bfe52e7e27d4b16482e3ebdd134}{write}}(vo);}
+\DoxyCodeLine{00129         rttr.addFlashAttribute(\textcolor{stringliteral}{"{}msg"{}}, \textcolor{stringliteral}{"{}회원가입이 되셨습니다. \(\backslash\)\(\backslash\)n로그인 후 이용해주세요."{}});}
+\DoxyCodeLine{00130         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}redirect:/member/login"{}};}
+\DoxyCodeLine{00131     \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1controller_1_1_member_controller_a6f1653c24b1f3cf8762b12a502e53d68_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1controller_1_1_member_controller_a4bff0edefff46ac4a053b3f10b120299}\label{classorg_1_1mnu_1_1controller_1_1_member_controller_a4bff0edefff46ac4a053b3f10b120299}} 
+\index{org.mnu.controller.MemberController@{org.mnu.controller.MemberController}!writeForm@{writeForm}}
+\index{writeForm@{writeForm}!org.mnu.controller.MemberController@{org.mnu.controller.MemberController}}
+\doxysubsubsection{\texorpdfstring{writeForm()}{writeForm()}}
+{\footnotesize\ttfamily String org.\+mnu.\+controller.\+Member\+Controller.\+write\+Form (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Exception}
+
+
+
+회원가입 작성 페이지 
+
+회원가입을 할 수 있는 페이지를 보여줌 
+
+\mbox{\hyperlink{_member_controller_8java_source}{Member\+Controller.\+java}} 파일의 \mbox{\hyperlink{_member_controller_8java_source_l00117}{117}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00117                                                \{}
+\DoxyCodeLine{00118         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}member/write"{}};}
+\DoxyCodeLine{00119     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1controller_1_1_member_controller_a5a615d64671d4979210755c44fe3d6d1}\label{classorg_1_1mnu_1_1controller_1_1_member_controller_a5a615d64671d4979210755c44fe3d6d1}} 
+\index{org.mnu.controller.MemberController@{org.mnu.controller.MemberController}!service@{service}}
+\index{service@{service}!org.mnu.controller.MemberController@{org.mnu.controller.MemberController}}
+\doxysubsubsection{\texorpdfstring{service}{service}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service}{Member\+Service}} org.\+mnu.\+controller.\+Member\+Controller.\+service\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_member_controller_8java_source}{Member\+Controller.\+java}} 파일의 \mbox{\hyperlink{_member_controller_8java_source_l00040}{40}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+java/org/mnu/controller/\mbox{\hyperlink{_member_controller_8java}{Member\+Controller.\+java}}\end{DoxyCompactItemize}

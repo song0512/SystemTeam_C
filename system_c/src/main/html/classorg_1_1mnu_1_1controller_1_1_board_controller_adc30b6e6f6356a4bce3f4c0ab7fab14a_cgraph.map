@@ -1,0 +1,5 @@
+<map id="org.mnu.controller.BoardController.write" name="org.mnu.controller.BoardController.write">
+<area shape="rect" id="node1" title="게시글 작성 처리 페이지" alt="" coords="5,5,169,47"/>
+<area shape="rect" id="node2" href="$classorg_1_1mnu_1_1service_1_1_board_service.html#a82f28cca2cda1576dbc9fb9f9d7e4ea8" title=" " alt="" coords="217,13,441,39"/>
+<area shape="rect" id="node3" href="$interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper.html#a79b47e7cea30f6f1d2dfb6e043818500" title=" " alt="" coords="489,13,717,39"/>
+</map>

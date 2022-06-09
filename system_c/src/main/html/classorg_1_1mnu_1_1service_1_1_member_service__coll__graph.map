@@ -1,0 +1,4 @@
+<map id="org.mnu.service.MemberService" name="org.mnu.service.MemberService">
+<area shape="rect" id="node1" title="회원 처리 서비스" alt="" coords="7,248,214,399"/>
+<area shape="rect" id="node2" href="$interfaceorg_1_1mnu_1_1mapper_1_1_member_mapper.html" title="회원 객체 사용 방법 정의" alt="" coords="5,5,216,185"/>
+</map>

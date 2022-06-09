@@ -1,0 +1,5 @@
+<map id="org.mnu.mapper.ImageMapper.chinesefood_category" name="org.mnu.mapper.ImageMapper.chinesefood_category">
+<area shape="rect" id="node1" title=" " alt="" coords="533,13,804,54"/>
+<area shape="rect" id="node2" href="$classorg_1_1mnu_1_1service_1_1_image_service.html#a5765df905ca3ad4b3b7a81ff34854664" title=" " alt="" coords="219,13,485,54"/>
+<area shape="rect" id="node3" href="$classorg_1_1mnu_1_1controller_1_1_image_controller.html#aca5ccb77f1234882497fd0354f58fd26" title="중식 카테고리 리스트 페이지" alt="" coords="5,5,171,61"/>
+</map>

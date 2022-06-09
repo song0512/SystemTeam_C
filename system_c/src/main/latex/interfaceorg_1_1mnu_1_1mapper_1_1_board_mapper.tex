@@ -1,0 +1,158 @@
+\hypertarget{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper}{}\doxysection{org.\+mnu.\+mapper.\+Board\+Mapper 인터페이스 참조}
+\label{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper}\index{org.mnu.mapper.BoardMapper@{org.mnu.mapper.BoardMapper}}
+
+
+게시판 객체 사용 방법 정의  
+
+
+
+
+org.\+mnu.\+mapper.\+Board\+Mapper에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_board_v_o}{Board\+VO}} $>$ \mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_ae5d918a7c0a880d8bafe27a134ededf7}{list}} (Page\+Object page\+Object)  throws Exception
+\item 
+long \mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_a28dedb45420f89a9936a7acd09577f8e}{get\+Total\+Row}} (Page\+Object page\+Object)  throws Exception
+\item 
+\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_board_v_o}{Board\+VO}} \mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_aa9a92cb145725416e623a7dab2b39ef2}{view}} (long no)  throws Exception
+\item 
+int \mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_aa2e2c668d1877edc1bb25a7c5961a617}{increase}} (long no)  throws Exception
+\item 
+int \mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_a79b47e7cea30f6f1d2dfb6e043818500}{write}} (\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_board_v_o}{Board\+VO}} vo)  throws Exception
+\item 
+int \mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_a3954c36955c7bec6e8d031b50045b4dd}{update}} (\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_board_v_o}{Board\+VO}} vo)  throws Exception
+\item 
+int \mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_aa7a473f50f3416f77169b7379022d7be}{delete}} (long no)  throws Exception
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+게시판 객체 사용 방법 정의 
+
+게시판 객체의 사용 방법을 정의한 타입 \begin{DoxyAuthor}{작성자}
+Team.\+C 
+\end{DoxyAuthor}
+\begin{DoxyDate}{날짜}
+2022/06/01 
+\end{DoxyDate}
+\begin{DoxyVersion}{버전}
+0.\+0.\+1 
+\end{DoxyVersion}
+
+
+\mbox{\hyperlink{_board_mapper_8java_source}{Board\+Mapper.\+java}} 파일의 \mbox{\hyperlink{_board_mapper_8java_source_l00017}{17}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\mbox{\Hypertarget{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_aa7a473f50f3416f77169b7379022d7be}\label{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_aa7a473f50f3416f77169b7379022d7be}} 
+\index{org.mnu.mapper.BoardMapper@{org.mnu.mapper.BoardMapper}!delete@{delete}}
+\index{delete@{delete}!org.mnu.mapper.BoardMapper@{org.mnu.mapper.BoardMapper}}
+\doxysubsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily int org.\+mnu.\+mapper.\+Board\+Mapper.\+delete (\begin{DoxyParamCaption}\item[{long}]{no }\end{DoxyParamCaption}) throws Exception}
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_aa7a473f50f3416f77169b7379022d7be_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_a28dedb45420f89a9936a7acd09577f8e}\label{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_a28dedb45420f89a9936a7acd09577f8e}} 
+\index{org.mnu.mapper.BoardMapper@{org.mnu.mapper.BoardMapper}!getTotalRow@{getTotalRow}}
+\index{getTotalRow@{getTotalRow}!org.mnu.mapper.BoardMapper@{org.mnu.mapper.BoardMapper}}
+\doxysubsubsection{\texorpdfstring{getTotalRow()}{getTotalRow()}}
+{\footnotesize\ttfamily long org.\+mnu.\+mapper.\+Board\+Mapper.\+get\+Total\+Row (\begin{DoxyParamCaption}\item[{Page\+Object}]{page\+Object }\end{DoxyParamCaption}) throws Exception}
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_a28dedb45420f89a9936a7acd09577f8e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_aa2e2c668d1877edc1bb25a7c5961a617}\label{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_aa2e2c668d1877edc1bb25a7c5961a617}} 
+\index{org.mnu.mapper.BoardMapper@{org.mnu.mapper.BoardMapper}!increase@{increase}}
+\index{increase@{increase}!org.mnu.mapper.BoardMapper@{org.mnu.mapper.BoardMapper}}
+\doxysubsubsection{\texorpdfstring{increase()}{increase()}}
+{\footnotesize\ttfamily int org.\+mnu.\+mapper.\+Board\+Mapper.\+increase (\begin{DoxyParamCaption}\item[{long}]{no }\end{DoxyParamCaption}) throws Exception}
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_aa2e2c668d1877edc1bb25a7c5961a617_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_ae5d918a7c0a880d8bafe27a134ededf7}\label{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_ae5d918a7c0a880d8bafe27a134ededf7}} 
+\index{org.mnu.mapper.BoardMapper@{org.mnu.mapper.BoardMapper}!list@{list}}
+\index{list@{list}!org.mnu.mapper.BoardMapper@{org.mnu.mapper.BoardMapper}}
+\doxysubsubsection{\texorpdfstring{list()}{list()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_board_v_o}{Board\+VO}} $>$ org.\+mnu.\+mapper.\+Board\+Mapper.\+list (\begin{DoxyParamCaption}\item[{Page\+Object}]{page\+Object }\end{DoxyParamCaption}) throws Exception}
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_ae5d918a7c0a880d8bafe27a134ededf7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_a3954c36955c7bec6e8d031b50045b4dd}\label{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_a3954c36955c7bec6e8d031b50045b4dd}} 
+\index{org.mnu.mapper.BoardMapper@{org.mnu.mapper.BoardMapper}!update@{update}}
+\index{update@{update}!org.mnu.mapper.BoardMapper@{org.mnu.mapper.BoardMapper}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily int org.\+mnu.\+mapper.\+Board\+Mapper.\+update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_board_v_o}{Board\+VO}}}]{vo }\end{DoxyParamCaption}) throws Exception}
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_a3954c36955c7bec6e8d031b50045b4dd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_aa9a92cb145725416e623a7dab2b39ef2}\label{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_aa9a92cb145725416e623a7dab2b39ef2}} 
+\index{org.mnu.mapper.BoardMapper@{org.mnu.mapper.BoardMapper}!view@{view}}
+\index{view@{view}!org.mnu.mapper.BoardMapper@{org.mnu.mapper.BoardMapper}}
+\doxysubsubsection{\texorpdfstring{view()}{view()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_board_v_o}{Board\+VO}} org.\+mnu.\+mapper.\+Board\+Mapper.\+view (\begin{DoxyParamCaption}\item[{long}]{no }\end{DoxyParamCaption}) throws Exception}
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_aa9a92cb145725416e623a7dab2b39ef2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_a79b47e7cea30f6f1d2dfb6e043818500}\label{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_a79b47e7cea30f6f1d2dfb6e043818500}} 
+\index{org.mnu.mapper.BoardMapper@{org.mnu.mapper.BoardMapper}!write@{write}}
+\index{write@{write}!org.mnu.mapper.BoardMapper@{org.mnu.mapper.BoardMapper}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily int org.\+mnu.\+mapper.\+Board\+Mapper.\+write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_board_v_o}{Board\+VO}}}]{vo }\end{DoxyParamCaption}) throws Exception}
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper_a79b47e7cea30f6f1d2dfb6e043818500_icgraph}
+\end{center}
+\end{figure}
+
+
+이 인터페이스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+java/org/mnu/mapper/\mbox{\hyperlink{_board_mapper_8java}{Board\+Mapper.\+java}}\end{DoxyCompactItemize}

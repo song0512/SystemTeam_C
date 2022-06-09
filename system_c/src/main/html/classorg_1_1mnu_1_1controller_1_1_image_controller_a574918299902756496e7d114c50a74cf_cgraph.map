@@ -1,0 +1,5 @@
+<map id="org.mnu.controller.ImageController.delete" name="org.mnu.controller.ImageController.delete">
+<area shape="rect" id="node1" title="이미지 게시글 삭제 처리 페이지" alt="" coords="5,5,171,47"/>
+<area shape="rect" id="node2" href="$classorg_1_1mnu_1_1service_1_1_image_service.html#ab9214ebdb6c9eb663c6217a8efccb45c" title=" " alt="" coords="219,13,452,39"/>
+<area shape="rect" id="node3" href="$interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#a147329b6015f5f737013c479db74571d" title=" " alt="" coords="500,13,737,39"/>
+</map>

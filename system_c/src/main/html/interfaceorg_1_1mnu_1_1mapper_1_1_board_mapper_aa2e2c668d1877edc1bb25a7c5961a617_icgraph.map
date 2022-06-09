@@ -1,0 +1,6 @@
+<map id="org.mnu.mapper.BoardMapper.increase" name="org.mnu.mapper.BoardMapper.increase">
+<area shape="rect" id="node1" title=" " alt="" coords="487,46,737,73"/>
+<area shape="rect" id="node2" href="$classorg_1_1mnu_1_1service_1_1_board_service.html#a51cb280e2d72e2d3878ae8baaa9a5d24" title=" " alt="" coords="217,46,439,73"/>
+<area shape="rect" id="node3" href="$classorg_1_1mnu_1_1controller_1_1_board_controller.html#a51d6a9d625922de2697e0fac6dfcd3a8" title="게시글 수정 페이지" alt="" coords="5,5,169,47"/>
+<area shape="rect" id="node4" href="$classorg_1_1mnu_1_1controller_1_1_board_controller.html#adc7615226784b390bc3d40410ada90c9" title="게시글 페이지" alt="" coords="5,71,169,112"/>
+</map>

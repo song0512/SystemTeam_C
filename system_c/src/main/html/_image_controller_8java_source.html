@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: java/org/mnu/controller/ImageController.java 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'검색','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_image_controller_8java_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ImageController.java</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_image_controller_8java.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">package </span>org.mnu.controller;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> java.net.URLEncoder;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> javax.servlet.http.HttpSession;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">import</span> org.mnu.domain.ImageVO;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">import</span> org.mnu.domain.LoginVO;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">import</span> org.mnu.service.ImageService;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">import</span> org.springframework.stereotype.Controller;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">import</span> org.springframework.ui.Model;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">import</span> org.springframework.web.bind.annotation.GetMapping;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">import</span> org.springframework.web.bind.annotation.PostMapping;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">import</span> org.springframework.web.servlet.mvc.support.RedirectAttributes;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">import</span> com.webjjang.util.PageObject;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">import</span> com.webjjang.util.file.FileUtil;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">import</span> lombok.extern.log4j.Log4j;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>@Controller</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>@RequestMapping(<span class="stringliteral">&quot;/image&quot;</span>)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>@Log4j</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html">   35</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html">ImageController</a> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    @Autowired</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#aa03803cddb85ffc4919c1dd7b012bfb5">   38</a></span>    <span class="keyword">private</span> <a class="code hl_class" href="classorg_1_1mnu_1_1service_1_1_image_service.html">ImageService</a> <a class="code hl_variable" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#aa03803cddb85ffc4919c1dd7b012bfb5">service</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    @GetMapping(<span class="stringliteral">&quot;/list&quot;</span>)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a6cbd1b9f0ab40b2f72691b450eb98d42">   45</a></span>    public String <a class="code hl_function" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a6cbd1b9f0ab40b2f72691b450eb98d42">list</a>(PageObject pageObject, Model model) throws Exception {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">if</span>(pageObject.getPage()&lt;1)pageObject.setPage(1);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">if</span>(pageObject.getPerPageNum() == 10) pageObject.setPerPageNum(8);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        log.info(<span class="stringliteral">&quot;list()&quot;</span>);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        model.addAttribute(<span class="stringliteral">&quot;list&quot;</span>, <a class="code hl_variable" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#aa03803cddb85ffc4919c1dd7b012bfb5">service</a>.<a class="code hl_function" href="classorg_1_1mnu_1_1service_1_1_image_service.html#a8ff78713698a9c3277375594726782fe">list</a>(pageObject));</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;image/list&quot;</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="comment">// 카페, 디저트 카테고리</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment"></span>    @GetMapping(<span class="stringliteral">&quot;/soup_category&quot;</span>)</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a0d712d91d23600a3734900970a8af422">   60</a></span>    public String <a class="code hl_function" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a0d712d91d23600a3734900970a8af422">soup_category</a>(PageObject pageObject, Model model) throws Exception {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">if</span>(pageObject.getPage()&lt;1)pageObject.setPage(1);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">if</span>(pageObject.getPerPageNum() == 10) pageObject.setPerPageNum(8);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        log.info(<span class="stringliteral">&quot;soup_category()&quot;</span>);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        model.addAttribute(<span class="stringliteral">&quot;soup_category&quot;</span>, <a class="code hl_variable" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#aa03803cddb85ffc4919c1dd7b012bfb5">service</a>.<a class="code hl_function" href="classorg_1_1mnu_1_1service_1_1_image_service.html#a109c2af361627a44e428cfd1e2dbcdd7">soup_category</a>(pageObject));</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;image/soup_category&quot;</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="comment">// 중식 카테고리</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment"></span>    @GetMapping(<span class="stringliteral">&quot;/chinesefood_category&quot;</span>)</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#aca5ccb77f1234882497fd0354f58fd26">   75</a></span>    public String <a class="code hl_function" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#aca5ccb77f1234882497fd0354f58fd26">chinesefood_category</a>(PageObject pageObject, Model model) throws Exception {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">if</span>(pageObject.getPage()&lt;1)pageObject.setPage(1);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">if</span>(pageObject.getPerPageNum() == 10) pageObject.setPerPageNum(8);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        log.info(<span class="stringliteral">&quot;chinesefood_category()&quot;</span>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        model.addAttribute(<span class="stringliteral">&quot;chinesefood_category&quot;</span>, <a class="code hl_variable" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#aa03803cddb85ffc4919c1dd7b012bfb5">service</a>.<a class="code hl_function" href="classorg_1_1mnu_1_1service_1_1_image_service.html#a5765df905ca3ad4b3b7a81ff34854664">chinesefood_category</a>(pageObject));</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;image/chinesefood_category&quot;</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="comment">// 패스트푸드 카테고리 </span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment"></span>    @GetMapping(<span class="stringliteral">&quot;/fastfood_category&quot;</span>)</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a98384671510ec6f5a33e549dca454c97">   90</a></span>    public String <a class="code hl_function" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a98384671510ec6f5a33e549dca454c97">fastfood_category</a>(PageObject pageObject, Model model) throws Exception {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">if</span>(pageObject.getPage()&lt;1)pageObject.setPage(1);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">if</span>(pageObject.getPerPageNum() == 10) pageObject.setPerPageNum(8);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        log.info(<span class="stringliteral">&quot;fastfood_category()&quot;</span>);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        model.addAttribute(<span class="stringliteral">&quot;fastfood_category&quot;</span>, <a class="code hl_variable" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#aa03803cddb85ffc4919c1dd7b012bfb5">service</a>.<a class="code hl_function" href="classorg_1_1mnu_1_1service_1_1_image_service.html#ab191722061e8b216a304a71d408a6e51">fastfood_category</a>(pageObject));</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;image/fastfood_category&quot;</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="comment">// 분식 카테고리</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment"></span>    @GetMapping(<span class="stringliteral">&quot;/snackbar_category&quot;</span>)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#ae37d8bb162920055a1d7e63c9bd0f771">  106</a></span>    public String <a class="code hl_function" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#ae37d8bb162920055a1d7e63c9bd0f771">snackbar_category</a>(PageObject pageObject, Model model) throws Exception {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">if</span>(pageObject.getPage()&lt;1)pageObject.setPage(1);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordflow">if</span>(pageObject.getPerPageNum() == 10) pageObject.setPerPageNum(8);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        log.info(<span class="stringliteral">&quot;snackbar_category()&quot;</span>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        model.addAttribute(<span class="stringliteral">&quot;snackbar_category&quot;</span>, <a class="code hl_variable" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#aa03803cddb85ffc4919c1dd7b012bfb5">service</a>.<a class="code hl_function" href="classorg_1_1mnu_1_1service_1_1_image_service.html#a7a0de37008f85d5b5ad96b67a804cf7b">snackbar_category</a>(pageObject));</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;image/snackbar_category&quot;</span>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    @GetMapping(<span class="stringliteral">&quot;/view&quot;</span>)</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#af1a0899e8ae61682bc095ba0abe0d4f3">  122</a></span>    public String <a class="code hl_function" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#af1a0899e8ae61682bc095ba0abe0d4f3">view</a>(<span class="keywordtype">long</span> no, Model model) throws Exception {</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <a class="code hl_class" href="classorg_1_1mnu_1_1domain_1_1_image_v_o.html">ImageVO</a> vo  = <a class="code hl_variable" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#aa03803cddb85ffc4919c1dd7b012bfb5">service</a>.<a class="code hl_function" href="classorg_1_1mnu_1_1service_1_1_image_service.html#aac51d1f9804dd2cf9b6e590ed0de764c">view</a>(no);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        vo.setContent(vo.getContent().replace(<span class="stringliteral">&quot;\n&quot;</span>, <span class="stringliteral">&quot;&lt;br&gt;&quot;</span>));</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        model.addAttribute(<span class="stringliteral">&quot;vo&quot;</span>, vo);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;image/view&quot;</span>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    @PostMapping(<span class="stringliteral">&quot;/changeImage&quot;</span>)</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a483fb59be8d988a96b776fcec8d0880f">  134</a></span>    public String <a class="code hl_function" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a483fb59be8d988a96b776fcec8d0880f">changeImage</a>(PageObject pageObject,<a class="code hl_class" href="classorg_1_1mnu_1_1domain_1_1_image_v_o.html">ImageVO</a> vo, HttpServletRequest request) throws Exception {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        String path = <span class="stringliteral">&quot;/upload/image&quot;</span>;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        String fileName = FileUtil.upload(path, vo.getImage(), request);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        vo.setFileName(fileName);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <a class="code hl_variable" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#aa03803cddb85ffc4919c1dd7b012bfb5">service</a>.<a class="code hl_function" href="classorg_1_1mnu_1_1service_1_1_image_service.html#aeb22c9228b2a5287714732d14b76bf0b">changeImage</a>(vo);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        FileUtil.remove(FileUtil.getRealPath(<span class="stringliteral">&quot;&quot;</span>, vo.getDeleteImage(), request));</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;redirect:view?no=&quot;</span> + vo.getNo()</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                + <span class="stringliteral">&quot;&amp;page=&quot;</span> +pageObject.getPage()</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                + <span class="stringliteral">&quot;&amp;perPageNum=&quot;</span> +pageObject.getPerPageNum()</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                + <span class="stringliteral">&quot;&amp;key=&quot;</span> +pageObject.getKey()</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                <span class="comment">//+ &quot;&amp;word=&quot;+URLEncoder.encode(pageObject.getWord(),&quot;utf-8&quot;)</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                +<span class="stringliteral">&quot;&amp;word=&quot;</span>+pageObject.getWord();</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    }</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    @GetMapping(<span class="stringliteral">&quot;/write&quot;</span>)</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a1c81c52507b1f02141e181099f2bb71d">  159</a></span>    public String <a class="code hl_function" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a1c81c52507b1f02141e181099f2bb71d">writeForm</a>() throws Exception {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;image/write&quot;</span>;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    }</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="comment">//write</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="comment"></span>    @PostMapping(<span class="stringliteral">&quot;/write&quot;</span>)</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a0f2578d744419b8e92661fec5628ffa6">  169</a></span>    public String <a class="code hl_function" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a0f2578d744419b8e92661fec5628ffa6">write</a>(PageObject pageObject, <a class="code hl_class" href="classorg_1_1mnu_1_1domain_1_1_image_v_o.html">ImageVO</a> vo,HttpSession session, HttpServletRequest request, RedirectAttributes rttr) throws Exception {</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        log.info(pageObject);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        vo.setId(((<a class="code hl_class" href="classorg_1_1mnu_1_1domain_1_1_login_v_o.html">LoginVO</a>)session.getAttribute(<span class="stringliteral">&quot;login&quot;</span>)).getId());</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        String path = <span class="stringliteral">&quot;/upload/image&quot;</span>;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        String fileName =FileUtil.upload(path, vo.getImage(), request);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        vo.setFileName(fileName);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        <a class="code hl_variable" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#aa03803cddb85ffc4919c1dd7b012bfb5">service</a>.<a class="code hl_function" href="classorg_1_1mnu_1_1service_1_1_image_service.html#a9da0ce9c0c0750469e14e7f653a45aed">write</a>(vo);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        rttr.addFlashAttribute(<span class="stringliteral">&quot;msg&quot;</span>, <span class="stringliteral">&quot;게시글이 등록되었습니다.&quot;</span>);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;redirect:list?page=1&amp;perPageNum=&quot;</span>+pageObject.getPerPageNum();</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    }</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    @GetMapping(<span class="stringliteral">&quot;/update&quot;</span>)</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a27ceb3fc3eade2960c6b95e78cf60b1b">  188</a></span>    public String <a class="code hl_function" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a27ceb3fc3eade2960c6b95e78cf60b1b">updateForm</a>(PageObject pageObject, <span class="keywordtype">long</span> no, Model model) throws Exception {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        model.addAttribute(<span class="stringliteral">&quot;vo&quot;</span>, <a class="code hl_variable" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#aa03803cddb85ffc4919c1dd7b012bfb5">service</a>.<a class="code hl_function" href="classorg_1_1mnu_1_1service_1_1_image_service.html#aac51d1f9804dd2cf9b6e590ed0de764c">view</a>(no));</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;image/update&quot;</span>;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    }</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    @PostMapping(<span class="stringliteral">&quot;/update&quot;</span>)</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a74f3f50631cdda5bae7d3670b12ae058">  198</a></span>    public String <a class="code hl_function" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a74f3f50631cdda5bae7d3670b12ae058">update</a>(PageObject pageObject, <a class="code hl_class" href="classorg_1_1mnu_1_1domain_1_1_image_v_o.html">ImageVO</a> vo, RedirectAttributes rttr) throws Exception {</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        log.info(vo);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        log.info(pageObject);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <a class="code hl_variable" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#aa03803cddb85ffc4919c1dd7b012bfb5">service</a>.<a class="code hl_function" href="classorg_1_1mnu_1_1service_1_1_image_service.html#a7917a8819bd96d4a8997a6ca63e70b6d">update</a>(vo);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        rttr.addFlashAttribute(<span class="stringliteral">&quot;msg&quot;</span>, <span class="stringliteral">&quot;게시글이 수정되었습니다.&quot;</span>);</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;redirect:view?no=&quot;</span>+vo.getNo()</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                + <span class="stringliteral">&quot;&amp;page=&quot;</span>+pageObject.getPage()</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>                + <span class="stringliteral">&quot;&amp;perPageNum=&quot;</span>+pageObject.getPerPageNum()</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                + <span class="stringliteral">&quot;&amp;key=&quot;</span>+pageObject.getKey()</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                + <span class="stringliteral">&quot;&amp;word=&quot;</span>+URLEncoder.encode(pageObject.getWord(),<span class="stringliteral">&quot;utf-8&quot;</span>);</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    }</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    @GetMapping(<span class="stringliteral">&quot;/delete&quot;</span>)</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a574918299902756496e7d114c50a74cf">  217</a></span>    public String <a class="code hl_function" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a574918299902756496e7d114c50a74cf">delete</a>(PageObject pageObject, <span class="keywordtype">long</span> no, String deleteImage, HttpServletRequest request, RedirectAttributes rttr) throws Exception {</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        log.info(no);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        log.info(pageObject);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        log.info(deleteImage);</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        <a class="code hl_variable" href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#aa03803cddb85ffc4919c1dd7b012bfb5">service</a>.<a class="code hl_function" href="classorg_1_1mnu_1_1service_1_1_image_service.html#ab9214ebdb6c9eb663c6217a8efccb45c">delete</a>(no);</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        FileUtil.remove(FileUtil.getRealPath(<span class="stringliteral">&quot;&quot;</span>, deleteImage, request));</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;redirect:list?perPageNum=&quot;</span>+pageObject.getPerPageNum();</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    }</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>}</div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1controller_1_1_image_controller_html"><div class="ttname"><a href="classorg_1_1mnu_1_1controller_1_1_image_controller.html">org.mnu.controller.ImageController</a></div><div class="ttdoc">이미지게시판 주소 처리</div><div class="ttdef"><b>Definition:</b> <a href="_image_controller_8java_source.html#l00035">ImageController.java:35</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1controller_1_1_image_controller_html_a0d712d91d23600a3734900970a8af422"><div class="ttname"><a href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a0d712d91d23600a3734900970a8af422">org.mnu.controller.ImageController.soup_category</a></div><div class="ttdeci">String soup_category(PageObject pageObject, Model model)</div><div class="ttdoc">카페-디저트 카테고리 리스트 페이지</div><div class="ttdef"><b>Definition:</b> <a href="_image_controller_8java_source.html#l00060">ImageController.java:60</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1controller_1_1_image_controller_html_a0f2578d744419b8e92661fec5628ffa6"><div class="ttname"><a href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a0f2578d744419b8e92661fec5628ffa6">org.mnu.controller.ImageController.write</a></div><div class="ttdeci">String write(PageObject pageObject, ImageVO vo, HttpSession session, HttpServletRequest request, RedirectAttributes rttr)</div><div class="ttdoc">이미지 게시글 작성 처리 페이지</div><div class="ttdef"><b>Definition:</b> <a href="_image_controller_8java_source.html#l00169">ImageController.java:169</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1controller_1_1_image_controller_html_a1c81c52507b1f02141e181099f2bb71d"><div class="ttname"><a href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a1c81c52507b1f02141e181099f2bb71d">org.mnu.controller.ImageController.writeForm</a></div><div class="ttdeci">String writeForm()</div><div class="ttdoc">이미지 게시글 작성 페이지</div><div class="ttdef"><b>Definition:</b> <a href="_image_controller_8java_source.html#l00159">ImageController.java:159</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1controller_1_1_image_controller_html_a27ceb3fc3eade2960c6b95e78cf60b1b"><div class="ttname"><a href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a27ceb3fc3eade2960c6b95e78cf60b1b">org.mnu.controller.ImageController.updateForm</a></div><div class="ttdeci">String updateForm(PageObject pageObject, long no, Model model)</div><div class="ttdoc">이미지 게시글 수정 페이지</div><div class="ttdef"><b>Definition:</b> <a href="_image_controller_8java_source.html#l00188">ImageController.java:188</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1controller_1_1_image_controller_html_a483fb59be8d988a96b776fcec8d0880f"><div class="ttname"><a href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a483fb59be8d988a96b776fcec8d0880f">org.mnu.controller.ImageController.changeImage</a></div><div class="ttdeci">String changeImage(PageObject pageObject, ImageVO vo, HttpServletRequest request)</div><div class="ttdoc">이미지게시글 사진 바꾸는 페이지</div><div class="ttdef"><b>Definition:</b> <a href="_image_controller_8java_source.html#l00134">ImageController.java:134</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1controller_1_1_image_controller_html_a574918299902756496e7d114c50a74cf"><div class="ttname"><a href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a574918299902756496e7d114c50a74cf">org.mnu.controller.ImageController.delete</a></div><div class="ttdeci">String delete(PageObject pageObject, long no, String deleteImage, HttpServletRequest request, RedirectAttributes rttr)</div><div class="ttdoc">이미지 게시글 삭제 처리 페이지</div><div class="ttdef"><b>Definition:</b> <a href="_image_controller_8java_source.html#l00217">ImageController.java:217</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1controller_1_1_image_controller_html_a6cbd1b9f0ab40b2f72691b450eb98d42"><div class="ttname"><a href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a6cbd1b9f0ab40b2f72691b450eb98d42">org.mnu.controller.ImageController.list</a></div><div class="ttdeci">String list(PageObject pageObject, Model model)</div><div class="ttdoc">이미지게시판 리스트 페이지</div><div class="ttdef"><b>Definition:</b> <a href="_image_controller_8java_source.html#l00045">ImageController.java:45</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1controller_1_1_image_controller_html_a74f3f50631cdda5bae7d3670b12ae058"><div class="ttname"><a href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a74f3f50631cdda5bae7d3670b12ae058">org.mnu.controller.ImageController.update</a></div><div class="ttdeci">String update(PageObject pageObject, ImageVO vo, RedirectAttributes rttr)</div><div class="ttdoc">이미지 게시글 수정 처리 페이지</div><div class="ttdef"><b>Definition:</b> <a href="_image_controller_8java_source.html#l00198">ImageController.java:198</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1controller_1_1_image_controller_html_a98384671510ec6f5a33e549dca454c97"><div class="ttname"><a href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#a98384671510ec6f5a33e549dca454c97">org.mnu.controller.ImageController.fastfood_category</a></div><div class="ttdeci">String fastfood_category(PageObject pageObject, Model model)</div><div class="ttdoc">패스트푸드 카테고리 리스트 페이지</div><div class="ttdef"><b>Definition:</b> <a href="_image_controller_8java_source.html#l00090">ImageController.java:90</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1controller_1_1_image_controller_html_aa03803cddb85ffc4919c1dd7b012bfb5"><div class="ttname"><a href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#aa03803cddb85ffc4919c1dd7b012bfb5">org.mnu.controller.ImageController.service</a></div><div class="ttdeci">ImageService service</div><div class="ttdef"><b>Definition:</b> <a href="_image_controller_8java_source.html#l00038">ImageController.java:38</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1controller_1_1_image_controller_html_aca5ccb77f1234882497fd0354f58fd26"><div class="ttname"><a href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#aca5ccb77f1234882497fd0354f58fd26">org.mnu.controller.ImageController.chinesefood_category</a></div><div class="ttdeci">String chinesefood_category(PageObject pageObject, Model model)</div><div class="ttdoc">중식 카테고리 리스트 페이지</div><div class="ttdef"><b>Definition:</b> <a href="_image_controller_8java_source.html#l00075">ImageController.java:75</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1controller_1_1_image_controller_html_ae37d8bb162920055a1d7e63c9bd0f771"><div class="ttname"><a href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#ae37d8bb162920055a1d7e63c9bd0f771">org.mnu.controller.ImageController.snackbar_category</a></div><div class="ttdeci">String snackbar_category(PageObject pageObject, Model model)</div><div class="ttdoc">분식 카테고리 리스트 페이지</div><div class="ttdef"><b>Definition:</b> <a href="_image_controller_8java_source.html#l00106">ImageController.java:106</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1controller_1_1_image_controller_html_af1a0899e8ae61682bc095ba0abe0d4f3"><div class="ttname"><a href="classorg_1_1mnu_1_1controller_1_1_image_controller.html#af1a0899e8ae61682bc095ba0abe0d4f3">org.mnu.controller.ImageController.view</a></div><div class="ttdeci">String view(long no, Model model)</div><div class="ttdoc">이미지게시글 페이지</div><div class="ttdef"><b>Definition:</b> <a href="_image_controller_8java_source.html#l00122">ImageController.java:122</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1domain_1_1_image_v_o_html"><div class="ttname"><a href="classorg_1_1mnu_1_1domain_1_1_image_v_o.html">org.mnu.domain.ImageVO</a></div><div class="ttdoc">이미지 게시판 VO</div><div class="ttdef"><b>Definition:</b> <a href="_image_v_o_8java_source.html#l00016">ImageVO.java:16</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1domain_1_1_login_v_o_html"><div class="ttname"><a href="classorg_1_1mnu_1_1domain_1_1_login_v_o.html">org.mnu.domain.LoginVO</a></div><div class="ttdoc">로그인 VO</div><div class="ttdef"><b>Definition:</b> <a href="_login_v_o_8java_source.html#l00014">LoginVO.java:14</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1service_1_1_image_service_html"><div class="ttname"><a href="classorg_1_1mnu_1_1service_1_1_image_service.html">org.mnu.service.ImageService</a></div><div class="ttdoc">이미지게시판 처리 서비스</div><div class="ttdef"><b>Definition:</b> <a href="_image_service_8java_source.html#l00026">ImageService.java:26</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1service_1_1_image_service_html_a109c2af361627a44e428cfd1e2dbcdd7"><div class="ttname"><a href="classorg_1_1mnu_1_1service_1_1_image_service.html#a109c2af361627a44e428cfd1e2dbcdd7">org.mnu.service.ImageService.soup_category</a></div><div class="ttdeci">List&lt; ImageVO &gt; soup_category(PageObject pageObject)</div><div class="ttdef"><b>Definition:</b> <a href="_image_service_8java_source.html#l00038">ImageService.java:38</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1service_1_1_image_service_html_a5765df905ca3ad4b3b7a81ff34854664"><div class="ttname"><a href="classorg_1_1mnu_1_1service_1_1_image_service.html#a5765df905ca3ad4b3b7a81ff34854664">org.mnu.service.ImageService.chinesefood_category</a></div><div class="ttdeci">List&lt; ImageVO &gt; chinesefood_category(PageObject pageObject)</div><div class="ttdef"><b>Definition:</b> <a href="_image_service_8java_source.html#l00045">ImageService.java:45</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1service_1_1_image_service_html_a7917a8819bd96d4a8997a6ca63e70b6d"><div class="ttname"><a href="classorg_1_1mnu_1_1service_1_1_image_service.html#a7917a8819bd96d4a8997a6ca63e70b6d">org.mnu.service.ImageService.update</a></div><div class="ttdeci">int update(ImageVO vo)</div><div class="ttdef"><b>Definition:</b> <a href="_image_service_8java_source.html#l00084">ImageService.java:84</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1service_1_1_image_service_html_a7a0de37008f85d5b5ad96b67a804cf7b"><div class="ttname"><a href="classorg_1_1mnu_1_1service_1_1_image_service.html#a7a0de37008f85d5b5ad96b67a804cf7b">org.mnu.service.ImageService.snackbar_category</a></div><div class="ttdeci">List&lt; ImageVO &gt; snackbar_category(PageObject pageObject)</div><div class="ttdef"><b>Definition:</b> <a href="_image_service_8java_source.html#l00059">ImageService.java:59</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1service_1_1_image_service_html_a8ff78713698a9c3277375594726782fe"><div class="ttname"><a href="classorg_1_1mnu_1_1service_1_1_image_service.html#a8ff78713698a9c3277375594726782fe">org.mnu.service.ImageService.list</a></div><div class="ttdeci">List&lt; ImageVO &gt; list(PageObject pageObject)</div><div class="ttdef"><b>Definition:</b> <a href="_image_service_8java_source.html#l00031">ImageService.java:31</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1service_1_1_image_service_html_a9da0ce9c0c0750469e14e7f653a45aed"><div class="ttname"><a href="classorg_1_1mnu_1_1service_1_1_image_service.html#a9da0ce9c0c0750469e14e7f653a45aed">org.mnu.service.ImageService.write</a></div><div class="ttdeci">int write(ImageVO vo)</div><div class="ttdef"><b>Definition:</b> <a href="_image_service_8java_source.html#l00072">ImageService.java:72</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1service_1_1_image_service_html_aac51d1f9804dd2cf9b6e590ed0de764c"><div class="ttname"><a href="classorg_1_1mnu_1_1service_1_1_image_service.html#aac51d1f9804dd2cf9b6e590ed0de764c">org.mnu.service.ImageService.view</a></div><div class="ttdeci">ImageVO view(long no)</div><div class="ttdef"><b>Definition:</b> <a href="_image_service_8java_source.html#l00066">ImageService.java:66</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1service_1_1_image_service_html_ab191722061e8b216a304a71d408a6e51"><div class="ttname"><a href="classorg_1_1mnu_1_1service_1_1_image_service.html#ab191722061e8b216a304a71d408a6e51">org.mnu.service.ImageService.fastfood_category</a></div><div class="ttdeci">List&lt; ImageVO &gt; fastfood_category(PageObject pageObject)</div><div class="ttdef"><b>Definition:</b> <a href="_image_service_8java_source.html#l00052">ImageService.java:52</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1service_1_1_image_service_html_ab9214ebdb6c9eb663c6217a8efccb45c"><div class="ttname"><a href="classorg_1_1mnu_1_1service_1_1_image_service.html#ab9214ebdb6c9eb663c6217a8efccb45c">org.mnu.service.ImageService.delete</a></div><div class="ttdeci">int delete(long no)</div><div class="ttdef"><b>Definition:</b> <a href="_image_service_8java_source.html#l00091">ImageService.java:91</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1service_1_1_image_service_html_aeb22c9228b2a5287714732d14b76bf0b"><div class="ttname"><a href="classorg_1_1mnu_1_1service_1_1_image_service.html#aeb22c9228b2a5287714732d14b76bf0b">org.mnu.service.ImageService.changeImage</a></div><div class="ttdeci">int changeImage(ImageVO vo)</div><div class="ttdef"><b>Definition:</b> <a href="_image_service_8java_source.html#l00078">ImageService.java:78</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_93c6ba7fb77bae0709fae89c9c13b44a.html">java</a></li><li class="navelem"><a class="el" href="dir_dbfded582784846724308f9150bf5e72.html">org</a></li><li class="navelem"><a class="el" href="dir_84ab82800e0e7f074bad744451e9fbf0.html">mnu</a></li><li class="navelem"><a class="el" href="dir_f37f4121ca03d1e7cbcf0aab33515ee1.html">controller</a></li><li class="navelem"><a class="el" href="_image_controller_8java.html">ImageController.java</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

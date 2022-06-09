@@ -1,0 +1,4 @@
+<map id="org.mnu.controller.BoardReplyController.delete" name="org.mnu.controller.BoardReplyController.delete">
+<area shape="rect" id="node1" title="댓글 삭제 처리 페이지" alt="" coords="5,5,169,47"/>
+<area shape="rect" id="node2" href="$interfaceorg_1_1mnu_1_1service_1_1_board_reply_service.html#a18bad9837b34c2d80d998b639d2af479" title=" " alt="" coords="217,5,401,47"/>
+</map>

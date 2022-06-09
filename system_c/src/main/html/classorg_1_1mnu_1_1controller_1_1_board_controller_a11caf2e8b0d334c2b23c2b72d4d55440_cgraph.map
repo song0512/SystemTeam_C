@@ -1,0 +1,6 @@
+<map id="org.mnu.controller.BoardController.list" name="org.mnu.controller.BoardController.list">
+<area shape="rect" id="node1" title="게시판 리스트 페이지" alt="" coords="5,35,169,76"/>
+<area shape="rect" id="node2" href="$classorg_1_1mnu_1_1service_1_1_board_service.html#a0414351394f63a38ebb095b652c908dd" title=" " alt="" coords="217,42,432,69"/>
+<area shape="rect" id="node3" href="$interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper.html#a28dedb45420f89a9936a7acd09577f8e" title=" " alt="" coords="480,5,699,47"/>
+<area shape="rect" id="node4" href="$interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper.html#ae5d918a7c0a880d8bafe27a134ededf7" title=" " alt="" coords="480,71,699,98"/>
+</map>

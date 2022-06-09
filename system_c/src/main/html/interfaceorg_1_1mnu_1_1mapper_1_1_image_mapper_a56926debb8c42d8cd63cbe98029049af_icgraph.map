@@ -1,0 +1,5 @@
+<map id="org.mnu.mapper.ImageMapper.changeImage" name="org.mnu.mapper.ImageMapper.changeImage">
+<area shape="rect" id="node1" title=" " alt="" coords="507,5,751,47"/>
+<area shape="rect" id="node2" href="$classorg_1_1mnu_1_1service_1_1_image_service.html#aeb22c9228b2a5287714732d14b76bf0b" title=" " alt="" coords="219,5,459,47"/>
+<area shape="rect" id="node3" href="$classorg_1_1mnu_1_1controller_1_1_image_controller.html#a483fb59be8d988a96b776fcec8d0880f" title="이미지게시글 사진 바꾸는 페이지" alt="" coords="5,5,171,47"/>
+</map>

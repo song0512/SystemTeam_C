@@ -1,0 +1,429 @@
+\hypertarget{classorg_1_1mnu_1_1service_1_1_image_service}{}\doxysection{org.\+mnu.\+service.\+Image\+Service 클래스 참조}
+\label{classorg_1_1mnu_1_1service_1_1_image_service}\index{org.mnu.service.ImageService@{org.mnu.service.ImageService}}
+
+
+이미지게시판 처리 서비스  
+
+
+
+
+org.\+mnu.\+service.\+Image\+Service에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classorg_1_1mnu_1_1service_1_1_image_service__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{Image\+VO}} $>$ \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a8ff78713698a9c3277375594726782fe}{list}} (Page\+Object page\+Object)  throws Exception 
+\item 
+List$<$ \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{Image\+VO}} $>$ \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a109c2af361627a44e428cfd1e2dbcdd7}{soup\+\_\+category}} (Page\+Object page\+Object)  throws Exception 
+\item 
+List$<$ \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{Image\+VO}} $>$ \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a5765df905ca3ad4b3b7a81ff34854664}{chinesefood\+\_\+category}} (Page\+Object page\+Object)  throws Exception 
+\item 
+List$<$ \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{Image\+VO}} $>$ \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_ab191722061e8b216a304a71d408a6e51}{fastfood\+\_\+category}} (Page\+Object page\+Object)  throws Exception 
+\item 
+List$<$ \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{Image\+VO}} $>$ \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a7a0de37008f85d5b5ad96b67a804cf7b}{snackbar\+\_\+category}} (Page\+Object page\+Object)  throws Exception 
+\item 
+\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{Image\+VO}} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_aac51d1f9804dd2cf9b6e590ed0de764c}{view}} (long no)  throws Exception 
+\item 
+int \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a9da0ce9c0c0750469e14e7f653a45aed}{write}} (\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{Image\+VO}} vo)  throws Exception 
+\item 
+int \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_aeb22c9228b2a5287714732d14b76bf0b}{change\+Image}} (\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{Image\+VO}} vo)  throws Exception 
+\item 
+int \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a7917a8819bd96d4a8997a6ca63e70b6d}{update}} (\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{Image\+VO}} vo)  throws Exception 
+\item 
+int \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_ab9214ebdb6c9eb663c6217a8efccb45c}{delete}} (long no)  throws Exception 
+\end{DoxyCompactItemize}
+\doxysubsection*{Private 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper}{Image\+Mapper}} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a4c1fa07e5c2323043af474ba82046e59}{mapper}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+이미지게시판 처리 서비스 
+
+Image\+Service에 정보를 Image\+Controller로 데이터를 넘기는 역할 \begin{DoxyAuthor}{작성자}
+Team.\+C 
+\end{DoxyAuthor}
+\begin{DoxyDate}{날짜}
+2022/06/01 
+\end{DoxyDate}
+\begin{DoxyVersion}{버전}
+0.\+0.\+1 
+\end{DoxyVersion}
+
+
+\mbox{\hyperlink{_image_service_8java_source}{Image\+Service.\+java}} 파일의 \mbox{\hyperlink{_image_service_8java_source_l00026}{26}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1service_1_1_image_service_aeb22c9228b2a5287714732d14b76bf0b}\label{classorg_1_1mnu_1_1service_1_1_image_service_aeb22c9228b2a5287714732d14b76bf0b}} 
+\index{org.mnu.service.ImageService@{org.mnu.service.ImageService}!changeImage@{changeImage}}
+\index{changeImage@{changeImage}!org.mnu.service.ImageService@{org.mnu.service.ImageService}}
+\doxysubsubsection{\texorpdfstring{changeImage()}{changeImage()}}
+{\footnotesize\ttfamily int org.\+mnu.\+service.\+Image\+Service.\+change\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{Image\+VO}}}]{vo }\end{DoxyParamCaption}) throws Exception}
+
+
+
+\mbox{\hyperlink{_image_service_8java_source}{Image\+Service.\+java}} 파일의 \mbox{\hyperlink{_image_service_8java_source_l00078}{78}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00078                                                         \{}
+\DoxyCodeLine{00079         log.info(vo);}
+\DoxyCodeLine{00080         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a4c1fa07e5c2323043af474ba82046e59}{mapper}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_a56926debb8c42d8cd63cbe98029049af}{changeImage}}(vo);}
+\DoxyCodeLine{00081     \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1service_1_1_image_service_aeb22c9228b2a5287714732d14b76bf0b_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1service_1_1_image_service_aeb22c9228b2a5287714732d14b76bf0b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1service_1_1_image_service_a5765df905ca3ad4b3b7a81ff34854664}\label{classorg_1_1mnu_1_1service_1_1_image_service_a5765df905ca3ad4b3b7a81ff34854664}} 
+\index{org.mnu.service.ImageService@{org.mnu.service.ImageService}!chinesefood\_category@{chinesefood\_category}}
+\index{chinesefood\_category@{chinesefood\_category}!org.mnu.service.ImageService@{org.mnu.service.ImageService}}
+\doxysubsubsection{\texorpdfstring{chinesefood\_category()}{chinesefood\_category()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{Image\+VO}} $>$ org.\+mnu.\+service.\+Image\+Service.\+chinesefood\+\_\+category (\begin{DoxyParamCaption}\item[{Page\+Object}]{page\+Object }\end{DoxyParamCaption}) throws Exception}
+
+
+
+\mbox{\hyperlink{_image_service_8java_source}{Image\+Service.\+java}} 파일의 \mbox{\hyperlink{_image_service_8java_source_l00045}{45}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045                                                                                       \{}
+\DoxyCodeLine{00046         log.info(pageObject);}
+\DoxyCodeLine{00047         pageObject.setTotalRow(\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a4c1fa07e5c2323043af474ba82046e59}{mapper}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_aa6f35a04e013c8e321e77ede1e3bb9a1}{getTotalRow}}(pageObject));}
+\DoxyCodeLine{00048         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a4c1fa07e5c2323043af474ba82046e59}{mapper}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_ae2105b83f61161f51fa25cd777372ab6}{chinesefood\_category}}(pageObject);}
+\DoxyCodeLine{00049     \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1service_1_1_image_service_a5765df905ca3ad4b3b7a81ff34854664_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1service_1_1_image_service_a5765df905ca3ad4b3b7a81ff34854664_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1service_1_1_image_service_ab9214ebdb6c9eb663c6217a8efccb45c}\label{classorg_1_1mnu_1_1service_1_1_image_service_ab9214ebdb6c9eb663c6217a8efccb45c}} 
+\index{org.mnu.service.ImageService@{org.mnu.service.ImageService}!delete@{delete}}
+\index{delete@{delete}!org.mnu.service.ImageService@{org.mnu.service.ImageService}}
+\doxysubsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily int org.\+mnu.\+service.\+Image\+Service.\+delete (\begin{DoxyParamCaption}\item[{long}]{no }\end{DoxyParamCaption}) throws Exception}
+
+
+
+\mbox{\hyperlink{_image_service_8java_source}{Image\+Service.\+java}} 파일의 \mbox{\hyperlink{_image_service_8java_source_l00091}{91}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091                                                 \{}
+\DoxyCodeLine{00092         log.info(no);}
+\DoxyCodeLine{00093         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a4c1fa07e5c2323043af474ba82046e59}{mapper}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_a147329b6015f5f737013c479db74571d}{delete}}(no);}
+\DoxyCodeLine{00094     \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1service_1_1_image_service_ab9214ebdb6c9eb663c6217a8efccb45c_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1service_1_1_image_service_ab9214ebdb6c9eb663c6217a8efccb45c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1service_1_1_image_service_ab191722061e8b216a304a71d408a6e51}\label{classorg_1_1mnu_1_1service_1_1_image_service_ab191722061e8b216a304a71d408a6e51}} 
+\index{org.mnu.service.ImageService@{org.mnu.service.ImageService}!fastfood\_category@{fastfood\_category}}
+\index{fastfood\_category@{fastfood\_category}!org.mnu.service.ImageService@{org.mnu.service.ImageService}}
+\doxysubsubsection{\texorpdfstring{fastfood\_category()}{fastfood\_category()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{Image\+VO}} $>$ org.\+mnu.\+service.\+Image\+Service.\+fastfood\+\_\+category (\begin{DoxyParamCaption}\item[{Page\+Object}]{page\+Object }\end{DoxyParamCaption}) throws Exception}
+
+
+
+\mbox{\hyperlink{_image_service_8java_source}{Image\+Service.\+java}} 파일의 \mbox{\hyperlink{_image_service_8java_source_l00052}{52}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052                                                                                    \{}
+\DoxyCodeLine{00053         log.info(pageObject);}
+\DoxyCodeLine{00054         pageObject.setTotalRow(\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a4c1fa07e5c2323043af474ba82046e59}{mapper}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_aa6f35a04e013c8e321e77ede1e3bb9a1}{getTotalRow}}(pageObject));}
+\DoxyCodeLine{00055         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a4c1fa07e5c2323043af474ba82046e59}{mapper}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_a5903a8aba8bff40c622c2a74cbd75f9a}{fastfood\_category}}(pageObject);}
+\DoxyCodeLine{00056     \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1service_1_1_image_service_ab191722061e8b216a304a71d408a6e51_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1service_1_1_image_service_ab191722061e8b216a304a71d408a6e51_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1service_1_1_image_service_a8ff78713698a9c3277375594726782fe}\label{classorg_1_1mnu_1_1service_1_1_image_service_a8ff78713698a9c3277375594726782fe}} 
+\index{org.mnu.service.ImageService@{org.mnu.service.ImageService}!list@{list}}
+\index{list@{list}!org.mnu.service.ImageService@{org.mnu.service.ImageService}}
+\doxysubsubsection{\texorpdfstring{list()}{list()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{Image\+VO}} $>$ org.\+mnu.\+service.\+Image\+Service.\+list (\begin{DoxyParamCaption}\item[{Page\+Object}]{page\+Object }\end{DoxyParamCaption}) throws Exception}
+
+
+
+\mbox{\hyperlink{_image_service_8java_source}{Image\+Service.\+java}} 파일의 \mbox{\hyperlink{_image_service_8java_source_l00031}{31}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031                                                                       \{}
+\DoxyCodeLine{00032         log.info(pageObject);}
+\DoxyCodeLine{00033         pageObject.setTotalRow(\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a4c1fa07e5c2323043af474ba82046e59}{mapper}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_aa6f35a04e013c8e321e77ede1e3bb9a1}{getTotalRow}}(pageObject));}
+\DoxyCodeLine{00034         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a4c1fa07e5c2323043af474ba82046e59}{mapper}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_a32481a19d439f56b4270d3b0a0902b15}{list}}(pageObject);}
+\DoxyCodeLine{00035     \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1service_1_1_image_service_a8ff78713698a9c3277375594726782fe_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1service_1_1_image_service_a8ff78713698a9c3277375594726782fe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1service_1_1_image_service_a7a0de37008f85d5b5ad96b67a804cf7b}\label{classorg_1_1mnu_1_1service_1_1_image_service_a7a0de37008f85d5b5ad96b67a804cf7b}} 
+\index{org.mnu.service.ImageService@{org.mnu.service.ImageService}!snackbar\_category@{snackbar\_category}}
+\index{snackbar\_category@{snackbar\_category}!org.mnu.service.ImageService@{org.mnu.service.ImageService}}
+\doxysubsubsection{\texorpdfstring{snackbar\_category()}{snackbar\_category()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{Image\+VO}} $>$ org.\+mnu.\+service.\+Image\+Service.\+snackbar\+\_\+category (\begin{DoxyParamCaption}\item[{Page\+Object}]{page\+Object }\end{DoxyParamCaption}) throws Exception}
+
+
+
+\mbox{\hyperlink{_image_service_8java_source}{Image\+Service.\+java}} 파일의 \mbox{\hyperlink{_image_service_8java_source_l00059}{59}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059                                                                                    \{}
+\DoxyCodeLine{00060         log.info(pageObject);}
+\DoxyCodeLine{00061         pageObject.setTotalRow(\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a4c1fa07e5c2323043af474ba82046e59}{mapper}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_aa6f35a04e013c8e321e77ede1e3bb9a1}{getTotalRow}}(pageObject));}
+\DoxyCodeLine{00062         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a4c1fa07e5c2323043af474ba82046e59}{mapper}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_add66c34019db6fd452408c719269ba88}{snackbar\_category}}(pageObject);}
+\DoxyCodeLine{00063     \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1service_1_1_image_service_a7a0de37008f85d5b5ad96b67a804cf7b_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1service_1_1_image_service_a7a0de37008f85d5b5ad96b67a804cf7b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1service_1_1_image_service_a109c2af361627a44e428cfd1e2dbcdd7}\label{classorg_1_1mnu_1_1service_1_1_image_service_a109c2af361627a44e428cfd1e2dbcdd7}} 
+\index{org.mnu.service.ImageService@{org.mnu.service.ImageService}!soup\_category@{soup\_category}}
+\index{soup\_category@{soup\_category}!org.mnu.service.ImageService@{org.mnu.service.ImageService}}
+\doxysubsubsection{\texorpdfstring{soup\_category()}{soup\_category()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{Image\+VO}} $>$ org.\+mnu.\+service.\+Image\+Service.\+soup\+\_\+category (\begin{DoxyParamCaption}\item[{Page\+Object}]{page\+Object }\end{DoxyParamCaption}) throws Exception}
+
+
+
+\mbox{\hyperlink{_image_service_8java_source}{Image\+Service.\+java}} 파일의 \mbox{\hyperlink{_image_service_8java_source_l00038}{38}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038                                                                                \{}
+\DoxyCodeLine{00039         log.info(pageObject);}
+\DoxyCodeLine{00040         pageObject.setTotalRow(\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a4c1fa07e5c2323043af474ba82046e59}{mapper}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_aa6f35a04e013c8e321e77ede1e3bb9a1}{getTotalRow}}(pageObject));}
+\DoxyCodeLine{00041         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a4c1fa07e5c2323043af474ba82046e59}{mapper}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_ae78ce55d3899b0b595aac265bbbaebc4}{soup\_category}}(pageObject);}
+\DoxyCodeLine{00042     \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1service_1_1_image_service_a109c2af361627a44e428cfd1e2dbcdd7_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1service_1_1_image_service_a109c2af361627a44e428cfd1e2dbcdd7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1service_1_1_image_service_a7917a8819bd96d4a8997a6ca63e70b6d}\label{classorg_1_1mnu_1_1service_1_1_image_service_a7917a8819bd96d4a8997a6ca63e70b6d}} 
+\index{org.mnu.service.ImageService@{org.mnu.service.ImageService}!update@{update}}
+\index{update@{update}!org.mnu.service.ImageService@{org.mnu.service.ImageService}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily int org.\+mnu.\+service.\+Image\+Service.\+update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{Image\+VO}}}]{vo }\end{DoxyParamCaption}) throws Exception}
+
+
+
+\mbox{\hyperlink{_image_service_8java_source}{Image\+Service.\+java}} 파일의 \mbox{\hyperlink{_image_service_8java_source_l00084}{84}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084                                                    \{}
+\DoxyCodeLine{00085         log.info(vo);}
+\DoxyCodeLine{00086         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a4c1fa07e5c2323043af474ba82046e59}{mapper}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_a867fd8990c9e14d77978d2312bfd11b1}{update}}(vo);}
+\DoxyCodeLine{00087     \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1service_1_1_image_service_a7917a8819bd96d4a8997a6ca63e70b6d_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1service_1_1_image_service_a7917a8819bd96d4a8997a6ca63e70b6d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1service_1_1_image_service_aac51d1f9804dd2cf9b6e590ed0de764c}\label{classorg_1_1mnu_1_1service_1_1_image_service_aac51d1f9804dd2cf9b6e590ed0de764c}} 
+\index{org.mnu.service.ImageService@{org.mnu.service.ImageService}!view@{view}}
+\index{view@{view}!org.mnu.service.ImageService@{org.mnu.service.ImageService}}
+\doxysubsubsection{\texorpdfstring{view()}{view()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{Image\+VO}} org.\+mnu.\+service.\+Image\+Service.\+view (\begin{DoxyParamCaption}\item[{long}]{no }\end{DoxyParamCaption}) throws Exception}
+
+
+
+\mbox{\hyperlink{_image_service_8java_source}{Image\+Service.\+java}} 파일의 \mbox{\hyperlink{_image_service_8java_source_l00066}{66}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066                                                   \{}
+\DoxyCodeLine{00067         log.info(log);}
+\DoxyCodeLine{00068         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a4c1fa07e5c2323043af474ba82046e59}{mapper}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_a6679f0d4890d576120144438ed571087}{view}}(no);}
+\DoxyCodeLine{00069     \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1service_1_1_image_service_aac51d1f9804dd2cf9b6e590ed0de764c_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1service_1_1_image_service_aac51d1f9804dd2cf9b6e590ed0de764c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1service_1_1_image_service_a9da0ce9c0c0750469e14e7f653a45aed}\label{classorg_1_1mnu_1_1service_1_1_image_service_a9da0ce9c0c0750469e14e7f653a45aed}} 
+\index{org.mnu.service.ImageService@{org.mnu.service.ImageService}!write@{write}}
+\index{write@{write}!org.mnu.service.ImageService@{org.mnu.service.ImageService}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily int org.\+mnu.\+service.\+Image\+Service.\+write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{Image\+VO}}}]{vo }\end{DoxyParamCaption}) throws Exception}
+
+
+
+\mbox{\hyperlink{_image_service_8java_source}{Image\+Service.\+java}} 파일의 \mbox{\hyperlink{_image_service_8java_source_l00072}{72}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072                                                   \{}
+\DoxyCodeLine{00073         log.info(vo);}
+\DoxyCodeLine{00074         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a4c1fa07e5c2323043af474ba82046e59}{mapper}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_a9d50423ba07873694728b1d340f61245}{write}}(vo);}
+\DoxyCodeLine{00075     \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1service_1_1_image_service_a9da0ce9c0c0750469e14e7f653a45aed_cgraph}
+\end{center}
+\end{figure}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1service_1_1_image_service_a9da0ce9c0c0750469e14e7f653a45aed_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{멤버 데이터 문서화}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1service_1_1_image_service_a4c1fa07e5c2323043af474ba82046e59}\label{classorg_1_1mnu_1_1service_1_1_image_service_a4c1fa07e5c2323043af474ba82046e59}} 
+\index{org.mnu.service.ImageService@{org.mnu.service.ImageService}!mapper@{mapper}}
+\index{mapper@{mapper}!org.mnu.service.ImageService@{org.mnu.service.ImageService}}
+\doxysubsubsection{\texorpdfstring{mapper}{mapper}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper}{Image\+Mapper}} org.\+mnu.\+service.\+Image\+Service.\+mapper\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_image_service_8java_source}{Image\+Service.\+java}} 파일의 \mbox{\hyperlink{_image_service_8java_source_l00028}{28}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+java/org/mnu/service/\mbox{\hyperlink{_image_service_8java}{Image\+Service.\+java}}\end{DoxyCompactItemize}

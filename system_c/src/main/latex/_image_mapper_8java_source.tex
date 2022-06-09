@@ -1,0 +1,50 @@
+\hypertarget{_image_mapper_8java_source}{}\doxysection{Image\+Mapper.\+java}
+\label{_image_mapper_8java_source}\index{java/org/mnu/mapper/ImageMapper.java@{java/org/mnu/mapper/ImageMapper.java}}
+\mbox{\hyperlink{_image_mapper_8java}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00001}00001 \textcolor{keyword}{package }org.mnu.mapper;}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00003}00003 \textcolor{keyword}{import} java.util.List;}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00005}00005 \textcolor{keyword}{import} org.mnu.domain.ImageVO;}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00007}00007 \textcolor{keyword}{import} com.webjjang.util.PageObject;}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00018}\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper}{00018}} \textcolor{keyword}{public} \textcolor{keyword}{interface }\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper}{ImageMapper}} \{}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00019}00019     }
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00020}00020     \textcolor{comment}{//list}}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00021}\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_a32481a19d439f56b4270d3b0a0902b15}{00021}}     \textcolor{keyword}{public} List<ImageVO> \mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_a32481a19d439f56b4270d3b0a0902b15}{list}}(PageObject pageObject) \textcolor{keywordflow}{throws} Exception;}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00022}00022     }
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00023}00023     \textcolor{comment}{//카페, 디저트 category}}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00024}\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_ae78ce55d3899b0b595aac265bbbaebc4}{00024}}     \textcolor{keyword}{public} List<ImageVO> \mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_ae78ce55d3899b0b595aac265bbbaebc4}{soup\_category}}(PageObject pageObject) \textcolor{keywordflow}{throws} Exception;}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00025}00025     }
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00026}00026     \textcolor{comment}{//중식 category}}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00027}\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_ae2105b83f61161f51fa25cd777372ab6}{00027}}     \textcolor{keyword}{public} List<ImageVO> \mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_ae2105b83f61161f51fa25cd777372ab6}{chinesefood\_category}}(PageObject pageObject) \textcolor{keywordflow}{throws} Exception;}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00028}00028         }
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00029}00029     \textcolor{comment}{//패스트푸드 category}}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00030}\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_a5903a8aba8bff40c622c2a74cbd75f9a}{00030}}     \textcolor{keyword}{public} List<ImageVO> \mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_a5903a8aba8bff40c622c2a74cbd75f9a}{fastfood\_category}}(PageObject pageObject) \textcolor{keywordflow}{throws} Exception;}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00031}00031         }
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00032}00032     \textcolor{comment}{//분식 category}}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00033}\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_add66c34019db6fd452408c719269ba88}{00033}}     \textcolor{keyword}{public} List<ImageVO> \mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_add66c34019db6fd452408c719269ba88}{snackbar\_category}}(PageObject pageObject) \textcolor{keywordflow}{throws} Exception;}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00034}00034         }
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00036}\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_aa6f35a04e013c8e321e77ede1e3bb9a1}{00036}}     \textcolor{keyword}{public} \textcolor{keywordtype}{long} \mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_aa6f35a04e013c8e321e77ede1e3bb9a1}{getTotalRow}}(PageObject pageObject) \textcolor{keywordflow}{throws} Exception;}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00037}00037     }
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00038}00038     \textcolor{comment}{//view}}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00039}\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_a6679f0d4890d576120144438ed571087}{00039}}     \textcolor{keyword}{public} \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{ImageVO}} \mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_a6679f0d4890d576120144438ed571087}{view}}(\textcolor{keywordtype}{long} no) \textcolor{keywordflow}{throws} Exception;}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00040}00040     }
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00041}00041     \textcolor{comment}{//write}}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00042}\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_a9d50423ba07873694728b1d340f61245}{00042}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_a9d50423ba07873694728b1d340f61245}{write}}(\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{ImageVO}} vo) \textcolor{keywordflow}{throws} Exception;}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00043}00043     }
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00044}00044     \textcolor{comment}{//update}}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00045}\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_a867fd8990c9e14d77978d2312bfd11b1}{00045}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_a867fd8990c9e14d77978d2312bfd11b1}{update}}(\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{ImageVO}} vo) \textcolor{keywordflow}{throws} Exception;}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00046}00046     }
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00047}00047     \textcolor{comment}{//changeImage}}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00048}\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_a56926debb8c42d8cd63cbe98029049af}{00048}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_a56926debb8c42d8cd63cbe98029049af}{changeImage}}(\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{ImageVO}} vo) \textcolor{keywordflow}{throws} Exception;}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00049}00049     }
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00050}00050     \textcolor{comment}{//DeleteImage}}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00051}\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_a147329b6015f5f737013c479db74571d}{00051}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_a147329b6015f5f737013c479db74571d}{delete}}(\textcolor{keywordtype}{long} no) \textcolor{keywordflow}{throws} Exception;}
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_image_mapper_8java_source_l00053}00053 \}}
+
+\end{DoxyCode}

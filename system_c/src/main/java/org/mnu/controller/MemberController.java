@@ -60,11 +60,13 @@ public class MemberController {
 		log.info("login 처리 ="+ invo);
 		
 		LoginVO vo = service.login(invo);
+
 		rttr.addFlashAttribute("msg", "로그인이 완료되었습니다. \\n환영합니다.");
 		
+	
 		session.setAttribute("login", vo);
-		
 		return "redirect:/image/list";
+		
 	}
 
 	//로그아웃 처리 - session 지움
@@ -101,6 +103,7 @@ public class MemberController {
 		if(id == null) {
 			model.addAttribute("title", "내 정보");
 			id = ((LoginVO) session.getAttribute("login")).getId();
+			log.info(id);
 		} else {
 			model.addAttribute("title", "회원 정보");
 		}

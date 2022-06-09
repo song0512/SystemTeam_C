@@ -16,6 +16,8 @@ margin-top:100px;
 
 
 </style>
+
+
 <meta charset="UTF-8">
 <title>로그인</title>
 </head>
@@ -35,7 +37,7 @@ margin-top:100px;
 				<input name="pw" id="pw" class="form-control" type="password" placeholder="비밀번호를 입력해주세요."> 
 			</div>
 			
-			<button class="btn btn-success">로그인</button>
+			<button  class="btn btn-success">로그인</button>
 			<button type="button" class="btn btn-danger" onclick="history.back()">취소</button>
 		</form>	
 	</div>

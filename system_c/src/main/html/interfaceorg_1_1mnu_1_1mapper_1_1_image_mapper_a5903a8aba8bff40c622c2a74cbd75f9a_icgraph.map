@@ -1,0 +1,5 @@
+<map id="org.mnu.mapper.ImageMapper.fastfood_category" name="org.mnu.mapper.ImageMapper.fastfood_category">
+<area shape="rect" id="node1" title=" " alt="" coords="527,5,773,47"/>
+<area shape="rect" id="node2" href="$classorg_1_1mnu_1_1service_1_1_image_service.html#ab191722061e8b216a304a71d408a6e51" title=" " alt="" coords="236,5,479,47"/>
+<area shape="rect" id="node3" href="$classorg_1_1mnu_1_1controller_1_1_image_controller.html#a98384671510ec6f5a33e549dca454c97" title="패스트푸드 카테고리 리스트 페이지" alt="" coords="5,5,188,47"/>
+</map>

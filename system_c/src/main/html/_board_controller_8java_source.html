@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: java/org/mnu/controller/BoardController.java 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'검색','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_board_controller_8java_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">BoardController.java</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_board_controller_8java.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespaceorg_1_1mnu_1_1controller.html">    1</a></span><span class="keyword">package </span>org.mnu.controller;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> javax.servlet.http.HttpSession;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> org.mnu.domain.BoardVO;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> org.mnu.domain.LoginVO;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">import</span> org.mnu.service.BoardService;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">import</span> org.springframework.stereotype.Controller;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">import</span> org.springframework.ui.Model;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">import</span> org.springframework.web.bind.annotation.GetMapping;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">import</span> org.springframework.web.bind.annotation.ModelAttribute;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">import</span> org.springframework.web.bind.annotation.PostMapping;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">import</span> org.springframework.web.servlet.mvc.support.RedirectAttributes;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">import</span> com.webjjang.util.PageObject;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>@Controller</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>@RequestMapping(<span class="stringliteral">&quot;/board/*&quot;</span>)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_board_controller.html">   30</a></span>public class <a class="code hl_class" href="classorg_1_1mnu_1_1controller_1_1_board_controller.html">BoardController</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    @Autowired</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_board_controller.html#a49d41105d06af3c91da43eaf0b21e38d">   33</a></span>    <span class="keyword">private</span> <a class="code hl_class" href="classorg_1_1mnu_1_1service_1_1_board_service.html">BoardService</a> <a class="code hl_variable" href="classorg_1_1mnu_1_1controller_1_1_board_controller.html#a49d41105d06af3c91da43eaf0b21e38d">service</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">//list</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"></span>    @GetMapping(<span class="stringliteral">&quot;/list&quot;</span>)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_board_controller.html#a11caf2e8b0d334c2b23c2b72d4d55440">   41</a></span>    public String list(@ModelAttribute PageObject pageObject, Model model) throws Exception {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">if</span> (pageObject.getPage() &lt; 1) pageObject.setPage(1);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        model.addAttribute(<span class="stringliteral">&quot;list&quot;</span>, service.<a class="code hl_function" href="classorg_1_1mnu_1_1service_1_1_board_service.html#a0414351394f63a38ebb095b652c908dd">list</a>(pageObject));</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;board/list&quot;</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">//view</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment"></span>    @GetMapping(<span class="stringliteral">&quot;/view&quot;</span>)</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_board_controller.html#adc7615226784b390bc3d40410ada90c9">   55</a></span>    public String view(<span class="keywordtype">long</span> no, <span class="keywordtype">int</span> inc, Model model) throws Exception {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <a class="code hl_class" href="classorg_1_1mnu_1_1domain_1_1_board_v_o.html">BoardVO</a> vo = service.<a class="code hl_function" href="classorg_1_1mnu_1_1service_1_1_board_service.html#a51cb280e2d72e2d3878ae8baaa9a5d24">view</a>(no, inc);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        vo.setContent(vo.getContent().replace(<span class="stringliteral">&quot;\n&quot;</span>, <span class="stringliteral">&quot;&lt;br&gt;&quot;</span>));</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        model.addAttribute(<span class="stringliteral">&quot;vo&quot;</span>, vo);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;board/view&quot;</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="comment">//writeForm</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment"></span>    @GetMapping(<span class="stringliteral">&quot;/write&quot;</span>)</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_board_controller.html#a69ae51d526a41d9f0fb455b99cf7b80e">   70</a></span>    public String writeForm() throws Exception {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;board/write&quot;</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="comment">//write</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment"></span>    @PostMapping(<span class="stringliteral">&quot;/write&quot;</span>)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_board_controller.html#adc30b6e6f6356a4bce3f4c0ab7fab14a">   81</a></span>    public String write(<a class="code hl_class" href="classorg_1_1mnu_1_1domain_1_1_board_v_o.html">BoardVO</a> vo, <span class="keywordtype">int</span> perPageNum, RedirectAttributes rttr, HttpServletResponse response,HttpSession session) throws Exception {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        vo.setId(((<a class="code hl_class" href="classorg_1_1mnu_1_1domain_1_1_login_v_o.html">LoginVO</a>)session.getAttribute(<span class="stringliteral">&quot;login&quot;</span>)).getId());</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        service.<a class="code hl_function" href="classorg_1_1mnu_1_1service_1_1_board_service.html#a82f28cca2cda1576dbc9fb9f9d7e4ea8">write</a>(vo);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        rttr.addFlashAttribute(<span class="stringliteral">&quot;msg&quot;</span>, <span class="stringliteral">&quot;게시글이 등록되었습니다.&quot;</span>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;redirect:list?page=1&amp;perPageNum=&quot;</span>+perPageNum;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="comment">//updateForm</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment"></span>    @GetMapping(<span class="stringliteral">&quot;/update&quot;</span>)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_board_controller.html#a51d6a9d625922de2697e0fac6dfcd3a8">   97</a></span>    public String updateForm(<span class="keywordtype">long</span> no,  Model model) throws Exception {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        System.out.println(<span class="stringliteral">&quot;BoardController.update().vo = &quot;</span>+no);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        model.addAttribute(<span class="stringliteral">&quot;vo&quot;</span>, service.<a class="code hl_function" href="classorg_1_1mnu_1_1service_1_1_board_service.html#a51cb280e2d72e2d3878ae8baaa9a5d24">view</a>(no, 0));</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;board/update&quot;</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="comment">//update</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment"></span>    @PostMapping(<span class="stringliteral">&quot;/update&quot;</span>)</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_board_controller.html#a617de2f6b0d27901d2d6ce3cbc2c1e35">  110</a></span>    public String update(PageObject pageObject, <a class="code hl_class" href="classorg_1_1mnu_1_1domain_1_1_board_v_o.html">BoardVO</a> vo,RedirectAttributes rttr) throws Exception {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        service.<a class="code hl_function" href="classorg_1_1mnu_1_1service_1_1_board_service.html#ab4794549d1d9da87acbcf11f932bfa09">update</a>(vo);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        rttr.addFlashAttribute(<span class="stringliteral">&quot;msg&quot;</span>, <span class="stringliteral">&quot;게시글이 수정되었습니다.&quot;</span>);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;redirect:view?no=&quot;</span>+vo.getNo() + <span class="stringliteral">&quot;&amp;inc=0&quot;</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                + <span class="stringliteral">&quot;&amp;page=&quot;</span>+pageObject.getPage() + <span class="stringliteral">&quot;&amp;perPageNum=&quot;</span>+pageObject.getPerPageNum();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="comment">//delete</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="comment"></span>    @GetMapping(<span class="stringliteral">&quot;/delete&quot;</span>)</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="classorg_1_1mnu_1_1controller_1_1_board_controller.html#a68b5133f9120a6122e4adbdb78024d0b">  124</a></span>    public String delete(<span class="keywordtype">long</span> no, <span class="keywordtype">int</span> perPageNum,RedirectAttributes rttr) throws Exception {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        service.<a class="code hl_function" href="classorg_1_1mnu_1_1service_1_1_board_service.html#a8c60ac7b6e50870ceda0d771e5708775">delete</a>(no);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        rttr.addFlashAttribute(<span class="stringliteral">&quot;msg&quot;</span>, <span class="stringliteral">&quot;게시글이 삭제되었습니다.&quot;</span>);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;redirect:list?perPageNum=&quot;</span>+perPageNum;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>}</div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1controller_1_1_board_controller_html"><div class="ttname"><a href="classorg_1_1mnu_1_1controller_1_1_board_controller.html">org.mnu.controller.BoardController</a></div><div class="ttdoc">게시판 주소 처리</div><div class="ttdef"><b>Definition:</b> <a href="_board_controller_8java_source.html#l00030">BoardController.java:30</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1controller_1_1_board_controller_html_a49d41105d06af3c91da43eaf0b21e38d"><div class="ttname"><a href="classorg_1_1mnu_1_1controller_1_1_board_controller.html#a49d41105d06af3c91da43eaf0b21e38d">org.mnu.controller.BoardController.service</a></div><div class="ttdeci">BoardService service</div><div class="ttdef"><b>Definition:</b> <a href="_board_controller_8java_source.html#l00033">BoardController.java:33</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1domain_1_1_board_v_o_html"><div class="ttname"><a href="classorg_1_1mnu_1_1domain_1_1_board_v_o.html">org.mnu.domain.BoardVO</a></div><div class="ttdoc">게시판 VO</div><div class="ttdef"><b>Definition:</b> <a href="_board_v_o_8java_source.html#l00014">BoardVO.java:14</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1domain_1_1_login_v_o_html"><div class="ttname"><a href="classorg_1_1mnu_1_1domain_1_1_login_v_o.html">org.mnu.domain.LoginVO</a></div><div class="ttdoc">로그인 VO</div><div class="ttdef"><b>Definition:</b> <a href="_login_v_o_8java_source.html#l00014">LoginVO.java:14</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1service_1_1_board_service_html"><div class="ttname"><a href="classorg_1_1mnu_1_1service_1_1_board_service.html">org.mnu.service.BoardService</a></div><div class="ttdoc">게시판 처리 서비스</div><div class="ttdef"><b>Definition:</b> <a href="_board_service_8java_source.html#l00022">BoardService.java:22</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1service_1_1_board_service_html_a0414351394f63a38ebb095b652c908dd"><div class="ttname"><a href="classorg_1_1mnu_1_1service_1_1_board_service.html#a0414351394f63a38ebb095b652c908dd">org.mnu.service.BoardService.list</a></div><div class="ttdeci">List&lt; BoardVO &gt; list(PageObject pageObject)</div><div class="ttdef"><b>Definition:</b> <a href="_board_service_8java_source.html#l00028">BoardService.java:28</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1service_1_1_board_service_html_a51cb280e2d72e2d3878ae8baaa9a5d24"><div class="ttname"><a href="classorg_1_1mnu_1_1service_1_1_board_service.html#a51cb280e2d72e2d3878ae8baaa9a5d24">org.mnu.service.BoardService.view</a></div><div class="ttdeci">BoardVO view(long no, int inc)</div><div class="ttdef"><b>Definition:</b> <a href="_board_service_8java_source.html#l00035">BoardService.java:35</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1service_1_1_board_service_html_a82f28cca2cda1576dbc9fb9f9d7e4ea8"><div class="ttname"><a href="classorg_1_1mnu_1_1service_1_1_board_service.html#a82f28cca2cda1576dbc9fb9f9d7e4ea8">org.mnu.service.BoardService.write</a></div><div class="ttdeci">int write(BoardVO vo)</div><div class="ttdef"><b>Definition:</b> <a href="_board_service_8java_source.html#l00041">BoardService.java:41</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1service_1_1_board_service_html_a8c60ac7b6e50870ceda0d771e5708775"><div class="ttname"><a href="classorg_1_1mnu_1_1service_1_1_board_service.html#a8c60ac7b6e50870ceda0d771e5708775">org.mnu.service.BoardService.delete</a></div><div class="ttdeci">int delete(long no)</div><div class="ttdef"><b>Definition:</b> <a href="_board_service_8java_source.html#l00051">BoardService.java:51</a></div></div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1service_1_1_board_service_html_ab4794549d1d9da87acbcf11f932bfa09"><div class="ttname"><a href="classorg_1_1mnu_1_1service_1_1_board_service.html#ab4794549d1d9da87acbcf11f932bfa09">org.mnu.service.BoardService.update</a></div><div class="ttdeci">int update(BoardVO vo)</div><div class="ttdef"><b>Definition:</b> <a href="_board_service_8java_source.html#l00046">BoardService.java:46</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_93c6ba7fb77bae0709fae89c9c13b44a.html">java</a></li><li class="navelem"><a class="el" href="dir_dbfded582784846724308f9150bf5e72.html">org</a></li><li class="navelem"><a class="el" href="dir_84ab82800e0e7f074bad744451e9fbf0.html">mnu</a></li><li class="navelem"><a class="el" href="dir_f37f4121ca03d1e7cbcf0aab33515ee1.html">controller</a></li><li class="navelem"><a class="el" href="_board_controller_8java.html">BoardController.java</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+\hypertarget{_member_service_8java_source}{}\doxysection{Member\+Service.\+java}
+\label{_member_service_8java_source}\index{java/org/mnu/service/MemberService.java@{java/org/mnu/service/MemberService.java}}
+\mbox{\hyperlink{_member_service_8java}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00001}00001 \textcolor{keyword}{package }org.mnu.service;}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00003}00003 \textcolor{keyword}{import} java.util.List;}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00005}00005 \textcolor{keyword}{import} javax.inject.Inject;}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00007}00007 \textcolor{keyword}{import} org.mnu.domain.BoardVO;}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00008}00008 \textcolor{keyword}{import} org.mnu.domain.LoginVO;}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00009}00009 \textcolor{keyword}{import} org.mnu.domain.MemberVO;}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00010}00010 \textcolor{keyword}{import} org.mnu.mapper.MemberMapper;}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00011}00011 \textcolor{keyword}{import} org.springframework.stereotype.Service;}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00013}00013 \textcolor{keyword}{import} com.webjjang.util.PageObject;}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00023}00023 @Service}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00024}\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service}{00024}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service}{MemberService}} \{}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00025}00025     }
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00026}00026     @Inject}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00027}\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_ab1bc88650cc370ea964991759d190c7b}{00027}}     \textcolor{keyword}{private} \mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_member_mapper}{MemberMapper}} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_ab1bc88650cc370ea964991759d190c7b}{mapper}};}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00028}00028     }
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00029}00029     \textcolor{comment}{//회원리스트}}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00030}\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_aedc4a8442d4c15f7ce71ac8280310444}{00030}}     \textcolor{keyword}{public} List<MemberVO> \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_aedc4a8442d4c15f7ce71ac8280310444}{list}}(PageObject pageObject) \textcolor{keywordflow}{throws} Exception \{}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00031}00031         pageObject.setTotalRow(\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_ab1bc88650cc370ea964991759d190c7b}{mapper}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_member_mapper_a9964cf88fff09874457af611faf72c5a}{getTotalRow}}(pageObject));}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00032}00032         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_ab1bc88650cc370ea964991759d190c7b}{mapper}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_member_mapper_a4ed2d49f6ac3b70b2f1d1f22b99bdd52}{list}}(pageObject);}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00033}00033     \}}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00034}00034     }
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00035}00035     \textcolor{comment}{//회원 정보, 내정보 확인}}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00036}\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_af1fd699644887f9be99c208f479da889}{00036}}     \textcolor{keyword}{public} \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o}{MemberVO}} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_af1fd699644887f9be99c208f479da889}{view}}(String \textcolor{keywordtype}{id}) \textcolor{keywordflow}{throws} Exception \{}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00037}00037         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_ab1bc88650cc370ea964991759d190c7b}{mapper}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_member_mapper_afccceb9611160ddcbe9fb516d8b4434f}{view}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00038}00038     \}}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00039}00039     }
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00040}00040     \textcolor{comment}{//회원가입}}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00041}\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_a0f4e6bfe52e7e27d4b16482e3ebdd134}{00041}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_a0f4e6bfe52e7e27d4b16482e3ebdd134}{write}}(\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o}{MemberVO}} vo) \textcolor{keywordflow}{throws} Exception \{}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00042}00042         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_ab1bc88650cc370ea964991759d190c7b}{mapper}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_member_mapper_a753358612cd13a7ac3eaffe8e7df1d07}{write}}(vo);}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00043}00043     \}}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00044}00044     }
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00045}00045     \textcolor{comment}{//로그인}}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00046}\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_ae751abb7d37c9e79e4de46241c100033}{00046}}     \textcolor{keyword}{public} \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_login_v_o}{LoginVO}} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_ae751abb7d37c9e79e4de46241c100033}{login}}(\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_login_v_o}{LoginVO}} invo) \textcolor{keywordflow}{throws} Exception \{}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00047}00047         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_ab1bc88650cc370ea964991759d190c7b}{mapper}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_member_mapper_aa4885a8889261c6454debffe249d914e}{login}}(invo);}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00048}00048     \}}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00049}00049     }
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00050}00050     \textcolor{comment}{//아이디 중복체크 -\/> 아이디 가져옴}}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00051}\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_ad88160586ff5d758d93dc7999f5f3167}{00051}}     \textcolor{keyword}{public} String \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_ad88160586ff5d758d93dc7999f5f3167}{idCheck}}(String \textcolor{keywordtype}{id}) \textcolor{keywordflow}{throws} Exception \{}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00052}00052         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_ab1bc88650cc370ea964991759d190c7b}{mapper}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_member_mapper_aa6d847c6157ed321fc261452d21281e1}{idCheck}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00053}00053     \}}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00054}00054     }
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00055}00055     \textcolor{comment}{// 회원정보 수정}}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00056}\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_a44772f2865759eb153bd1a6f2a876d7d}{00056}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_a44772f2865759eb153bd1a6f2a876d7d}{update}}(\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_member_v_o}{MemberVO}} vo) \textcolor{keywordflow}{throws} Exception \{}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00057}00057         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_member_service_ab1bc88650cc370ea964991759d190c7b}{mapper}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1mapper_1_1_member_mapper_a279fbf37d1ba5a8bef64f393e3174d28}{update}}( vo);}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00058}00058     \}}
+\DoxyCodeLine{\Hypertarget{_member_service_8java_source_l00059}00059 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,77 @@
+\hypertarget{_upload_controller_8java_source}{}\doxysection{Upload\+Controller.\+java}
+\label{_upload_controller_8java_source}\index{java/org/mnu/controller/UploadController.java@{java/org/mnu/controller/UploadController.java}}
+\mbox{\hyperlink{_upload_controller_8java}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00001}00001 \textcolor{keyword}{package }org.mnu.controller;}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00003}00003 \textcolor{keyword}{import} java.io.File;}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00005}00005 \textcolor{keyword}{import} javax.servlet.http.HttpServletRequest;}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00006}00006 \textcolor{keyword}{import} org.springframework.stereotype.Controller;}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00007}00007 \textcolor{keyword}{import} org.springframework.ui.Model;}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00008}00008 \textcolor{keyword}{import} org.springframework.web.bind.annotation.GetMapping;}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00009}00009 \textcolor{keyword}{import} org.springframework.web.bind.annotation.PostMapping;}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00010}00010 \textcolor{keyword}{import} org.springframework.web.multipart.MultipartFile;}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00011}00011 \textcolor{keyword}{import} lombok.extern.log4j.Log4j;}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00021}00021 @Controller}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00022}00022 @Log4j}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00023}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_upload_controller}{00023}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_upload_controller}{UploadController}} \{}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00024}00024     }
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00029}00029     @GetMapping(\textcolor{stringliteral}{"{}/uploadForm"{}})}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00030}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_upload_controller_ae0115a6dd9deebad944167934395cab1}{00030}}     public \textcolor{keywordtype}{void} \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_upload_controller_ae0115a6dd9deebad944167934395cab1}{uploadForm}}() throws Exception\{}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00031}00031         log.info(\textcolor{stringliteral}{"{}uploadForm()"{}});}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00032}00032     \}}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00033}00033     }
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00038}00038     @PostMapping(\textcolor{stringliteral}{"{}/uploadFormAction"{}})}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00039}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_upload_controller_a4c512aa96f0ca6586063d5789d36ecb2}{00039}}     public \textcolor{keywordtype}{void} \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_upload_controller_a4c512aa96f0ca6586063d5789d36ecb2}{uploadFormAction}}(MultipartFile uploadFile, HttpServletRequest request,}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00040}00040             Model model) throws Exception \{}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00041}00041         log.info(uploadFile);}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00043}00043         \textcolor{comment}{//서버기준 상대 위치}}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00044}00044         String path = \textcolor{stringliteral}{"{}/upload"{}};}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00045}00045         }
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00046}00046         \textcolor{comment}{//request 이용 -\/> 절대 위치 구함 }}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00047}00047         String savePath = request.getServletContext().getRealPath(path);}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00048}00048         log.info(savePath);}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00049}00049         }
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00050}00050         \textcolor{comment}{//파일 저장 (동일 파일 이름일 경우 -\/> 덮어씀?)}}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00051}00051         uploadFile.transferTo(\textcolor{keyword}{new} File(savePath, uploadFile.getOriginalFilename()));}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00052}00052         \textcolor{comment}{//DB에 저장될 파일 정보 }}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00053}00053         String fileName = path + \textcolor{stringliteral}{"{}/"{}} + uploadFile.getOriginalFilename();}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00054}00054         log.info(fileName);}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00055}00055         }
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00056}00056         model.addAttribute(\textcolor{stringliteral}{"{}fileName"{}}, fileName);}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00057}00057     \}}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00058}00058     }
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00063}00063     @GetMapping(\textcolor{stringliteral}{"{}/uploadForms"{}})}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00064}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_upload_controller_acfbed3f6eaef3d1e4b41ff4ad784ec30}{00064}}     public \textcolor{keywordtype}{void} \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_upload_controller_acfbed3f6eaef3d1e4b41ff4ad784ec30}{uploadForms}}() throws Exception\{}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00065}00065         log.info(\textcolor{stringliteral}{"{}uploadForms()"{}});}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00066}00066     \}}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00067}00067     }
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00068}00068     }
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00073}00073     @PostMapping(\textcolor{stringliteral}{"{}/uploadFormActions"{}})}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00074}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_upload_controller_aa0ef73d339837d95e247966d3c6bd2bd}{00074}}     public \textcolor{keywordtype}{void} \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_upload_controller_aa0ef73d339837d95e247966d3c6bd2bd}{uploadFormActions}}(MultipartFile uploadFiles, HttpServletRequest request,}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00075}00075             Model model) throws Exception \{}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00076}00076         log.info(uploadFiles);}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00078}00078         }
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00079}00079         \textcolor{comment}{//서버기준 상대 위치}}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00080}00080         String path = \textcolor{stringliteral}{"{}/upload"{}};}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00081}00081         }
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00082}00082         \textcolor{comment}{//request 이용 -\/> 절대 위치 구함 }}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00083}00083         String savePath = request.getServletContext().getRealPath(path);}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00084}00084         log.info(savePath);}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00085}00085         }
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00086}00086         \textcolor{comment}{//파일 저장 (동일 파일 이름일 경우 -\/> 덮어씀?)}}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00087}00087         uploadFiles.transferTo(\textcolor{keyword}{new} File(savePath, uploadFiles.getOriginalFilename()));}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00088}00088         \textcolor{comment}{//DB에 저장될 파일 정보 }}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00089}00089         String fileName = path + \textcolor{stringliteral}{"{}/"{}} + uploadFiles.getOriginalFilename();}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00090}00090         log.info(fileName);}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00091}00091         }
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00092}00092         model.addAttribute(\textcolor{stringliteral}{"{}fileName"{}}, fileName);}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00093}00093     \}}
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{_upload_controller_8java_source_l00095}00095 \}}
+
+\end{DoxyCode}

@@ -145,9 +145,6 @@ $(function(){
 						</li>
 					
 						<li><a href="/board/list" style="color:white">자유게시판</a></li>
-						<% if(loginVO != null) {%>
-							<li><a href="/member/list" style="color:white">회원관리</a></li>
-						<%} %>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 					
@@ -160,7 +157,6 @@ $(function(){
 								</a></li>
 							<li><a href="/member/logout">로그아웃</a></li>
 						<% } %>
-						
 					</ul>
 				</div>
 			</div>

@@ -1,0 +1,5 @@
+<map id="org.mnu.mapper.BoardMapper.delete" name="org.mnu.mapper.BoardMapper.delete">
+<area shape="rect" id="node1" title=" " alt="" coords="497,13,733,39"/>
+<area shape="rect" id="node2" href="$classorg_1_1mnu_1_1service_1_1_board_service.html#a8c60ac7b6e50870ceda0d771e5708775" title=" " alt="" coords="217,13,449,39"/>
+<area shape="rect" id="node3" href="$classorg_1_1mnu_1_1controller_1_1_board_controller.html#a68b5133f9120a6122e4adbdb78024d0b" title="게시글 삭제 처리 페이지" alt="" coords="5,5,169,47"/>
+</map>

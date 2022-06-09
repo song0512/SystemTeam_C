@@ -32,7 +32,7 @@
 				from tbl_imageboard i, tbl_member m
 				where (1 = 1) 
 				<include refid="search" />
-				and (i.id = m.id)
+				and (i.id = m.id) and (i.category = '카페, 디저트')
 				order by i.no desc
 				)
 			)
@@ -50,7 +50,7 @@
 				from tbl_imageboard i, tbl_member m
 				where (1 = 1) 
 				<include refid="search" />
-				and (i.id = m.id)
+				and (i.id = m.id)  and (i.category = '중식')
 				order by i.no desc
 				)
 			)
@@ -67,7 +67,7 @@
 				from tbl_imageboard i, tbl_member m
 				where (1 = 1) 
 				<include refid="search" />
-				and (i.id = m.id)
+				and (i.id = m.id)  and (i.category = '패스트푸드')
 				order by i.no desc
 				)
 			)
@@ -84,7 +84,7 @@
 				from tbl_imageboard i, tbl_member m
 				where (1 = 1) 
 				<include refid="search" />
-				and (i.id = m.id)
+				and (i.id = m.id) and (i.category = '분식')
 				order by i.no desc
 				)
 			)

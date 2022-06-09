@@ -1,0 +1,6 @@
+<map id="org.mnu.controller.BoardController.updateForm" name="org.mnu.controller.BoardController.updateForm">
+<area shape="rect" id="node1" title="게시글 수정 페이지" alt="" coords="5,23,169,65"/>
+<area shape="rect" id="node2" href="$classorg_1_1mnu_1_1service_1_1_board_service.html#a51cb280e2d72e2d3878ae8baaa9a5d24" title=" " alt="" coords="217,31,439,57"/>
+<area shape="rect" id="node3" href="$interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper.html#aa2e2c668d1877edc1bb25a7c5961a617" title=" " alt="" coords="487,5,737,32"/>
+<area shape="rect" id="node4" href="$interfaceorg_1_1mnu_1_1mapper_1_1_board_mapper.html#aa9a92cb145725416e623a7dab2b39ef2" title=" " alt="" coords="499,56,725,83"/>
+</map>

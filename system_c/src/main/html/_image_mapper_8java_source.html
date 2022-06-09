@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: java/org/mnu/mapper/ImageMapper.java 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'검색','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_image_mapper_8java_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ImageMapper.java</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_image_mapper_8java.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">package </span>org.mnu.mapper;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> java.util.List;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> org.mnu.domain.ImageVO;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> com.webjjang.util.PageObject;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html">   18</a></span><span class="keyword">public</span> <span class="keyword">interface </span><a class="code hl_interface" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html">ImageMapper</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">//list</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#a32481a19d439f56b4270d3b0a0902b15">   21</a></span>    <span class="keyword">public</span> List&lt;ImageVO&gt; <a class="code hl_function" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#a32481a19d439f56b4270d3b0a0902b15">list</a>(PageObject pageObject) <span class="keywordflow">throws</span> Exception;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">//카페, 디저트 category</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#ae78ce55d3899b0b595aac265bbbaebc4">   24</a></span>    <span class="keyword">public</span> List&lt;ImageVO&gt; <a class="code hl_function" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#ae78ce55d3899b0b595aac265bbbaebc4">soup_category</a>(PageObject pageObject) <span class="keywordflow">throws</span> Exception;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">//중식 category</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#ae2105b83f61161f51fa25cd777372ab6">   27</a></span>    <span class="keyword">public</span> List&lt;ImageVO&gt; <a class="code hl_function" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#ae2105b83f61161f51fa25cd777372ab6">chinesefood_category</a>(PageObject pageObject) <span class="keywordflow">throws</span> Exception;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">//패스트푸드 category</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#a5903a8aba8bff40c622c2a74cbd75f9a">   30</a></span>    <span class="keyword">public</span> List&lt;ImageVO&gt; <a class="code hl_function" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#a5903a8aba8bff40c622c2a74cbd75f9a">fastfood_category</a>(PageObject pageObject) <span class="keywordflow">throws</span> Exception;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">//분식 category</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#add66c34019db6fd452408c719269ba88">   33</a></span>    <span class="keyword">public</span> List&lt;ImageVO&gt; <a class="code hl_function" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#add66c34019db6fd452408c719269ba88">snackbar_category</a>(PageObject pageObject) <span class="keywordflow">throws</span> Exception;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#aa6f35a04e013c8e321e77ede1e3bb9a1">   36</a></span>    <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code hl_function" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#aa6f35a04e013c8e321e77ede1e3bb9a1">getTotalRow</a>(PageObject pageObject) <span class="keywordflow">throws</span> Exception;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">//view</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#a6679f0d4890d576120144438ed571087">   39</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="classorg_1_1mnu_1_1domain_1_1_image_v_o.html">ImageVO</a> <a class="code hl_function" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#a6679f0d4890d576120144438ed571087">view</a>(<span class="keywordtype">long</span> no) <span class="keywordflow">throws</span> Exception;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">//write</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#a9d50423ba07873694728b1d340f61245">   42</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#a9d50423ba07873694728b1d340f61245">write</a>(<a class="code hl_class" href="classorg_1_1mnu_1_1domain_1_1_image_v_o.html">ImageVO</a> vo) <span class="keywordflow">throws</span> Exception;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">//update</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#a867fd8990c9e14d77978d2312bfd11b1">   45</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#a867fd8990c9e14d77978d2312bfd11b1">update</a>(<a class="code hl_class" href="classorg_1_1mnu_1_1domain_1_1_image_v_o.html">ImageVO</a> vo) <span class="keywordflow">throws</span> Exception;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">//changeImage</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#a56926debb8c42d8cd63cbe98029049af">   48</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#a56926debb8c42d8cd63cbe98029049af">changeImage</a>(<a class="code hl_class" href="classorg_1_1mnu_1_1domain_1_1_image_v_o.html">ImageVO</a> vo) <span class="keywordflow">throws</span> Exception;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="comment">//DeleteImage</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#a147329b6015f5f737013c479db74571d">   51</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#a147329b6015f5f737013c479db74571d">delete</a>(<span class="keywordtype">long</span> no) <span class="keywordflow">throws</span> Exception;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+<div class="ttc" id="aclassorg_1_1mnu_1_1domain_1_1_image_v_o_html"><div class="ttname"><a href="classorg_1_1mnu_1_1domain_1_1_image_v_o.html">org.mnu.domain.ImageVO</a></div><div class="ttdoc">이미지 게시판 VO</div><div class="ttdef"><b>Definition:</b> <a href="_image_v_o_8java_source.html#l00016">ImageVO.java:16</a></div></div>
+<div class="ttc" id="ainterfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_html"><div class="ttname"><a href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html">org.mnu.mapper.ImageMapper</a></div><div class="ttdoc">이미지 게시판 객체 사용 방법 정의</div><div class="ttdef"><b>Definition:</b> <a href="_image_mapper_8java_source.html#l00018">ImageMapper.java:18</a></div></div>
+<div class="ttc" id="ainterfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_html_a147329b6015f5f737013c479db74571d"><div class="ttname"><a href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#a147329b6015f5f737013c479db74571d">org.mnu.mapper.ImageMapper.delete</a></div><div class="ttdeci">int delete(long no)</div></div>
+<div class="ttc" id="ainterfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_html_a32481a19d439f56b4270d3b0a0902b15"><div class="ttname"><a href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#a32481a19d439f56b4270d3b0a0902b15">org.mnu.mapper.ImageMapper.list</a></div><div class="ttdeci">List&lt; ImageVO &gt; list(PageObject pageObject)</div></div>
+<div class="ttc" id="ainterfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_html_a56926debb8c42d8cd63cbe98029049af"><div class="ttname"><a href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#a56926debb8c42d8cd63cbe98029049af">org.mnu.mapper.ImageMapper.changeImage</a></div><div class="ttdeci">int changeImage(ImageVO vo)</div></div>
+<div class="ttc" id="ainterfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_html_a5903a8aba8bff40c622c2a74cbd75f9a"><div class="ttname"><a href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#a5903a8aba8bff40c622c2a74cbd75f9a">org.mnu.mapper.ImageMapper.fastfood_category</a></div><div class="ttdeci">List&lt; ImageVO &gt; fastfood_category(PageObject pageObject)</div></div>
+<div class="ttc" id="ainterfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_html_a6679f0d4890d576120144438ed571087"><div class="ttname"><a href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#a6679f0d4890d576120144438ed571087">org.mnu.mapper.ImageMapper.view</a></div><div class="ttdeci">ImageVO view(long no)</div></div>
+<div class="ttc" id="ainterfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_html_a867fd8990c9e14d77978d2312bfd11b1"><div class="ttname"><a href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#a867fd8990c9e14d77978d2312bfd11b1">org.mnu.mapper.ImageMapper.update</a></div><div class="ttdeci">int update(ImageVO vo)</div></div>
+<div class="ttc" id="ainterfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_html_a9d50423ba07873694728b1d340f61245"><div class="ttname"><a href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#a9d50423ba07873694728b1d340f61245">org.mnu.mapper.ImageMapper.write</a></div><div class="ttdeci">int write(ImageVO vo)</div></div>
+<div class="ttc" id="ainterfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_html_aa6f35a04e013c8e321e77ede1e3bb9a1"><div class="ttname"><a href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#aa6f35a04e013c8e321e77ede1e3bb9a1">org.mnu.mapper.ImageMapper.getTotalRow</a></div><div class="ttdeci">long getTotalRow(PageObject pageObject)</div></div>
+<div class="ttc" id="ainterfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_html_add66c34019db6fd452408c719269ba88"><div class="ttname"><a href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#add66c34019db6fd452408c719269ba88">org.mnu.mapper.ImageMapper.snackbar_category</a></div><div class="ttdeci">List&lt; ImageVO &gt; snackbar_category(PageObject pageObject)</div></div>
+<div class="ttc" id="ainterfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_html_ae2105b83f61161f51fa25cd777372ab6"><div class="ttname"><a href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#ae2105b83f61161f51fa25cd777372ab6">org.mnu.mapper.ImageMapper.chinesefood_category</a></div><div class="ttdeci">List&lt; ImageVO &gt; chinesefood_category(PageObject pageObject)</div></div>
+<div class="ttc" id="ainterfaceorg_1_1mnu_1_1mapper_1_1_image_mapper_html_ae78ce55d3899b0b595aac265bbbaebc4"><div class="ttname"><a href="interfaceorg_1_1mnu_1_1mapper_1_1_image_mapper.html#ae78ce55d3899b0b595aac265bbbaebc4">org.mnu.mapper.ImageMapper.soup_category</a></div><div class="ttdeci">List&lt; ImageVO &gt; soup_category(PageObject pageObject)</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_93c6ba7fb77bae0709fae89c9c13b44a.html">java</a></li><li class="navelem"><a class="el" href="dir_dbfded582784846724308f9150bf5e72.html">org</a></li><li class="navelem"><a class="el" href="dir_84ab82800e0e7f074bad744451e9fbf0.html">mnu</a></li><li class="navelem"><a class="el" href="dir_c679bca140dc8f88ef9537e15b676f83.html">mapper</a></li><li class="navelem"><a class="el" href="_image_mapper_8java.html">ImageMapper.java</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+\hypertarget{_board_reply_controller_8java_source}{}\doxysection{Board\+Reply\+Controller.\+java}
+\label{_board_reply_controller_8java_source}\index{java/org/mnu/controller/BoardReplyController.java@{java/org/mnu/controller/BoardReplyController.java}}
+\mbox{\hyperlink{_board_reply_controller_8java}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00001}00001 \textcolor{keyword}{package }org.mnu.controller;}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00010}00010 \textcolor{keyword}{import} java.util.List;}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00012}00012 \textcolor{keyword}{import} javax.servlet.http.HttpSession;}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00014}00014 \textcolor{keyword}{import} org.mnu.domain.BoardReplyVO;}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00015}00015 \textcolor{keyword}{import} org.mnu.domain.LoginVO;}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00016}00016 \textcolor{keyword}{import} org.mnu.service.BoardReplyService;}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00017}00017 \textcolor{keyword}{import} org.springframework.beans.factory.annotation.Autowired;}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00018}00018 \textcolor{keyword}{import} org.springframework.beans.factory.annotation.Qualifier;}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00019}00019 \textcolor{keyword}{import} org.springframework.http.HttpStatus;}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00020}00020 \textcolor{keyword}{import} org.springframework.http.MediaType;}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00021}00021 \textcolor{keyword}{import} org.springframework.http.ResponseEntity;}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00022}00022 \textcolor{keyword}{import} org.springframework.web.bind.annotation.DeleteMapping;}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00023}00023 \textcolor{keyword}{import} org.springframework.web.bind.annotation.GetMapping;}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00024}00024 \textcolor{keyword}{import} org.springframework.web.bind.annotation.PatchMapping;}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00025}00025 \textcolor{keyword}{import} org.springframework.web.bind.annotation.PostMapping;}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00026}00026 \textcolor{keyword}{import} org.springframework.web.bind.annotation.RequestBody;}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00027}00027 \textcolor{keyword}{import} org.springframework.web.bind.annotation.RequestMapping;}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00028}00028 \textcolor{keyword}{import} org.springframework.web.bind.annotation.RestController;}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00030}00030 \textcolor{keyword}{import} lombok.extern.log4j.Log4j;}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00033}00033 @RestController}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00034}00034 @RequestMapping(\textcolor{stringliteral}{"{}/reply"{}})}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00035}00035 @Log4j}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00036}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_board_reply_controller}{00036}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_board_reply_controller}{BoardReplyController}} \{}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00037}00037     }
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00038}00038     @Autowired}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00039}00039     @Qualifier(\textcolor{stringliteral}{"{}brs"{}})}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00040}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_board_reply_controller_a722cf1e67ee5972d6e0bd6980ca3d69f}{00040}}     private \mbox{\hyperlink{interfaceorg_1_1mnu_1_1service_1_1_board_reply_service}{BoardReplyService}} \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_board_reply_controller_a722cf1e67ee5972d6e0bd6980ca3d69f}{service}};}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00041}00041     }
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00042}00042     \textcolor{comment}{// 댓글 리스트}}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00047}00047 \textcolor{comment}{}    @GetMapping(value = "{}/\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_board_reply_controller_aa47e52f503bbdc8e134c91088950c773}{list}}"{})}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00048}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_board_reply_controller_aa47e52f503bbdc8e134c91088950c773}{00048}}     public ResponseEntity<List<\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_board_reply_v_o}{BoardReplyVO}}>> \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_board_reply_controller_aa47e52f503bbdc8e134c91088950c773}{list}}(Long no)\{}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00049}00049         \textcolor{keywordflow}{return} \textcolor{keyword}{new} ResponseEntity<List<BoardReplyVO>>(\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_board_reply_controller_a722cf1e67ee5972d6e0bd6980ca3d69f}{service}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1service_1_1_board_reply_service_aac0ba508b745ff8701b3ca20dd2f9a83}{list}}(no),HttpStatus.OK);}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00050}00050     \}}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00051}00051     }
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00052}00052     \textcolor{comment}{//댓글 작성}}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00057}00057 \textcolor{comment}{}    @PostMapping(value = \textcolor{stringliteral}{"{}/write"{}}, consumes = MediaType.APPLICATION\_JSON\_UTF8\_VALUE, produces= \{MediaType.TEXT\_PLAIN\_VALUE\})}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00058}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_board_reply_controller_aea99ab5b82765be0f267f165b1ebb431}{00058}}     public ResponseEntity<String> \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_board_reply_controller_aea99ab5b82765be0f267f165b1ebb431}{write}}(@RequestBody \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_board_reply_v_o}{BoardReplyVO}} vo) \{}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00059}00059         log.info(\textcolor{stringliteral}{"{}writeReply.vo : "{}} + vo);}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00060}00060         }
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00061}00061         }
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00062}00062         \textcolor{keywordtype}{int} writeCount = \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_board_reply_controller_a722cf1e67ee5972d6e0bd6980ca3d69f}{service}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1service_1_1_board_reply_service_ac3b0e50cb1f8b21a1b462b9840c5b009}{write}}(vo);}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00063}00063         }
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00064}00064         log.info(writeCount);}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00065}00065     }
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00066}00066         }
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00067}00067         \textcolor{keywordflow}{return} \textcolor{keyword}{new} ResponseEntity<String>(\textcolor{stringliteral}{"{}success"{}}, HttpStatus.OK);}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00068}00068     \}}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00069}00069     }
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00070}00070     \textcolor{comment}{//댓글 수정}}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00075}00075 \textcolor{comment}{}    @PatchMapping(value = \textcolor{stringliteral}{"{}/update"{}}, consumes = MediaType.APPLICATION\_JSON\_UTF8\_VALUE, }
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00076}00076             produces= \{MediaType.TEXT\_PLAIN\_VALUE\})}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00077}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_board_reply_controller_a843a3f4decdcbdf0d6146961f9c0ccdf}{00077}}     public ResponseEntity<String> \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_board_reply_controller_a843a3f4decdcbdf0d6146961f9c0ccdf}{update}}(@RequestBody \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_board_reply_v_o}{BoardReplyVO}} vo) \{}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00078}00078         log.info(\textcolor{stringliteral}{"{}updateReply.vo : "{}} + vo);}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00079}00079         \textcolor{keywordtype}{int} updateCount = \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_board_reply_controller_a722cf1e67ee5972d6e0bd6980ca3d69f}{service}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1service_1_1_board_reply_service_a86a51871e2f7a5cc0188de4494eb28e0}{update}}(vo);}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00080}00080         log.info(updateCount);}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00081}00081         }
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00082}00082         \textcolor{keywordflow}{return} \textcolor{keyword}{new} ResponseEntity<String>(\textcolor{stringliteral}{"{}success"{}}, HttpStatus.OK);}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00083}00083     \}}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00084}00084     }
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00085}00085     \textcolor{comment}{//댓글 삭제}}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00090}00090 \textcolor{comment}{}    @DeleteMapping(value = \textcolor{stringliteral}{"{}/delete"{}}, produces= \{MediaType.TEXT\_PLAIN\_VALUE\})}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00091}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_board_reply_controller_a3048f82729f4720112388562cc1cc75a}{00091}}     \textcolor{keyword}{public} ResponseEntity<String> \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_board_reply_controller_a3048f82729f4720112388562cc1cc75a}{delete}}(Long rno) \{}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00092}00092         log.info(\textcolor{stringliteral}{"{}deleteReply.rno : "{}} + rno);}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00093}00093         }
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00094}00094         \textcolor{keywordtype}{int} deleteCount = \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_board_reply_controller_a722cf1e67ee5972d6e0bd6980ca3d69f}{service}}.\mbox{\hyperlink{interfaceorg_1_1mnu_1_1service_1_1_board_reply_service_a18bad9837b34c2d80d998b639d2af479}{delete}}(rno);}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00095}00095         log.info(deleteCount);}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00096}00096         }
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00097}00097         \textcolor{keywordflow}{return} \textcolor{keyword}{new} ResponseEntity<String>(\textcolor{stringliteral}{"{}success"{}}, HttpStatus.OK);}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00098}00098     \}}
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00099}00099     }
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00100}00100     }
+\DoxyCodeLine{\Hypertarget{_board_reply_controller_8java_source_l00101}00101 \}}
+
+\end{DoxyCode}

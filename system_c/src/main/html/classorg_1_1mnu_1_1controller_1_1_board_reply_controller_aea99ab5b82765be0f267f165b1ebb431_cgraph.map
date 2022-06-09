@@ -1,0 +1,4 @@
+<map id="org.mnu.controller.BoardReplyController.write" name="org.mnu.controller.BoardReplyController.write">
+<area shape="rect" id="node1" title="댓글 작성 처리 페이지" alt="" coords="5,5,169,47"/>
+<area shape="rect" id="node2" href="$interfaceorg_1_1mnu_1_1service_1_1_board_reply_service.html#ac3b0e50cb1f8b21a1b462b9840c5b009" title=" " alt="" coords="217,5,401,47"/>
+</map>

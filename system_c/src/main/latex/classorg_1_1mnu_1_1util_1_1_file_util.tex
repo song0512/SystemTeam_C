@@ -1,0 +1,250 @@
+\hypertarget{classorg_1_1mnu_1_1util_1_1_file_util}{}\doxysection{org.\+mnu.\+util.\+File\+Util 클래스 참조}
+\label{classorg_1_1mnu_1_1util_1_1_file_util}\index{org.mnu.util.FileUtil@{org.mnu.util.FileUtil}}
+
+
+파일 처리  
+
+
+
+
+org.\+mnu.\+util.\+File\+Util에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classorg_1_1mnu_1_1util_1_1_file_util__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{정적 Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+static boolean \mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_a934ee173ce934b30154e0b3847f6c6fa}{exist}} (File file)  throws Exception
+\begin{DoxyCompactList}\small\item\em 파일 존재 여부 ~\newline
+ \end{DoxyCompactList}\item 
+static boolean \mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_a926b0d4390a0800a6658898e2c9da79e}{exist}} (String file\+Name)  throws Exception
+\item 
+static File \mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_ab35d1216597068f03b10ff7673d02598}{to\+File}} (String file\+Name)  throws Exception
+\begin{DoxyCompactList}\small\item\em 파일 객체 변환 \end{DoxyCompactList}\item 
+static boolean \mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_afe6262ad5b3884f56825ce0de5bd5195}{delete}} (File file)  throws Exception 
+\begin{DoxyCompactList}\small\item\em 파일 지우기 \end{DoxyCompactList}\item 
+static boolean \mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_a0280e0764eed8c8b602e5a35331a7397}{remove}} (String file\+Name)  throws Exception 
+\begin{DoxyCompactList}\small\item\em 파일 삭제 \end{DoxyCompactList}\item 
+static File \mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_a98f14d3d513c244eaa2629b491f544a7}{no\+Duplicate}} (String file\+Full\+Name)  throws Exception 
+\begin{DoxyCompactList}\small\item\em 중복 파일 처리 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+파일 처리 
+
+파일 처리 \begin{DoxyAuthor}{작성자}
+Team.\+C 
+\end{DoxyAuthor}
+\begin{DoxyDate}{날짜}
+2022/06/01 
+\end{DoxyDate}
+\begin{DoxyVersion}{버전}
+0.\+0.\+1 
+\end{DoxyVersion}
+
+
+\mbox{\hyperlink{_file_util_8java_source}{File\+Util.\+java}} 파일의 \mbox{\hyperlink{_file_util_8java_source_l00014}{14}} 번째 라인에서 정의되었습니다.
+
+
+
+\doxysubsection{멤버 함수 문서화}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1util_1_1_file_util_afe6262ad5b3884f56825ce0de5bd5195}\label{classorg_1_1mnu_1_1util_1_1_file_util_afe6262ad5b3884f56825ce0de5bd5195}} 
+\index{org.mnu.util.FileUtil@{org.mnu.util.FileUtil}!delete@{delete}}
+\index{delete@{delete}!org.mnu.util.FileUtil@{org.mnu.util.FileUtil}}
+\doxysubsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily static boolean org.\+mnu.\+util.\+File\+Util.\+delete (\begin{DoxyParamCaption}\item[{File}]{file }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+파일 지우기 
+
+파일 지우기 
+
+\mbox{\hyperlink{_file_util_8java_source}{File\+Util.\+java}} 파일의 \mbox{\hyperlink{_file_util_8java_source_l00044}{44}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044                                                              \{}
+\DoxyCodeLine{00045         \textcolor{keywordflow}{return} file.delete();}
+\DoxyCodeLine{00046     \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1util_1_1_file_util_afe6262ad5b3884f56825ce0de5bd5195_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1util_1_1_file_util_a934ee173ce934b30154e0b3847f6c6fa}\label{classorg_1_1mnu_1_1util_1_1_file_util_a934ee173ce934b30154e0b3847f6c6fa}} 
+\index{org.mnu.util.FileUtil@{org.mnu.util.FileUtil}!exist@{exist}}
+\index{exist@{exist}!org.mnu.util.FileUtil@{org.mnu.util.FileUtil}}
+\doxysubsubsection{\texorpdfstring{exist()}{exist()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static boolean org.\+mnu.\+util.\+File\+Util.\+exist (\begin{DoxyParamCaption}\item[{File}]{file }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+파일 존재 여부 ~\newline
+ 
+
+파일이 존재하는지 확인하는 메서드 
+
+\mbox{\hyperlink{_file_util_8java_source}{File\+Util.\+java}} 파일의 \mbox{\hyperlink{_file_util_8java_source_l00021}{21}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021                                                            \{}
+\DoxyCodeLine{00022         \textcolor{keywordflow}{return} file.exists();}
+\DoxyCodeLine{00023     \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1util_1_1_file_util_a934ee173ce934b30154e0b3847f6c6fa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1util_1_1_file_util_a926b0d4390a0800a6658898e2c9da79e}\label{classorg_1_1mnu_1_1util_1_1_file_util_a926b0d4390a0800a6658898e2c9da79e}} 
+\index{org.mnu.util.FileUtil@{org.mnu.util.FileUtil}!exist@{exist}}
+\index{exist@{exist}!org.mnu.util.FileUtil@{org.mnu.util.FileUtil}}
+\doxysubsubsection{\texorpdfstring{exist()}{exist()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static boolean org.\+mnu.\+util.\+File\+Util.\+exist (\begin{DoxyParamCaption}\item[{String}]{file\+Name }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{_file_util_8java_source}{File\+Util.\+java}} 파일의 \mbox{\hyperlink{_file_util_8java_source_l00026}{26}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026                                                                  \{}
+\DoxyCodeLine{00027         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_ab35d1216597068f03b10ff7673d02598}{toFile}}(fileName).exists();}
+\DoxyCodeLine{00028     \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1util_1_1_file_util_a926b0d4390a0800a6658898e2c9da79e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1util_1_1_file_util_a98f14d3d513c244eaa2629b491f544a7}\label{classorg_1_1mnu_1_1util_1_1_file_util_a98f14d3d513c244eaa2629b491f544a7}} 
+\index{org.mnu.util.FileUtil@{org.mnu.util.FileUtil}!noDuplicate@{noDuplicate}}
+\index{noDuplicate@{noDuplicate}!org.mnu.util.FileUtil@{org.mnu.util.FileUtil}}
+\doxysubsubsection{\texorpdfstring{noDuplicate()}{noDuplicate()}}
+{\footnotesize\ttfamily static File org.\+mnu.\+util.\+File\+Util.\+no\+Duplicate (\begin{DoxyParamCaption}\item[{String}]{file\+Full\+Name }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+중복 파일 처리 
+
+중복이 되는 파일을 처리하는 메서드 
+
+\mbox{\hyperlink{_file_util_8java_source}{File\+Util.\+java}} 파일의 \mbox{\hyperlink{_file_util_8java_source_l00066}{66}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066                                                                          \{}
+\DoxyCodeLine{00067         System.out.println(\textcolor{stringliteral}{"{}FileUtil.noDuplicate().fileFullName"{}}+fileFullName);}
+\DoxyCodeLine{00068         }
+\DoxyCodeLine{00069         File file = \textcolor{keyword}{null};}
+\DoxyCodeLine{00070         \textcolor{keywordtype}{int} dotPos = fileFullName.lastIndexOf(\textcolor{stringliteral}{"{}."{}});}
+\DoxyCodeLine{00071         String fileName = fileFullName.substring(0, dotPos);}
+\DoxyCodeLine{00072         String ext = fileFullName.substring(dotPos); }
+\DoxyCodeLine{00073         \textcolor{keywordtype}{int} cnt = 0; }
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075         \textcolor{keywordflow}{while}(\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{00076             \textcolor{keywordflow}{if}(cnt == 0)}
+\DoxyCodeLine{00077                 file = \mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_ab35d1216597068f03b10ff7673d02598}{toFile}}(fileFullName);}
+\DoxyCodeLine{00078             \textcolor{keywordflow}{else} file = \mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_ab35d1216597068f03b10ff7673d02598}{toFile}}(fileName + cnt + ext);}
+\DoxyCodeLine{00079             \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_a934ee173ce934b30154e0b3847f6c6fa}{exist}}(file)) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00080             cnt++;}
+\DoxyCodeLine{00081         \}}
+\DoxyCodeLine{00082         }
+\DoxyCodeLine{00083         \textcolor{keywordflow}{return} file;}
+\DoxyCodeLine{00084     \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1util_1_1_file_util_a98f14d3d513c244eaa2629b491f544a7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1util_1_1_file_util_a0280e0764eed8c8b602e5a35331a7397}\label{classorg_1_1mnu_1_1util_1_1_file_util_a0280e0764eed8c8b602e5a35331a7397}} 
+\index{org.mnu.util.FileUtil@{org.mnu.util.FileUtil}!remove@{remove}}
+\index{remove@{remove}!org.mnu.util.FileUtil@{org.mnu.util.FileUtil}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily static boolean org.\+mnu.\+util.\+File\+Util.\+remove (\begin{DoxyParamCaption}\item[{String}]{file\+Name }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+파일 삭제 
+
+파일을 삭제하는 메서드 
+
+\mbox{\hyperlink{_file_util_8java_source}{File\+Util.\+java}} 파일의 \mbox{\hyperlink{_file_util_8java_source_l00053}{53}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053                                                                    \{}
+\DoxyCodeLine{00054         File file = \mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_ab35d1216597068f03b10ff7673d02598}{toFile}}(fileName);}
+\DoxyCodeLine{00055         \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_a934ee173ce934b30154e0b3847f6c6fa}{exist}}(file)) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Exception(\textcolor{stringliteral}{"{}삭제하려는 파일이 존재하지 않습니다."{}});}
+\DoxyCodeLine{00056         \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_afe6262ad5b3884f56825ce0de5bd5195}{delete}}(file)) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Exception(\textcolor{stringliteral}{"{}삭제하려는 파일이 삭제되지 않았습니다."{}});}
+\DoxyCodeLine{00057         System.out.println(\textcolor{stringliteral}{"{}FileUtil.remove() -\/ 파일이 삭제 되었습니다."{}});}
+\DoxyCodeLine{00058         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00059     \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1util_1_1_file_util_a0280e0764eed8c8b602e5a35331a7397_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classorg_1_1mnu_1_1util_1_1_file_util_ab35d1216597068f03b10ff7673d02598}\label{classorg_1_1mnu_1_1util_1_1_file_util_ab35d1216597068f03b10ff7673d02598}} 
+\index{org.mnu.util.FileUtil@{org.mnu.util.FileUtil}!toFile@{toFile}}
+\index{toFile@{toFile}!org.mnu.util.FileUtil@{org.mnu.util.FileUtil}}
+\doxysubsubsection{\texorpdfstring{toFile()}{toFile()}}
+{\footnotesize\ttfamily static File org.\+mnu.\+util.\+File\+Util.\+to\+File (\begin{DoxyParamCaption}\item[{String}]{file\+Name }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+파일 객체 변환 
+
+문자열을 파일 객체로 만들어 주는 메서드 
+
+\mbox{\hyperlink{_file_util_8java_source}{File\+Util.\+java}} 파일의 \mbox{\hyperlink{_file_util_8java_source_l00035}{35}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035                                                                \{}
+\DoxyCodeLine{00036         \textcolor{keywordflow}{return} \textcolor{keyword}{new} File(fileName);}
+\DoxyCodeLine{00037     \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classorg_1_1mnu_1_1util_1_1_file_util_ab35d1216597068f03b10ff7673d02598_icgraph}
+\end{center}
+\end{figure}
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+java/org/mnu/util/\mbox{\hyperlink{_file_util_8java}{File\+Util.\+java}}\end{DoxyCompactItemize}

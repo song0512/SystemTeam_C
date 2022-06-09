@@ -1,0 +1,64 @@
+\hypertarget{_file_util_8java_source}{}\doxysection{File\+Util.\+java}
+\label{_file_util_8java_source}\index{java/org/mnu/util/FileUtil.java@{java/org/mnu/util/FileUtil.java}}
+\mbox{\hyperlink{_file_util_8java}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00001}\mbox{\hyperlink{namespaceorg_1_1mnu_1_1util}{00001}} \textcolor{keyword}{package }org.mnu.util;}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00003}00003 \textcolor{keyword}{import} java.io.File;}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00014}\mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util}{00014}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util}{FileUtil}} \{}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00016}00016     \textcolor{comment}{// 파일이 존재하는지 확인하는 메서드}}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00021}\mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_a934ee173ce934b30154e0b3847f6c6fa}{00021}} \textcolor{comment}{}    \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{boolean} \mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_a934ee173ce934b30154e0b3847f6c6fa}{exist}}(File file) \textcolor{keywordflow}{throws} Exception\{}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00022}00022         \textcolor{keywordflow}{return} file.exists();}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00023}00023     \}}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00024}00024     }
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00025}00025     \textcolor{comment}{// 파일이 존재하는지 확인하는 메서드}}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00026}\mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_a926b0d4390a0800a6658898e2c9da79e}{00026}}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{boolean} \mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_a926b0d4390a0800a6658898e2c9da79e}{exist}}(String fileName) \textcolor{keywordflow}{throws} Exception\{}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00027}00027         \textcolor{keywordflow}{return} \mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_ab35d1216597068f03b10ff7673d02598}{toFile}}(fileName).exists();}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00028}00028     \}}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00029}00029     }
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00030}00030     \textcolor{comment}{// 문자열을 파일 객체로 만들어 주는 메서드}}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00035}\mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_ab35d1216597068f03b10ff7673d02598}{00035}} \textcolor{comment}{}    \textcolor{keyword}{public} \textcolor{keyword}{static} File \mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_ab35d1216597068f03b10ff7673d02598}{toFile}}(String fileName) \textcolor{keywordflow}{throws} Exception\{}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00036}00036         \textcolor{keywordflow}{return} \textcolor{keyword}{new} File(fileName);}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00037}00037     \}}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00038}00038     }
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00039}00039     \textcolor{comment}{// 파일 지우기}}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00044}\mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_afe6262ad5b3884f56825ce0de5bd5195}{00044}} \textcolor{comment}{}    \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{boolean} \mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_afe6262ad5b3884f56825ce0de5bd5195}{delete}}(File file) \textcolor{keywordflow}{throws} Exception \{}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00045}00045         \textcolor{keywordflow}{return} file.delete();}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00046}00046     \}}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00047}00047     }
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00048}00048     \textcolor{comment}{// 파일의 정보를 문자열로 넣어주면 지워주는 메서드}}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00053}\mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_a0280e0764eed8c8b602e5a35331a7397}{00053}} \textcolor{comment}{}    \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{boolean} \textcolor{keyword}{remove}(String fileName) \textcolor{keywordflow}{throws} Exception \{}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00054}00054         File file = \mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_ab35d1216597068f03b10ff7673d02598}{toFile}}(fileName);}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00055}00055         \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_a934ee173ce934b30154e0b3847f6c6fa}{exist}}(file)) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Exception(\textcolor{stringliteral}{"{}삭제하려는 파일이 존재하지 않습니다."{}});}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00056}00056         \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_afe6262ad5b3884f56825ce0de5bd5195}{delete}}(file)) \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Exception(\textcolor{stringliteral}{"{}삭제하려는 파일이 삭제되지 않았습니다."{}});}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00057}00057         System.out.println(\textcolor{stringliteral}{"{}FileUtil.remove() -\/ 파일이 삭제 되었습니다."{}});}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00058}00058         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00059}00059     \}}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00060}00060     }
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00061}00061     \textcolor{comment}{// 중복된 파일에 대한 처리 -\/ 중복이 되지 않는 파일 객체를 리턴해 준다.}}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00066}\mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_a98f14d3d513c244eaa2629b491f544a7}{00066}} \textcolor{comment}{}    \textcolor{keyword}{public} \textcolor{keyword}{static} File \mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_a98f14d3d513c244eaa2629b491f544a7}{noDuplicate}}(String fileFullName) \textcolor{keywordflow}{throws} Exception \{}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00067}00067         System.out.println(\textcolor{stringliteral}{"{}FileUtil.noDuplicate().fileFullName"{}}+fileFullName);}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00068}00068         }
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00069}00069         File file = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00070}00070         \textcolor{keywordtype}{int} dotPos = fileFullName.lastIndexOf(\textcolor{stringliteral}{"{}."{}});}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00071}00071         String fileName = fileFullName.substring(0, dotPos);}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00072}00072         String ext = fileFullName.substring(dotPos); }
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00073}00073         \textcolor{keywordtype}{int} cnt = 0; }
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00075}00075         \textcolor{keywordflow}{while}(\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00076}00076             \textcolor{keywordflow}{if}(cnt == 0)}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00077}00077                 file = \mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_ab35d1216597068f03b10ff7673d02598}{toFile}}(fileFullName);}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00078}00078             \textcolor{keywordflow}{else} file = \mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_ab35d1216597068f03b10ff7673d02598}{toFile}}(fileName + cnt + ext);}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00079}00079             \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classorg_1_1mnu_1_1util_1_1_file_util_a934ee173ce934b30154e0b3847f6c6fa}{exist}}(file)) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00080}00080             cnt++;}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00081}00081         \}}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00082}00082         }
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00083}00083         \textcolor{keywordflow}{return} file;}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00084}00084     \}}
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00085}00085     }
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00086}00086     }
+\DoxyCodeLine{\Hypertarget{_file_util_8java_source_l00087}00087 \}}
+
+\end{DoxyCode}

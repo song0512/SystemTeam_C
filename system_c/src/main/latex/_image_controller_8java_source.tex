@@ -1,0 +1,177 @@
+\hypertarget{_image_controller_8java_source}{}\doxysection{Image\+Controller.\+java}
+\label{_image_controller_8java_source}\index{java/org/mnu/controller/ImageController.java@{java/org/mnu/controller/ImageController.java}}
+\mbox{\hyperlink{_image_controller_8java}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00001}00001 \textcolor{keyword}{package }org.mnu.controller;}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00003}00003 \textcolor{keyword}{import} java.net.URLEncoder;}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00005}00005 \textcolor{keyword}{import} javax.servlet.http.HttpServletRequest;}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00006}00006 \textcolor{keyword}{import} javax.servlet.http.HttpSession;}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00008}00008 \textcolor{keyword}{import} org.mnu.domain.ImageVO;}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00009}00009 \textcolor{keyword}{import} org.mnu.domain.LoginVO;}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00010}00010 \textcolor{keyword}{import} org.mnu.service.ImageService;}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00011}00011 \textcolor{keyword}{import} org.springframework.beans.factory.annotation.Autowired;}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00012}00012 \textcolor{keyword}{import} org.springframework.stereotype.Controller;}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00013}00013 \textcolor{keyword}{import} org.springframework.ui.Model;}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00014}00014 \textcolor{keyword}{import} org.springframework.web.bind.annotation.GetMapping;}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00015}00015 \textcolor{keyword}{import} org.springframework.web.bind.annotation.PostMapping;}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00016}00016 \textcolor{keyword}{import} org.springframework.web.bind.annotation.RequestMapping;}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00017}00017 \textcolor{keyword}{import} org.springframework.web.servlet.mvc.support.RedirectAttributes;}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00019}00019 \textcolor{keyword}{import} com.webjjang.util.PageObject;}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00020}00020 \textcolor{keyword}{import} com.webjjang.util.file.FileUtil;}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00022}00022 \textcolor{keyword}{import} lombok.extern.log4j.Log4j;}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00032}00032 @Controller}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00033}00033 @RequestMapping(\textcolor{stringliteral}{"{}/image"{}})}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00034}00034 @Log4j}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00035}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller}{00035}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller}{ImageController}} \{}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00036}00036     }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00037}00037     @Autowired}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00038}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_aa03803cddb85ffc4919c1dd7b012bfb5}{00038}}     \textcolor{keyword}{private} \mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service}{ImageService}} \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_aa03803cddb85ffc4919c1dd7b012bfb5}{service}};}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00039}00039     }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00040}00040     @GetMapping(\textcolor{stringliteral}{"{}/list"{}})}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00045}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_a6cbd1b9f0ab40b2f72691b450eb98d42}{00045}}     public String \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_a6cbd1b9f0ab40b2f72691b450eb98d42}{list}}(PageObject pageObject, Model model) throws Exception \{}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00046}00046         \textcolor{keywordflow}{if}(pageObject.getPage()<1)pageObject.setPage(1);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00047}00047         \textcolor{keywordflow}{if}(pageObject.getPerPageNum() == 10) pageObject.setPerPageNum(8);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00048}00048         log.info(\textcolor{stringliteral}{"{}list()"{}});}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00049}00049         }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00050}00050         model.addAttribute(\textcolor{stringliteral}{"{}list"{}}, \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_aa03803cddb85ffc4919c1dd7b012bfb5}{service}}.\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a8ff78713698a9c3277375594726782fe}{list}}(pageObject));}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00051}00051         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}image/list"{}};}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00052}00052     \}}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00053}00053     }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00054}00054     \textcolor{comment}{// 카페, 디저트 카테고리}}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00059}00059 \textcolor{comment}{}    @GetMapping(\textcolor{stringliteral}{"{}/soup\_category"{}})}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00060}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_a0d712d91d23600a3734900970a8af422}{00060}}     public String \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_a0d712d91d23600a3734900970a8af422}{soup\_category}}(PageObject pageObject, Model model) throws Exception \{}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00061}00061         \textcolor{keywordflow}{if}(pageObject.getPage()<1)pageObject.setPage(1);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00062}00062         \textcolor{keywordflow}{if}(pageObject.getPerPageNum() == 10) pageObject.setPerPageNum(8);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00063}00063         log.info(\textcolor{stringliteral}{"{}soup\_category()"{}});}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00064}00064         }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00065}00065         model.addAttribute(\textcolor{stringliteral}{"{}soup\_category"{}}, \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_aa03803cddb85ffc4919c1dd7b012bfb5}{service}}.\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a109c2af361627a44e428cfd1e2dbcdd7}{soup\_category}}(pageObject));}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00066}00066         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}image/soup\_category"{}};}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00067}00067     \}}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00068}00068     }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00069}00069     \textcolor{comment}{// 중식 카테고리}}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00074}00074 \textcolor{comment}{}    @GetMapping(\textcolor{stringliteral}{"{}/chinesefood\_category"{}})}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00075}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_aca5ccb77f1234882497fd0354f58fd26}{00075}}     public String \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_aca5ccb77f1234882497fd0354f58fd26}{chinesefood\_category}}(PageObject pageObject, Model model) throws Exception \{}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00076}00076         \textcolor{keywordflow}{if}(pageObject.getPage()<1)pageObject.setPage(1);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00077}00077         \textcolor{keywordflow}{if}(pageObject.getPerPageNum() == 10) pageObject.setPerPageNum(8);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00078}00078         log.info(\textcolor{stringliteral}{"{}chinesefood\_category()"{}});}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00079}00079         }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00080}00080         model.addAttribute(\textcolor{stringliteral}{"{}chinesefood\_category"{}}, \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_aa03803cddb85ffc4919c1dd7b012bfb5}{service}}.\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a5765df905ca3ad4b3b7a81ff34854664}{chinesefood\_category}}(pageObject));}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00081}00081         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}image/chinesefood\_category"{}};}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00082}00082     \}}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00083}00083     }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00084}00084     \textcolor{comment}{// 패스트푸드 카테고리 }}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00089}00089 \textcolor{comment}{}    @GetMapping(\textcolor{stringliteral}{"{}/fastfood\_category"{}})}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00090}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_a98384671510ec6f5a33e549dca454c97}{00090}}     public String \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_a98384671510ec6f5a33e549dca454c97}{fastfood\_category}}(PageObject pageObject, Model model) throws Exception \{}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00091}00091         \textcolor{keywordflow}{if}(pageObject.getPage()<1)pageObject.setPage(1);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00092}00092         \textcolor{keywordflow}{if}(pageObject.getPerPageNum() == 10) pageObject.setPerPageNum(8);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00093}00093         log.info(\textcolor{stringliteral}{"{}fastfood\_category()"{}});}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00094}00094         }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00095}00095         model.addAttribute(\textcolor{stringliteral}{"{}fastfood\_category"{}}, \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_aa03803cddb85ffc4919c1dd7b012bfb5}{service}}.\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_ab191722061e8b216a304a71d408a6e51}{fastfood\_category}}(pageObject));}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00096}00096         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}image/fastfood\_category"{}};}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00097}00097     \}}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00098}00098     }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00099}00099     }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00100}00100     \textcolor{comment}{// 분식 카테고리}}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00105}00105 \textcolor{comment}{}    @GetMapping(\textcolor{stringliteral}{"{}/snackbar\_category"{}})}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00106}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_ae37d8bb162920055a1d7e63c9bd0f771}{00106}}     public String \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_ae37d8bb162920055a1d7e63c9bd0f771}{snackbar\_category}}(PageObject pageObject, Model model) throws Exception \{}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00107}00107         \textcolor{keywordflow}{if}(pageObject.getPage()<1)pageObject.setPage(1);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00108}00108         \textcolor{keywordflow}{if}(pageObject.getPerPageNum() == 10) pageObject.setPerPageNum(8);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00109}00109         log.info(\textcolor{stringliteral}{"{}snackbar\_category()"{}});}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00110}00110         }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00111}00111         model.addAttribute(\textcolor{stringliteral}{"{}snackbar\_category"{}}, \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_aa03803cddb85ffc4919c1dd7b012bfb5}{service}}.\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a7a0de37008f85d5b5ad96b67a804cf7b}{snackbar\_category}}(pageObject));}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00112}00112         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}image/snackbar\_category"{}};}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00113}00113     \}}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00115}00115     }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00116}00116     }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00121}00121     @GetMapping(\textcolor{stringliteral}{"{}/view"{}})}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00122}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_af1a0899e8ae61682bc095ba0abe0d4f3}{00122}}     public String \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_af1a0899e8ae61682bc095ba0abe0d4f3}{view}}(\textcolor{keywordtype}{long} no, Model model) throws Exception \{}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00123}00123         \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{ImageVO}} vo  = \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_aa03803cddb85ffc4919c1dd7b012bfb5}{service}}.\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_aac51d1f9804dd2cf9b6e590ed0de764c}{view}}(no);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00124}00124         vo.setContent(vo.getContent().replace(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}, \textcolor{stringliteral}{"{}<br>"{}}));}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00125}00125         model.addAttribute(\textcolor{stringliteral}{"{}vo"{}}, vo);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00126}00126         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}image/view"{}};}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00127}00127     \}}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00128}00128     }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00133}00133     @PostMapping(\textcolor{stringliteral}{"{}/changeImage"{}})}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00134}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_a483fb59be8d988a96b776fcec8d0880f}{00134}}     public String \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_a483fb59be8d988a96b776fcec8d0880f}{changeImage}}(PageObject pageObject,\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{ImageVO}} vo, HttpServletRequest request) throws Exception \{}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00135}00135         String path = \textcolor{stringliteral}{"{}/upload/image"{}};}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00136}00136         }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00137}00137         String fileName = FileUtil.upload(path, vo.getImage(), request);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00138}00138         vo.setFileName(fileName);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00139}00139         }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00140}00140         \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_aa03803cddb85ffc4919c1dd7b012bfb5}{service}}.\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_aeb22c9228b2a5287714732d14b76bf0b}{changeImage}}(vo);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00141}00141         }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00142}00142         FileUtil.remove(FileUtil.getRealPath(\textcolor{stringliteral}{"{}"{}}, vo.getDeleteImage(), request));}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00143}00143     }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00144}00144         }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00145}00145         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}redirect:view?no="{}} + vo.getNo()}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00146}00146                 + \textcolor{stringliteral}{"{}\&page="{}} +pageObject.getPage()}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00147}00147                 + \textcolor{stringliteral}{"{}\&perPageNum="{}} +pageObject.getPerPageNum()}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00148}00148                 + \textcolor{stringliteral}{"{}\&key="{}} +pageObject.getKey()}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00149}00149                 \textcolor{comment}{//+ "{}\&word="{}+URLEncoder.encode(pageObject.getWord(),"{}utf-\/8"{})}}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00150}00150                 +\textcolor{stringliteral}{"{}\&word="{}}+pageObject.getWord();}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00151}00151     \}}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00152}00152     }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00153}00153     }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00158}00158     @GetMapping(\textcolor{stringliteral}{"{}/write"{}})}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00159}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_a1c81c52507b1f02141e181099f2bb71d}{00159}}     public String \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_a1c81c52507b1f02141e181099f2bb71d}{writeForm}}() throws Exception \{}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00160}00160         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}image/write"{}};}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00161}00161     \}}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00162}00162     }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00163}00163     \textcolor{comment}{//write}}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00168}00168 \textcolor{comment}{}    @PostMapping(\textcolor{stringliteral}{"{}/write"{}})}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00169}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_a0f2578d744419b8e92661fec5628ffa6}{00169}}     public String \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_a0f2578d744419b8e92661fec5628ffa6}{write}}(PageObject pageObject, \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{ImageVO}} vo,HttpSession session, HttpServletRequest request, RedirectAttributes rttr) throws Exception \{}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00170}00170         log.info(pageObject);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00171}00171         }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00172}00172         vo.setId(((\mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_login_v_o}{LoginVO}})session.getAttribute(\textcolor{stringliteral}{"{}login"{}})).getId());}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00173}00173         }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00174}00174         String path = \textcolor{stringliteral}{"{}/upload/image"{}};}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00175}00175         String fileName =FileUtil.upload(path, vo.getImage(), request);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00176}00176         vo.setFileName(fileName);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00177}00177         }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00178}00178         \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_aa03803cddb85ffc4919c1dd7b012bfb5}{service}}.\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a9da0ce9c0c0750469e14e7f653a45aed}{write}}(vo);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00179}00179         rttr.addFlashAttribute(\textcolor{stringliteral}{"{}msg"{}}, \textcolor{stringliteral}{"{}게시글이 등록되었습니다."{}});}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00180}00180         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}redirect:list?page=1\&perPageNum="{}}+pageObject.getPerPageNum();}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00181}00181     \}}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00182}00182     }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00187}00187     @GetMapping(\textcolor{stringliteral}{"{}/update"{}})}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00188}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_a27ceb3fc3eade2960c6b95e78cf60b1b}{00188}}     public String \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_a27ceb3fc3eade2960c6b95e78cf60b1b}{updateForm}}(PageObject pageObject, \textcolor{keywordtype}{long} no, Model model) throws Exception \{}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00189}00189         model.addAttribute(\textcolor{stringliteral}{"{}vo"{}}, \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_aa03803cddb85ffc4919c1dd7b012bfb5}{service}}.\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_aac51d1f9804dd2cf9b6e590ed0de764c}{view}}(no));}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00190}00190         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}image/update"{}};}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00191}00191     \}}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00192}00192     }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00197}00197     @PostMapping(\textcolor{stringliteral}{"{}/update"{}})}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00198}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_a74f3f50631cdda5bae7d3670b12ae058}{00198}}     public String \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_a74f3f50631cdda5bae7d3670b12ae058}{update}}(PageObject pageObject, \mbox{\hyperlink{classorg_1_1mnu_1_1domain_1_1_image_v_o}{ImageVO}} vo, RedirectAttributes rttr) throws Exception \{}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00199}00199         log.info(vo);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00200}00200         log.info(pageObject);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00201}00201         }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00202}00202         \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_aa03803cddb85ffc4919c1dd7b012bfb5}{service}}.\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_a7917a8819bd96d4a8997a6ca63e70b6d}{update}}(vo);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00203}00203         rttr.addFlashAttribute(\textcolor{stringliteral}{"{}msg"{}}, \textcolor{stringliteral}{"{}게시글이 수정되었습니다."{}});}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00204}00204         }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00205}00205         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}redirect:view?no="{}}+vo.getNo()}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00206}00206                 + \textcolor{stringliteral}{"{}\&page="{}}+pageObject.getPage()}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00207}00207                 + \textcolor{stringliteral}{"{}\&perPageNum="{}}+pageObject.getPerPageNum()}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00208}00208                 + \textcolor{stringliteral}{"{}\&key="{}}+pageObject.getKey()}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00209}00209                 + \textcolor{stringliteral}{"{}\&word="{}}+URLEncoder.encode(pageObject.getWord(),\textcolor{stringliteral}{"{}utf-\/8"{}});}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00210}00210     \}}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00211}00211     }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00216}00216     @GetMapping(\textcolor{stringliteral}{"{}/delete"{}})}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00217}\mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_a574918299902756496e7d114c50a74cf}{00217}}     public String \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_a574918299902756496e7d114c50a74cf}{delete}}(PageObject pageObject, \textcolor{keywordtype}{long} no, String deleteImage, HttpServletRequest request, RedirectAttributes rttr) throws Exception \{}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00218}00218         log.info(no);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00219}00219         log.info(pageObject);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00220}00220         log.info(deleteImage);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00221}00221         }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00222}00222         \mbox{\hyperlink{classorg_1_1mnu_1_1controller_1_1_image_controller_aa03803cddb85ffc4919c1dd7b012bfb5}{service}}.\mbox{\hyperlink{classorg_1_1mnu_1_1service_1_1_image_service_ab9214ebdb6c9eb663c6217a8efccb45c}{delete}}(no);}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00223}00223         }
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00224}00224         FileUtil.remove(FileUtil.getRealPath(\textcolor{stringliteral}{"{}"{}}, deleteImage, request));}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00225}00225         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}redirect:list?perPageNum="{}}+pageObject.getPerPageNum();}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00226}00226     \}}
+\DoxyCodeLine{\Hypertarget{_image_controller_8java_source_l00227}00227 \}}
+
+\end{DoxyCode}
