@@ -54,6 +54,11 @@ public class MemberService {
 	
 	// 회원정보 수정
 	public int update(MemberVO vo) throws Exception {
-		return mapper.update( vo);
+		return mapper.update(vo);
+	}
+	
+	//회원탈퇴
+	public void delete(String id) throws Exception {
+		mapper.delete(id);
 	}
 }

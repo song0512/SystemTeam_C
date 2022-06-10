@@ -27,12 +27,12 @@
 		<form action="update" method="post">
 			<div class="form-group">
 				<label>아이디</label>
-				<input name="name" id="name" class="form-control" value="${vo.name }" readonly="readonly">
+				<input name="name" id="name" class="form-control" value="${vo.id}" readonly="readonly">
 			</div>	
 			
 			<div class="form-group">
 				<label>닉네임 변경</label>
-				<input name="id" id="id" class="form-control" value="${vo.id }">
+				<input name="id" id="id" class="form-control" value="${vo.name}">
 			</div>	
 			
 			<div class="form-group">

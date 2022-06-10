@@ -25,7 +25,7 @@
 			cursor : pointer;
 		}
 	</style>
-  <script type="text/javascript" src="/js/reply.js"></script>
+  <script type="text/javascript" src="/js/reply.js?ver=123"></script>
   <script type="text/javascript" src="/js/util.js"></script>
   <script type="text/javascript">
   	$(function(){
@@ -73,7 +73,7 @@
   			$("#modalWriteReplyBtn").show();
   			
   			$("#content").val("");
-  			$("#writer").val("");
+  			$("#writer").val("${login.id}");
   			$("#myModal").modal("show");
   		});
   		
@@ -99,23 +99,29 @@
   		});
   		
   		// 댓글 수정폼
-  		$(".chat").on("click", ".dataRow", function(){
+  		
+	  	
+	  	$(".chat").on("click", ".dataRow", function(){
+	  		if( "${login.id}" == $(this).find(".writer").text()) {
+	  			console.log("clear");
+		  		$("#myModal .modal-title").text("댓글 - 수정 / 삭제");
+		  			
+		  		var rno = $(this).data("rno");
+		  		var content = $(this).find(".content").text();
+		  		var writer = $(this).find(".writer").text();
+				
+		  			
+		  		$("#rno").val(rno);
+		  		$("#content").val(content);
+		  		$("#writer").val(writer);
+		  			
+		  		$("#modalUpdateReplyBtn, #modalDeleteReplyBtn, #rno-modal").show();
+		  		$("#modalWriteReplyBtn").hide();
+		  		$("#myModal").modal("show");
+	  		}
+	  	});
   			
-  			
-  			$("#myModal .modal-title").text("댓글 - 수정 / 삭제");
-  			
-  			var rno = $(this).data("rno");
-  			var content = $(this).find(".content").text();
-  			var writer = $(this).find(".writer").text();
-
-  			$("#rno").val(rno);
-  			$("#content").val(content);
-  			$("#writer").val(writer);
-  			
-  			$("#modalUpdateReplyBtn, #modalDeleteReplyBtn, #rno-modal").show();
-  			$("#modalWriteReplyBtn").hide();
-  			$("#myModal").modal("show");
-  		});
+ 
   		
   		// 댓글 수정 
   		$("#modalUpdateReplyBtn").click(function(){
@@ -171,6 +177,7 @@
 		<th>작성자</th>
 		<th>${vo.name }</th>
 	</tr>
+
 	
 	<tr>
 		<th>작성일</th>
@@ -183,7 +190,7 @@
 	</tr>
 	<tr>
 		<td colspan="2">
-			<c:if test="${!empty login}">
+			<c:if test="${!empty login and login.id == vo.id}">
 				<a href="update?no=${vo.no }&inc=0&page=${param.page }&perPageNum=${param.perPageNum}" class="btn btn-success">수정</a>
 				<a href="delete?no=${vo.no }&perPageNum=${param.perPageNum}" class="btn btn-danger" id="deleteBtn">삭제</a>
 			</c:if>
@@ -236,7 +243,7 @@
 			
 	        <div class="form-group">
 	    		<label for="writer">작성자</label>
-	    		<input type="text" class="form-control" id="writer" value="${vo.name }">
+	    		<input type="text" class="form-control" id="writer" readonly = "readonly">
 	  		</div>
 	      </div>
 	      <div class="modal-footer">

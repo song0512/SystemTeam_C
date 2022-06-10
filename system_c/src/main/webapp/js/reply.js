@@ -30,7 +30,10 @@
 			data : JSON.stringify(reply),
 			contentType : "application/json; charset=utf-8",
 			success : function(result, status, xhr){
-				if(callback) callback(result);
+				if(callback){
+					callback(result);
+					alert("댓글 등록이 되었습니다.");
+				} 
 				else 
 					alert("댓글 등록이 되었습니다.");
 			},
@@ -45,16 +48,18 @@
 	
 	//댓글 수정
 	function update(reply, callback, error){
-		alert("replyService.update - reply : " + JSON.stringify(reply));
 		$.ajax({
 			url : "/reply/update",
 			type : "patch",
 			data : JSON.stringify(reply),
 			contentType : "application/json; charset=utf-8",
 			success : function(result, status, xhr){
-				if(callback) callback(result);
+				if(callback){
+					callback(result);
+					alert("댓글이 수정되었습니다.");
+				} 
 				else 
-					alert("댓글 수정이 되었습니다.");
+					alert("댓글이 수정되었습니다.");
 			},
 			error : function(xhr, status, er) {
 				if(error) error(er);
@@ -68,12 +73,14 @@
 	
 	//댓글 삭제
 	function deleteReply(rno, callback, error){
-		alert("replyService.delete - reply : " + rno);
 		$.ajax({
 			url : "/reply/delete?rno="+rno,
 			type : "delete",
 			success : function(result, status, xhr){
-				if(callback) callback(result);
+				if(callback){
+					callback(result);
+					alert("댓글이 삭제 되었습니다.");
+				} 
 				else 
 					alert("댓글 삭제가 되었습니다.");
 			},

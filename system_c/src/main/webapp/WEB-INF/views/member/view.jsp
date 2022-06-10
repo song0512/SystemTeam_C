@@ -14,6 +14,9 @@
 		margin-top:100px;	
 	}
 </style>
+<script type="text/javascript">
+	
+</script>
 </head>
 <body>
 <div class="container">
@@ -39,8 +42,8 @@
 			<td colspan="2">
 				<c:if test="${empty param.id }">
 				<!-- 개인메뉴 -->
-					<a href="update" class="btn btn-default">정보수정</a>
-					<a href="delete" class="btn btn-danger">회원탈퇴</a>
+					<a href="update?id=${vo.id }" class="btn btn-default">정보수정</a>
+					<a href="delete" class="btn btn-danger" id="delete_btn">회원탈퇴</a>
 				</c:if>
 			</td>
 		</tr>

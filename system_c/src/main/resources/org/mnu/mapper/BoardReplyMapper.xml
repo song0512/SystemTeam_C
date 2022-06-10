@@ -7,7 +7,7 @@
 <mapper namespace="org.mnu.mapper.BoardReplyMapper">
 	<!-- list -->
 	<select id="list" resultType="org.mnu.domain.BoardReplyVO">
-		select rno, no, content,writer,writeDate 
+		select rno, no, content,writer, writeDate 
 		from tbl_reply
 		where no = #{no}
 		order by rno desc

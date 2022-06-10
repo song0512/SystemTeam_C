@@ -29,6 +29,7 @@
 		<include refid="search" />
 	</select>
 	
+	
 	<!-- 검색 조건 처리 -->
 	<sql id="search">
 		<if test="word != null and word != ''.toString">
@@ -66,7 +67,7 @@
 	
 	<!-- 게시글 보기 -->
 	<select id="view" resultType="org.mnu.domain.BoardVO">
-		select b.no, b.title, b.content , b.writeDate,  b.hit, m.name, b.id
+		select b.no, b.title, b.content , b.writeDate,  b.hit, m.name, b.id, m.id
 		from tbl_board b, tbl_member m
 		where (no = #{no}) and (m.id = b.id)
 	</select>

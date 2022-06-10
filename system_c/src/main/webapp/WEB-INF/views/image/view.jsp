@@ -41,7 +41,7 @@
 		});
 		
 		$("#deleteBtn").click(function() {
-			if(!confirm("이미지를 삭제하시겠습니까?")) return false;
+			if(!confirm("게시글을 삭제하시겠습니까?")) return false;
 		});
 	});
 </script>
@@ -64,10 +64,10 @@
 	</div>
 	<div class="well row">
 		<div class="col-sm-3">
-			<c:if test="${empty login }">
+			<c:if test="${empty login}">
 			<div>이미지</div>
 			</c:if>
-			<c:if test="${!empty login }">
+			<c:if test="${!empty login and login.id == vo.id}">
 				<div>
 					이미지<button class="btn btn-warning btn-sm" id="changeImageBtn">바꾸기</button>
 				</div>
@@ -95,17 +95,17 @@
 		<div class="col-sm-3">작성일</div>
 		<div class="col-sm-9"><fmt:formatDate value="${vo.writeDate }" pattern="yyyy-MM-dd" /></div>
 	</div>
-	<c:if test="${!empty login }">
+
+	<c:if test="${!empty login and login.id == vo.id}">
 		<a href="update?no=${vo.no }&page=${param.page}&perPageNum=${param.perPageNum}&key=${param.key}&word=${param.word}"
 		class = "btn btn-success" id="updateBtn" data-toggle="tooltip" data-placement="top">수정</a>
 		<a href="delete?no=${vo.no }&deleteImage=${vo.fileName}"
 		class = "btn btn-danger" id="deleteBtn">삭제</a>
 		<div class="alert alert-info" id="updateMsgDiv">이미지 바꾸기는 이미지 제목 오른쪽의 바꾸기 버튼을 이용하세요.</div>
 	</c:if>
-		<!-- 
 	<a href="list?page=${param.page}&perPageNum=${param.perPageNum}&key=${param.key}&word=${param.word}"
-	class = "btn btn-default">리스트</a> -->
-	<a class = "btn btn-default" onclick="history.back()">리스트</a>
+	class = "btn btn-default">뒤로가기</a>
+	<!-- <a class = "btn btn-default" onclick="history.back()">리스트</a> -->
 </div>
 </body>
 </html>

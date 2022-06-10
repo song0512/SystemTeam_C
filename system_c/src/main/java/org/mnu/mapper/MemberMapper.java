@@ -31,14 +31,14 @@ public interface MemberMapper {
 	
 	//수정
 	public int update(MemberVO vo)throws Exception;
-	
-	// 탈퇴
-	public int delete(long no) throws Exception;
 
 	// 로그인 처리
 	public LoginVO login(LoginVO invo) throws Exception;
 	
 	//아이디 중복 체크 
 	public String idCheck(String id) throws Exception;
+	
+	// 탈퇴
+	public void delete(String id) throws Exception;
 	
 }

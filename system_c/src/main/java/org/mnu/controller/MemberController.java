@@ -2,6 +2,7 @@ package org.mnu.controller;
 
 
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webjjang.util.PageObject;
@@ -55,15 +57,20 @@ public class MemberController {
 	 * @brief 로그인 처리 페이지
 	 * @details 로그인 작성 후 DB와 일치하는 아이디와 비밀번호를 찾는다.
 	 * */
-	@PostMapping("/login")
-	public String login(LoginVO invo, HttpSession session, HttpServletResponse response, RedirectAttributes rttr) throws Exception {
+	@RequestMapping(value="/login", method=RequestMethod.POST)
+	public String login(LoginVO invo, HttpServletRequest request,HttpServletResponse response, RedirectAttributes rttr) throws Exception {
 		log.info("login 처리 ="+ invo);
 		
+		HttpSession session = request.getSession();
 		LoginVO vo = service.login(invo);
 
+		if(vo == null) {
+			rttr.addFlashAttribute("msg", "아이디 또는 비밀번호를 잘못 입력했습니다. \\n입력하신 내용을 다시 확인해주세요.");
+			return "redirect:/member/login";
+			
+		}
 		rttr.addFlashAttribute("msg", "로그인이 완료되었습니다. \\n환영합니다.");
 		
-	
 		session.setAttribute("login", vo);
 		return "redirect:/image/list";
 		
@@ -77,7 +84,7 @@ public class MemberController {
 	@GetMapping("/logout")
 	public String logout(HttpSession session, HttpServletResponse response, RedirectAttributes rttr) throws Exception {
 		session.removeAttribute("login");
-		rttr.addFlashAttribute("msg", "로그아웃 되셨습니다.");
+		rttr.addFlashAttribute("msg", "회원탈퇴가 되셨습니다.");
 		return "redirect:/image/list";
 	}
 	
@@ -99,11 +106,10 @@ public class MemberController {
 	 * @details 자신의 정보를 확인할 수 있는 페이지
 	 * */
 	@GetMapping("/view")
-	public String view(String id,Model model, HttpSession session) throws Exception{
+	public String view(String id, String name,Model model, HttpSession session) throws Exception{
 		if(id == null) {
 			model.addAttribute("title", "내 정보");
 			id = ((LoginVO) session.getAttribute("login")).getId();
-			log.info(id);
 		} else {
 			model.addAttribute("title", "회원 정보");
 		}
@@ -151,7 +157,7 @@ public class MemberController {
 	 * @details 회원 정보를 수정할 수 있는 페이지를 보여줌 
 	 * */
 	@GetMapping("/update")
-	public String updateForm(String id,  MemberVO vo,Model model, HttpSession session) throws Exception {
+	public String updateForm(String id,  String name,MemberVO vo,Model model, HttpSession session) throws Exception {
 		id = ((LoginVO) session.getAttribute("login")).getId();
 		System.out.println("BoardController.update().vo = "+id);
 		
@@ -166,12 +172,25 @@ public class MemberController {
 	 * @details 회원정보를 수정해서 db에 반영
 	 * */
 	@PostMapping("/update")
-	public String update(PageObject pageObject, String id,MemberVO vo, RedirectAttributes rttr) throws Exception {
+	public String update(HttpSession session, String id, MemberVO vo, RedirectAttributes rttr) throws Exception {
 		service.update(vo);
+		
 		rttr.addFlashAttribute("msg", "회원정보가 수정되었습니다.");
 			
 		return "redirect:/member/view";
 	}
 		
+	
+	@GetMapping("/delete")
+	public String delete(String id, RedirectAttributes rttr, HttpSession session) throws Exception {
+		id = ((LoginVO) session.getAttribute("login")).getId();
+		service.delete(id);
+		
+		rttr.addFlashAttribute("msg", "회원탈퇴가 되었습니다.");
+		
+		return "redirect:/member/logout";
+		
+	
+	}
 	
 }

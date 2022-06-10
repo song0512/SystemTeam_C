@@ -80,14 +80,14 @@
 	<!-- 글 수정 -->
 	<update id="update">
 		update tbl_member
-		set id = #{id}, name = #{name}
+		set id = #{id}, name = #{name}, pw = #{pw}
 		where id = #{id}
 	</update>
 	
 	<!-- 탈퇴 -->
 	<delete id="delete">	
 		delete from tbl_member
-		where no = #{no}
+		where id = #{id}
 	
 	</delete>
 	

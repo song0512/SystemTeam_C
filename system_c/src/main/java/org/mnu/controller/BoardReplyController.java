@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import lombok.extern.log4j.Log4j;
 
@@ -55,9 +56,10 @@ public class BoardReplyController {
 	 * @details 댓글을 작성해서 db에 반영
 	 * */
 	@PostMapping(value = "/write", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces= {MediaType.TEXT_PLAIN_VALUE})
-	public ResponseEntity<String> write(@RequestBody BoardReplyVO vo) {
+	public ResponseEntity<String> write(@RequestBody BoardReplyVO vo, HttpSession session) {
 		log.info("writeReply.vo : " + vo);
-		
+		vo.setWriter(((LoginVO)session.getAttribute("login")).getId());
+//		vo.setId(((LoginVO)session.getAttribute("login")).getId());
 		
 		int writeCount = service.write(vo);
 		
@@ -88,7 +90,7 @@ public class BoardReplyController {
 	 * @details 댓글을 삭제 처리하고 db에 반영 
 	 * */
 	@DeleteMapping(value = "/delete", produces= {MediaType.TEXT_PLAIN_VALUE})
-	public ResponseEntity<String> delete(Long rno) {
+	public ResponseEntity<String> delete(Long rno, RedirectAttributes rttr) {
 		log.info("deleteReply.rno : " + rno);
 		
 		int deleteCount = service.delete(rno);
